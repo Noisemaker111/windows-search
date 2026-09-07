@@ -3,3 +3,4 @@
 node_modules/
 
 startup-before.lnk
+.cache/

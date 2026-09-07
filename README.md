@@ -34,3 +34,16 @@ Physical Win+S/Alt+Space verification is pending: native keyboard automation was
 
 
 Package regression tests and strict typecheck passed. Repository gate: 733 passed, 1 skipped, 0 failed. Static smoke passes until the pre-existing headless-process violation in ui-lab/pen-mcp.ts; no search-bar violations remain.
+
+
+## Typing, typos, and UX verification
+
+Local suggestions use a 120 ms debounce. Typing, pasting, changing models, and clicking examples do not call AI. Enter/Ask deliberately submits; held/repeated Enter and repeated identical submissions are suppressed. Editing, Escape, and Stop cancel the stream and interrupt its OpenCode execution. Arrow keys select a result; Enter on that selection opens it and asks OpenCode. IME composition cannot accidentally submit.
+
+Typo tests cover calcluator, claculator, calculatr, calulator, 7 dyas to die, 7 days to dei, wher is 7 days to die, and proejcts/projcts. Ambiguous corrections remain suggestions. Steam duplicates collapse into one result; stable target IDs survive index refresh.
+
+Real UI measurements: rapid typing/replacement produced 2 local searches, 0 submissions, 0 model calls, and 0 active OpenCode executions. Four Enter presses produced exactly 1 submission and 1 model call. Editing during an answer and Escape produced 2 cancellations, no stale answer overwrite, and 0 active OpenCode executions afterward. Selecting the Calculator typo match with Down/Enter produced a launch receipt and an observed CalculatorApp process. Windows icon extraction cached 152 icons; the real 7 Days to Die icon was visually verified.
+
+Local matching over 201 real indexed items, 200 runs across six queries: median 0.65 ms, p95 2.14 ms. This excludes the 120 ms debounce, network/UI rendering, and model latency.
+
+The redesign includes real cached icons with vector fallbacks, typo badges, keyboard hints, streaming skeleton, stop/clear controls, source chips, and readable packaged-app labels. Run bun run check:ui for client syntax validation alongside the tests and strict server typecheck.

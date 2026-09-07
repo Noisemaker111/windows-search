@@ -1,58 +1,13 @@
 <!doctype html>
-<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Ask</title>
-<style>
-:root{color-scheme:dark;font-family:"Segoe UI Variable","Segoe UI",sans-serif;color:#f2f5fa;background:#11151b}
-*{box-sizing:border-box}body{margin:0;padding:20px}main{max-width:850px;margin:auto;background:#1b222c;border:1px solid #344150;border-radius:16px;overflow:hidden;box-shadow:0 18px 60px #0005}
-header{display:flex;align-items:center;gap:8px;padding:16px;border-bottom:1px solid #344150}input{min-width:0;flex:1;font:18px "Segoe UI",sans-serif;border:0;background:transparent;color:inherit;outline:none}button,select{color:inherit;background:#283440;border:1px solid #4a5c6e;border-radius:8px;padding:8px;cursor:pointer}button:hover{background:#35495d}input:focus-visible,button:focus-visible,select:focus-visible{outline:2px solid #83c4ff;outline-offset:2px}#status{padding:10px 16px;color:#a9c0d5;font-size:12px}#out{padding:0 16px 12px;line-height:1.55;white-space:pre-wrap;overflow-wrap:anywhere}#hits{padding:0 10px 10px;max-height:330px;overflow:auto;display:grid;gap:5px}.hit{text-align:left;width:100%;display:flex;gap:12px;padding:10px;border:1px solid transparent;background:#222d38}.hit.active{border-color:#719bc2}.kind{font-size:10px;color:#a9c0d5;text-transform:uppercase;min-width:40px;margin-top:4px}.name{display:block}.path{font-size:11px;color:#a4b5c8;overflow-wrap:anywhere}footer{font-size:11px;color:#8ca3b8;border-top:1px solid #344150;padding:10px 16px;display:flex;justify-content:space-between}#sources{padding:0 16px 10px;font-size:12px}a{color:#8dcaff}select{max-width:130px}#launch{padding:0 16px 10px;font-size:12px;color:#afd7b6}
-</style>
-<main><header><input id="q" aria-label="Ask this PC" placeholder="Ask, find or open anything…" autofocus><select id="model" aria-label="Model"><option value="claude-haiku-4-5-20251001">Haiku · fast</option><option value="gpt-5.6-luna">Luna</option><option value="gpt-5.6-sol">Sol</option><option value="grok-4.6">Grok · SuperGrok</option></select><button id="ask">Ask</button></header>
-<div id="status" role="status">OpenCode v2 · ready</div><div id="out" aria-live="polite"></div><div id="launch"></div><div id="sources"></div><div id="hits"></div><footer><span>Win+S / Alt+Space · Enter to ask · Click a result to open</span><span id="timing">Grounded in this PC</span></footer></main>
-<script type="module">
-const q=document.querySelector('#q'), model=document.querySelector('#model'), out=document.querySelector('#out'), status=document.querySelector('#status'), hitsEl=document.querySelector('#hits'), timing=document.querySelector('#timing'), launchEl=document.querySelector('#launch'),sourcesEl=document.querySelector('#sources')
-let hits=[],active=0,lookupId=0,answerId=0,controller,timer
-function render(){
-  hitsEl.replaceChildren()
-  hits.forEach((h,i)=>{
-    const b=document.createElement('button');b.className='hit'+(i===active?' active':'')
-    const kind=document.createElement('span');kind.className='kind';kind.textContent=h.kind
-    const content=document.createElement('span'),name=document.createElement('span'),path=document.createElement('span')
-    name.className='name';name.textContent=h.name;path.className='path';path.textContent=h.path;content.append(name,path);b.append(kind,content)
-    b.onclick=async()=>{
-      try{const r=await fetch('/run',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:h.id,launch:h.launch})});const j=await r.json();if(!r.ok)throw Error(j.error);launchEl.textContent='Launch requested: '+j.name}
-      catch(e){launchEl.textContent=e.message}
-    };hitsEl.append(b)
-  })
-}
-async function lookup(){
-  const id=++lookupId,text=q.value.trim()
-  if(!text){hits=[];render();return}
-  try{const r=await fetch('/search?q='+encodeURIComponent(text));const data=await r.json();if(id!==lookupId)return;hits=data.hits;active=0;render()}catch{status.textContent='Search service unavailable'}
-}
-async function ask(){
-  const query=q.value.trim();if(!query)return
-  controller?.abort();controller=new AbortController();const id=++answerId
-  out.textContent='';launchEl.textContent='';sourcesEl.replaceChildren();status.textContent='Searching this PC → OpenCode v2…';timing.textContent=''
-  try{
-    const r=await fetch('/ask',{method:'POST',headers:{'content-type':'application/json'},signal:controller.signal,body:JSON.stringify({query,model:model.value})})
-    if(!r.ok)throw Error((await r.json()).error||r.status)
-    const reader=r.body.getReader(),decoder=new TextDecoder();let buffer=''
-    while(true){const {done,value}=await reader.read();if(done)break;buffer+=decoder.decode(value,{stream:true});const lines=buffer.split('\n');buffer=lines.pop()
-      for(const line of lines){if(!line.startsWith('data:')||id!==answerId)continue;const e=JSON.parse(line.slice(5))
-        if(e.type==='hits'){hits=e.hits;active=0;render()}
-        if(e.type==='context'){status.textContent='OpenCode v2 · '+e.source;e.sources.forEach(s=>{const a=document.createElement('a');a.href=s.url;a.target='_blank';a.rel='noopener';a.textContent=s.title||s.url;sourcesEl.append(a,document.createElement('br'))})}
-        if(e.type==='delta')out.textContent+=e.text
-        if(e.type==='launch')launchEl.textContent='Launch requested: '+e.result.name
-        if(e.type==='launchError')launchEl.textContent=e.message
-        if(e.type==='done')timing.textContent=(e.firstTokenMs/1000).toFixed(2)+'s first token · '+(e.totalMs/1000).toFixed(2)+'s total'
-        if(e.type==='error')throw Error(e.message)
-      }
-    }
-  }catch(e){if(e.name!=='AbortError'&&id===answerId){status.textContent='OpenCode error';out.textContent=e.message}}
-}
-q.addEventListener('input',()=>{controller?.abort();answerId++;lookupId++;clearTimeout(timer);out.textContent='';launchEl.textContent='';sourcesEl.replaceChildren();timer=setTimeout(lookup,80)})
-q.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();ask()}if(e.key==='ArrowDown'){e.preventDefault();active=Math.min(active+1,hits.length-1);render()}if(e.key==='ArrowUp'){e.preventDefault();active=Math.max(active-1,0);render()}})
-document.querySelector('#ask').onclick=ask
-window.addEventListener('focus',()=>{q.focus();q.select()})
-q.focus()
-</script></html>
+<html lang="en">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Ask</title><link rel="stylesheet" href="/style.css"></head>
+<body><main id="shell">
+<header><div class="brand"><span class="brand-mark">o<span>c</span></span><span>OpenCode <b>Ask</b></span></div><div class="model-wrap"><span class="live-dot"></span><select id="model" aria-label="Model"><option value="claude-haiku-4-5-20251001">Haiku</option><option value="gpt-5.6-luna">Luna</option><option value="gpt-5.6-sol">Sol</option><option value="grok-4.6">SuperGrok</option></select></div></header>
+<div class="search-line"><span id="search-icon"></span><input id="q" aria-label="Ask this PC" placeholder="Find anything. Ask anything." autocomplete="off" spellcheck="false" autofocus aria-controls="hits" aria-autocomplete="list"><button id="clear" class="icon-button" aria-label="Clear search" title="Clear search · Escape" hidden></button><button id="ask" aria-label="Ask OpenCode" title="Ask OpenCode · Enter"></button></div>
+<div id="status-row"><span id="status" role="status">Your PC, a little closer.</span><span id="timing"></span></div>
+<section id="answer" hidden><div class="answer-heading"><span id="answer-icon"></span><span id="answer-label">OpenCode</span><button id="stop" hidden>Stop <kbd>Esc</kbd></button></div><div id="out" aria-live="polite"></div><div id="sources"></div></section>
+<div id="launch" role="status" hidden></div>
+<section id="results" hidden><div class="section-label"><span>ON THIS PC</span><span id="count"></span></div><div id="hits" role="listbox" aria-label="Local results"></div></section>
+<section id="empty"><div class="empty-mark" id="empty-icon"></div><h1>A place for every question.</h1><p>Apps, games, projects, and the rest of the world.</p><div class="examples"><button data-query="Where is 7 Days to Die">Find a game <span>↗</span></button><button data-query="Where are my projects">My projects <span>↗</span></button><button data-query="Why is the sky blue?">Ask a question <span>↗</span></button></div></section>
+<footer><span id="footer-hint"><kbd>↑</kbd><kbd>↓</kbd> choose <kbd>Enter</kbd> ask</span><span><span class="tiny-dot"></span> OpenCode v2</span></footer>
+</main><script type="module" src="/app.js"></script></body></html>
