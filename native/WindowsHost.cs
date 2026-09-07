@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using System.Text;
 
 public sealed class WindowsBarHost : IBarWindowHost {
-  readonly string edge, profile, url, title;
+  readonly string edge, profile, url, title, propertyKey;
   Process launchProcess;
   public bool LaunchFailed { get { return launchProcess != null && launchProcess.HasExited && launchProcess.ExitCode != 0; } }
   public WindowsBarHost(string edge, string profile, int port) {
@@ -16,6 +16,7 @@ public sealed class WindowsBarHost : IBarWindowHost {
     Guid parsed;
     if (!Guid.TryParseExact(id, "N", out parsed)) { id = Guid.NewGuid().ToString("N"); File.WriteAllText(marker, id); }
     title = "Windows Search [" + port + "] " + id;
+    propertyKey = "WindowsSearch.Owner." + id;
     url = "http://127.0.0.1:" + port + "/?native=1&windowId=" + id;
   }
   public IntPtr Foreground { get { return GetForegroundWindow(); } }
@@ -25,13 +26,17 @@ public sealed class WindowsBarHost : IBarWindowHost {
     IntPtr found = IntPtr.Zero;
     EnumWindows(delegate(IntPtr window, IntPtr ignored) {
       var text = new StringBuilder(512); GetWindowText(window, text, text.Capacity);
-      if (text.ToString() != title) return true;
+      bool tagged = GetProp(window, propertyKey) == (IntPtr)1;
+      if (!tagged && text.ToString() != title) return true;
       uint pid; GetWindowThreadProcessId(window, out pid);
       try {
         using (var process = Process.GetProcessById((int)pid)) {
           if (!String.Equals(process.MainModule.FileName, edge, StringComparison.OrdinalIgnoreCase)) return true;
         }
       } catch { return true; }
+      if (!tagged && !SetProp(window, propertyKey, (IntPtr)1)) return true;
+      // The bootstrap identity belongs in a native property, not the visible caption.
+      SetWindowText(window, "Windows Search");
       found = window; return false;
     }, IntPtr.Zero);
     if (found != IntPtr.Zero && launchProcess != null) { launchProcess.Dispose(); launchProcess = null; }
@@ -64,6 +69,9 @@ public sealed class WindowsBarHost : IBarWindowHost {
   delegate bool EnumProc(IntPtr window, IntPtr param);
   [StructLayout(LayoutKind.Sequential)] struct Rect { public int left, top, right, bottom; }
   [StructLayout(LayoutKind.Sequential)] struct MonitorInfo { public int size; public Rect monitor, work; public uint flags; }
+  [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern IntPtr GetProp(IntPtr window, string name);
+  [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern bool SetProp(IntPtr window, string name, IntPtr value);
+  [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern bool SetWindowText(IntPtr window, string text);
   [DllImport("user32.dll")] static extern bool EnumWindows(EnumProc callback, IntPtr param);
   [DllImport("user32.dll", CharSet=CharSet.Unicode)] static extern int GetWindowText(IntPtr window, StringBuilder text, int size);
   [DllImport("user32.dll")] static extern uint GetWindowThreadProcessId(IntPtr window, out uint process);
