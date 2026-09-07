@@ -85,3 +85,26 @@ Final smoke rerun from the repository root passed the focus sentinel (20 hidden 
 Cleanup: the first Bun-driven headless Edge attempt timed out; later inspection found no remaining process for its exact temporary profile. The first candidate shell interruption left a listener, so it was identified by its reserved port/process command and stopped explicitly. Final candidate and outage processes are tracked by their returned PIDs for cleanup; installed bar, hotkey, OpenCode host, proxies and login shortcut remain untouched. This is evidence about the audit harness cleanup, not a verified product uninstall.
 
 Final cleanup verified: both audit process IDs absent, no listeners on 8331/8333, final candidate active count zero, installed 8320 service still healthy with 201 entries.
+
+
+## Native lifecycle follow-up (standalone repository)
+
+The helper now has a tested lifecycle controller and a Windows adapter. It tracks
+press/release state, uses a profile-specific identity instead of generic Ask title
+matching, suppresses duplicate opens while Edge startup is unresolved, toggles and
+Escape-hides the owned window, restores a valid prior app, and positions on that
+app's monitor work area. Late discovery does not issue another focus request over
+an app the user has selected. Extra Ctrl/Shift combinations are not hijacked.
+
+The client selects existing input on native reopen, aborts on page hide/native
+visibility loss, and does not cancel solely because another app received focus.
+11 fake-host lifecycle/key checks and an eighth headless browser test cover these
+contracts. The Windows helper compiles in Windows PowerShell without registering
+hooks or acquiring the live mutex. CI now runs those checks independently.
+
+Physical Win+S/Alt+Space, focus restoration, native Search/Start competition,
+actual ShowWindow-to-browser visibility events and mixed-DPI placement remain
+release gates. The native tool's window enumeration was blocked by automatic
+approval review for unrelated-window metadata; approval was requested. No current
+installation, startup shortcut, global hook or shared host/proxy was changed.
+The old helper remains installed. No release-ready claim is made.
