@@ -108,3 +108,66 @@ release gates. The native tool's window enumeration was blocked by automatic
 approval review for unrelated-window metadata; approval was requested. No current
 installation, startup shortcut, global hook or shared host/proxy was changed.
 The old helper remains installed. No release-ready claim is made.
+
+## Latency and token reduction (2026-09-07)
+
+PRs #1 and #2 are merged into the public standalone repository. This follow-up
+keeps the installed bar unchanged. It prepares at most one unused session per
+selected model, defaults to preparing Haiku at startup, and consumes each session
+once. Preparation creates OpenCode metadata only; it never sends a prompt. A
+successful answer replenishes the slot. Unused sessions expire for reuse after
+five minutes and are removed on replacement or graceful shutdown. Failed
+preparation does not loop. A definitive missing-session 404 can recreate once;
+transport errors and other failures never replay a possibly admitted prompt.
+
+Typing still performs local matching only, now with a 40ms rather than 120ms
+pause. Model changes do not invoke inference. Compact prompts preserve exact
+paths but omit icons, index IDs, ranking and redundant launch metadata. Answers
+request one sentence, with a second only when needed. Token telemetry records
+OpenCode step usage, not an estimate of subscription charges.
+
+Controlled real Haiku comparison: five alternating calls per variant through the
+same existing OpenCode v2 host and subscription proxy, same indexed game query,
+fresh context on every call. Baseline reproduces the merged prompt with session
+creation on demand; candidate waits for empty-session preparation before timing.
+These are completion-client timings, excluding browser, indexing and preparation.
+No direct provider completion path or cached answer was used.
+
+| Metric | Baseline | Prepared + compact |
+| --- | ---: | ---: |
+| First token, median | 2518ms | 1262ms |
+| First token, range | 2199–4984ms | 1208–1483ms |
+| Completion, median | 3158ms | 1821ms |
+| Completion, range | 2770–5879ms | 1679–2098ms |
+| Session wait | 863–983ms | below 1ms |
+| Prompt bytes | 786 | 435 |
+| Input tokens, median | 742 | 618 |
+| Output tokens, median | 40 | 34 |
+
+Input tokens fell 17%, output median 15%. No dollar savings are established:
+these use subscriptions and no billing data was measured. The first baseline
+also had 1972ms prompt admission; later baselines were 36–50ms. Prepared prompt
+admission was 5–11ms, with 1194–1471ms after admission until first token. That
+last interval still combines OpenCode scheduling, proxy and model; pure provider
+latency has not been separated. Five samples do not establish stable percentiles
+or isolate all effects of host warming and prompt shortening. Cold start and a
+newly selected model may still wait for preparation. Subsecond AI is NOT met.
+
+An isolated candidate in headless Edge returned actual local results in
+128/108/91/100/96ms from automated input fill to visible result (includes browser
+automation overhead). Metrics changed from zero to five searches, with zero
+submissions and zero model calls. A deliberate real submission displayed first
+text in 1600ms and completed in 2148ms, with the exact indexed path and no
+unrequested launch advice. This is one browser sample, not a hardware shortcut
+measurement. The ten comparison sessions were deleted after measurement. The
+owned browser and candidate process were stopped; installed services stayed up.
+
+Validation: 23 unit/reliability tests, 88 assertions; strict typecheck; UI syntax;
+11 fake-host native checks and native compilation; eight headless Edge journeys.
+New checks cover model isolation, bounded preparation, expiry, shutdown races,
+failed preparation, cancellation before inference and safe 404-only recovery.
+
+DO NOT RELEASE remains the recommendation. Native hardware shortcuts and focus,
+actual target-app launch confirmation, DPI/monitor behavior, useful current web
+retrieval, real proxy/model outage recovery and login/uninstall lifecycle remain
+unverified. The latency improvement is material but does not close these gates.

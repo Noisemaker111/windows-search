@@ -45,7 +45,7 @@ function edited(){
  cancel();lookupId++;lookupController?.abort();clearTimeout(timer);hits=[];active=-1;render()
  answer.hidden=true;out.textContent='';$('#sources').replaceChildren();$('#launch').hidden=true;$('#timing').textContent=''
  clearButton.hidden=!q.value;askButton.disabled=!q.value.trim();status.textContent=q.value.trim()?'Finding local matches…':'Your PC, a little closer.'
- if(!composing)timer=setTimeout(lookup,120)
+ if(!composing)timer=setTimeout(lookup,40)
 }
 async function lookup(){
  const id=++lookupId,text=q.value.trim();if(!text)return
