@@ -1,5 +1,6 @@
 import { buildIndex, search, launchIntent, launch } from "./pc"
-import { complete, models, request } from "./opencode"
+import { complete, models, request, prepareModel, sessionPool } from "./opencode"
+import { answerPrompt } from "./answer-prompt"
 import { relevant } from "./evidence"
 import { join } from "node:path"
 import { mkdir } from "node:fs/promises"
@@ -17,6 +18,7 @@ async function cacheIcons(){
 }
 void cacheIcons()
 setInterval(async()=> { try { index = await buildIndex(); indexedAt=Date.now();void cacheIcons() } catch(e) { console.error("Index refresh:",String(e)) } },60000)
+void prepareModel(models[0].id)
 const launches: unknown[] = []
 const xml = (s:string) => s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g,"$1").replace(/<[^>]*>/g,"").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/&#39;/g,"'")
 async function web(query:string, signal:AbortSignal) {
@@ -60,6 +62,7 @@ const server = Bun.serve({
         return Response.json({error:"A query and supported model are required"},{status:400})
       stats.submissions++
       const started=performance.now()
+      void prepareModel(body.model)
       const hits=search(index,body.query)
       const localSearchMs=performance.now()-started
       const selected=hits.find(h=>h.id===body.selection)
@@ -88,12 +91,9 @@ const server = Bun.serve({
             let first:number|undefined
             signal.throwIfAborted()
             stats.modelCalls++
-            const result = await complete(body.model,JSON.stringify({
-              query:body.query,retrievedAt:new Date().toISOString(),pcHits:hits,launchOutcome:launched,launchError,webSources:sources,
-              instruction:"Answer the query in 1-3 short sentences with actual paths where relevant. For packaged Windows apps, use the app name and launch outcome; do not print internal shell:AppsFolder identifiers. "+
-                (hits.length?"Use supplied disk evidence only for location questions. A launch requested receipt is not confirmation that the app opened. Do not infer current facts from local paths.":sources.length?"Use supplied snippets only if they directly support the answer; cite those URLs. Otherwise say you cannot verify the answer.":"For a missing local item say not found in indexed locations. For current facts say you cannot verify them. Only general explanations may use explicitly labeled model knowledge. Never invent paths or current facts.")
-            }),delta=>{first??=performance.now()-started;send({type:"delta",text:delta})},signal)
-            send({type:"done",model:result.model,firstTokenMs:Math.round(first||0),totalMs:Math.round(performance.now()-started),timings:{localSearchMs,retrievalMs,...result.timings}})
+            const prompt=answerPrompt(body.query,hits,sources,launched,launchError)
+            const result = await complete(body.model,prompt,delta=>{first??=performance.now()-started;send({type:"delta",text:delta})},signal)
+            send({type:"done",model:result.model,firstTokenMs:Math.round(first||0),totalMs:Math.round(performance.now()-started),timings:{localSearchMs,retrievalMs,...result.timings},preparedSession:result.preparedSession,promptBytes:Buffer.byteLength(prompt),usage:result.usage})
           } catch(e) { send({type:"error",message:String(e)}) }
           finally { clearTimeout(deadlineTimer);if(signal.aborted)stats.cancelled++;if(clients.get(clientId)===abort)clients.delete(clientId);try {controller.close()} catch {} }
         },
@@ -105,3 +105,12 @@ const server = Bun.serve({
   }
 })
 console.log("OpenCode search bar: http://127.0.0.1:"+server.port+"; "+index.length+" real items")
+
+async function shutdown(){
+  for(const abort of clients.values())abort.abort()
+  server.stop(true)
+  await sessionPool.dispose()
+  process.exit(0)
+}
+process.once("SIGINT",()=>void shutdown())
+process.once("SIGTERM",()=>void shutdown())

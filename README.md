@@ -42,3 +42,10 @@ The bar follows the previous app's monitor work area. Reopening selects the
 existing query without submitting it. Hiding cancels a pending response; ordinary
 focus loss alone does not. These are candidate behaviors, not physically verified
 claims. `hotkey.ps1 -Check` compiles even when the installed helper owns the mutex.
+
+The shim prepares an empty OpenCode session for Haiku at startup and after a
+successful answer, keeping creation off the warm submission path. Other models
+prepare on deliberate submission. No preparation invokes inference, and prompted
+sessions are never reused. Local suggestions use a 40ms debounce. Responses carry
+phase timings and input/output token usage for diagnosis; these are not billing
+figures. See RELEASE-AUDIT.md for measured warm results and remaining release gates.
