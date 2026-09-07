@@ -5,10 +5,11 @@
   "scripts": {
     "start": "bun main.ts",
     "test": "bun test pc.test.ts reliability.test.ts latency.test.ts",
-    "typecheck": "tsc --noEmit --strict --lib esnext --target esnext --module preserve --moduleResolution bundler --types bun main.ts pc.ts opencode.ts",
+    "typecheck": "tsc --noEmit --strict --lib esnext --target esnext --module preserve --moduleResolution bundler --types bun main.ts pc.ts opencode.ts benchmark-models.ts",
     "check:ui": "node --check app.js",
     "test:ui": "playwright test",
-    "test:native": "powershell.exe -NoProfile -NonInteractive -File ./native.test.ps1"
+    "test:native": "powershell.exe -NoProfile -NonInteractive -File ./native.test.ps1",
+    "bench:models": "bun benchmark-models.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",

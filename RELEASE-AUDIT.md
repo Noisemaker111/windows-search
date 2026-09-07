@@ -171,3 +171,23 @@ DO NOT RELEASE remains the recommendation. Native hardware shortcuts and focus,
 actual target-app launch confirmation, DPI/monitor behavior, useful current web
 retrieval, real proxy/model outage recovery and login/uninstall lifecycle remain
 unverified. The latency improvement is material but does not close these gates.
+
+## Expanded subscription benchmark (2026-09-07)
+
+See MODEL-BENCHMARK.md and model-benchmark-results.json: 56 successful answers
+across Haiku, Spark, Luna and Grok, plus three rejected attempts. Warm median
+first text was 1347 / 2055 / 3055 / 5506ms respectively. These completion-client
+timings exclude preparation, retrieval and the UI. No billing savings are proven.
+Keep Haiku default for now; the benchmark does not authorize installing changes.
+
+Confirmed blockers: vague installed-game requests supplied zero candidates to all
+models; Haiku invented an unsupplied fallback Steam location once. With no web
+sources, Haiku asserted a current fact twice without qualification, while the
+other models labeled knowledge but still failed to explicitly withhold current
+verification. Projects responses were sometimes unnecessarily large. The next
+improvement must address evidence discovery and grounding, not just model choice.
+
+The benchmark is opt-in, uses only existing subscription routes through OpenCode,
+and never launches apps. The additional model catalog existed only in an isolated
+host. All owned sessions were removed, that host was stopped, and the installed
+bar/proxies/startup were preserved. Native release gates remain outstanding.

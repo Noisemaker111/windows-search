@@ -49,3 +49,17 @@ prepare on deliberate submission. No preparation invokes inference, and prompted
 sessions are never reused. Local suggestions use a 40ms debounce. Responses carry
 phase timings and input/output token usage for diagnosis; these are not billing
 figures. See RELEASE-AUDIT.md for measured warm results and remaining release gates.
+
+Run the opt-in subscription model benchmark from this repository with
+`$env:SEARCH_BENCHMARK='1'; bun run bench:models`. Set `SEARCH_OPENCODE_URL` and
+`SEARCH_OPENCODE_LOG` to the intended test host and its local credential log.
+The benchmark submits up to 70 real prompts (two passes, seven query categories,
+five models), disables a model after its first error, and never launches apps.
+It adds Haiku 3.5 and Spark only to its own process and writes an isolated config
+under `.cache/benchmark-runtime`; an OpenCode host must load that configuration
+at startup to test those additional models. The installed host normally permits
+only the product's existing models. Do not change the installed host to run it.
+`SEARCH_BENCH_MODELS` can restrict the comma-separated model IDs. Results and
+local paths stay in ignored `.cache` files. The runner removes its own sessions;
+stop any separately started test host after it completes. Read MODEL-BENCHMARK.md
+for the recorded run, quality failures and limitations.
