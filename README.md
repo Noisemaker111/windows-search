@@ -63,3 +63,19 @@ only the product's existing models. Do not change the installed host to run it.
 local paths stay in ignored `.cache` files. The runner removes its own sessions;
 stop any separately started test host after it completes. Read MODEL-BENCHMARK.md
 for the recorded run, quality failures and limitations.
+
+The expanded reasoning screen is separate: set `SEARCH_BENCHMARK=1` and run
+`bun run bench:matrix prepare`. It inventories the live subscription catalog and
+writes an isolated host configuration under `.cache/matrix-runtime`. Start a
+separate OpenCode host with that config and a separate database, then set
+`SEARCH_OPENCODE_URL` and `SEARCH_OPENCODE_LOG` for that host and run
+`bun run bench:matrix screen`. Reserve loopback port 8337 for its observing relay.
+The runner sends fixed public synthetic evidence only and observes the outgoing
+model and reasoning field without logging credentials. It does not read the PC
+index. Selected combination keys can be repeated with `SEARCH_BENCH_CELLS` and
+`bun run bench:matrix finalists`. Stop the owned test host after the run.
+
+The screen probes two low-cost settings per advertised text model; full declared
+reasoning levels remain in `model-reasoning-inventory.json`. Unbenchmarked higher
+levels are not claimed to work. Reasoning requests reaching the proxy do not
+prove how its upstream normalizes them. See MODEL-REASONING-BENCHMARK.md.

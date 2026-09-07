@@ -191,3 +191,18 @@ The benchmark is opt-in, uses only existing subscription routes through OpenCode
 and never launches apps. The additional model catalog existed only in an isolated
 host. All owned sessions were removed, that host was stopped, and the installed
 bar/proxies/startup were preserved. Native release gates remain outstanding.
+
+## Model/reasoning expansion
+
+The initial model-only ranking is provisional. MODEL-REASONING-BENCHMARK.md now
+records 22 text models across 44 low-effort settings and 64 valid repeated
+finalist measurements. Synthetic evidence replaced live private index data after
+automatic review blocked that broader disclosure. A Projects fixture mismatch
+was corrected and its 16 invalid samples excluded and replaced.
+
+Reasoning changes the quality/latency tradeoff: Haiku/none was fastest but failed
+current-fact provenance; Haiku/low and Sonnet 5 settings were more cautious.
+Spark/low roughly halved reported reasoning versus medium. Advertised older and
+Fable routes exposed model, client-version, reasoning-support and retry failures.
+OpenCode's ambient workspace context can also become an ungrounded path answer.
+See the detailed report; none of this establishes current release readiness.

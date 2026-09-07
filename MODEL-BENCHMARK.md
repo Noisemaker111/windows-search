@@ -1,4 +1,4 @@
-# Subscription model benchmark — 2026-09-07
+# Subscription model benchmark â€” 2026-09-07
 
 Keep Haiku as the default for now. It was fastest across this small mixed-query suite. None of the tested models fixes the missing-evidence problem, and none establishes reliable current web answers. Do not release based on these timings.
 
@@ -6,10 +6,10 @@ Keep Haiku as the default for now. It was fastest across this small mixed-query 
 
 | Model | Answers | Median first text | Median completion | First text range | Median input / output / reasoning tokens |
 | --- | ---: | ---: | ---: | --- | --- |
-| Haiku | 14 | 1347ms | 2075ms | 1113–3824ms | 603 / 34 / 0 |
-| Spark | 14 | 2055ms | 2524ms | 1702–5363ms | 456 / 33 / 248 |
-| Luna | 14 | 3055ms | 3989ms | 1652–5244ms | 751 / 22 / 0 |
-| Grok · SuperGrok | 14 | 5506ms | 6109ms | 3361–12331ms | 541 / 0 / 283 |
+| Haiku | 14 | 1347ms | 2075ms | 1113â€“3824ms | 603 / 34 / 0 |
+| Spark | 14 | 2055ms | 2524ms | 1702â€“5363ms | 456 / 33 / 248 |
+| Luna | 14 | 3055ms | 3989ms | 1652â€“5244ms | 751 / 22 / 0 |
+| Grok Â· SuperGrok | 14 | 5506ms | 6109ms | 3361â€“12331ms | 541 / 0 / 283 |
 
 First-text medians by query category (only two samples each):
 

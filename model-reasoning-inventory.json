@@ -1,0 +1,314 @@
+[
+  {
+    "model": "gpt-5.6-terra",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "screened": [
+      "low",
+      "medium"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "gpt-5.6-luna",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "screened": [
+      "low",
+      "medium"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "codex-auto-review",
+    "excluded": "image generation or internal review"
+  },
+  {
+    "model": "claude-sonnet-5",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "screened": [
+      "none",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-opus-4-5-20251101",
+    "declared": [
+      "none"
+    ],
+    "screened": [
+      "none",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-opus-4-1-20250805",
+    "declared": [
+      "token-budget",
+      1024,
+      128000
+    ],
+    "screened": [
+      "default",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "gpt-6-astra",
+    "declared": [],
+    "screened": [
+      "default",
+      "low"
+    ],
+    "basis": "unknown; request probe only"
+  },
+  {
+    "model": "claude-opus-4-6",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "max"
+    ],
+    "screened": [
+      "none",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-opus-4-7",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "screened": [
+      "none",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-opus-5",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "screened": [
+      "none",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-fable-5",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "screened": [
+      "none",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-3-7-sonnet-20250219",
+    "declared": [
+      "token-budget",
+      1024,
+      128000
+    ],
+    "screened": [
+      "default",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-fable-5-1",
+    "declared": [],
+    "screened": [
+      "default",
+      "low"
+    ],
+    "basis": "unknown; request probe only"
+  },
+  {
+    "model": "gpt-5.5",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "screened": [
+      "low",
+      "medium"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-sonnet-4-5-20250929",
+    "declared": [
+      "none"
+    ],
+    "screened": [
+      "none",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-sonnet-4-6",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "max"
+    ],
+    "screened": [
+      "none",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-opus-4-20250514",
+    "declared": [
+      "token-budget",
+      1024,
+      128000
+    ],
+    "screened": [
+      "default",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "gpt-5.6-sol",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "screened": [
+      "low",
+      "medium"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "gpt-image-1.5",
+    "excluded": "image generation or internal review"
+  },
+  {
+    "model": "gpt-image-2",
+    "excluded": "image generation or internal review"
+  },
+  {
+    "model": "claude-haiku-4-5-20251001",
+    "declared": [
+      "none"
+    ],
+    "screened": [
+      "none",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-opus-4-8",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "screened": [
+      "none",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "claude-sonnet-4-20250514",
+    "declared": [
+      "token-budget",
+      1024,
+      128000
+    ],
+    "screened": [
+      "default",
+      "low"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "gpt-5.3-codex-spark",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "screened": [
+      "low",
+      "medium"
+    ],
+    "basis": "v7.2.147 static metadata"
+  },
+  {
+    "model": "grok-4.6",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "screened": [
+      "low",
+      "medium"
+    ],
+    "basis": "v7.2.147 static metadata"
+  }
+]
