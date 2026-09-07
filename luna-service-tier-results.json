@@ -1,0 +1,200 @@
+[
+  {
+    "choice": "gpt-5.6-luna",
+    "firstMs": 3825,
+    "totalMs": 4550,
+    "timings": {
+      "sessionMs": 585.0221,
+      "subscriptionMs": 2.7941999999999325,
+      "promptMs": 1526.7584000000002,
+      "postPromptFirstTokenMs": 1707.0881
+    },
+    "usage": {
+      "input": 704,
+      "output": 15,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "observed": [
+      {
+        "model": "gpt-5.6-luna",
+        "reasoning": "low",
+        "requested": "default",
+        "status": 200,
+        "returnedTiers": [
+          "auto",
+          "default"
+        ]
+      }
+    ],
+    "text": "Example Game is located at C:\\Games\\Example."
+  },
+  {
+    "choice": "gpt-5.6-luna#fast",
+    "firstMs": 1943,
+    "totalMs": 2909,
+    "timings": {
+      "sessionMs": 426.4350999999997,
+      "subscriptionMs": 1.927400000000489,
+      "promptMs": 9.652900000000045,
+      "postPromptFirstTokenMs": 1504.8604000000005
+    },
+    "usage": {
+      "input": 699,
+      "output": 15,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "observed": [
+      {
+        "model": "gpt-5.6-luna",
+        "reasoning": "low",
+        "requested": "priority",
+        "status": 200,
+        "returnedTiers": [
+          "auto",
+          "default"
+        ]
+      }
+    ],
+    "text": "Example Game is located at C:\\Games\\Example."
+  },
+  {
+    "choice": "gpt-5.6-luna#fast",
+    "firstMs": 2969,
+    "totalMs": 3589,
+    "timings": {
+      "sessionMs": 412.6716000000006,
+      "subscriptionMs": 1.1957000000002154,
+      "promptMs": 5.889400000000023,
+      "postPromptFirstTokenMs": 2548.360499999999
+    },
+    "usage": {
+      "input": 703,
+      "output": 15,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "observed": [
+      {
+        "model": "gpt-5.6-luna",
+        "reasoning": "low",
+        "requested": "priority",
+        "status": 200,
+        "returnedTiers": [
+          "auto",
+          "default"
+        ]
+      }
+    ],
+    "text": "Example Game is located at C:\\Games\\Example."
+  },
+  {
+    "choice": "gpt-5.6-luna",
+    "firstMs": 5049,
+    "totalMs": 6069,
+    "timings": {
+      "sessionMs": 421.186099999999,
+      "subscriptionMs": 1.8037999999996828,
+      "promptMs": 5.221799999999348,
+      "postPromptFirstTokenMs": 4619.9679
+    },
+    "usage": {
+      "input": 701,
+      "output": 15,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "observed": [
+      {
+        "model": "gpt-5.6-luna",
+        "reasoning": "low",
+        "requested": "default",
+        "status": 200,
+        "returnedTiers": [
+          "auto",
+          "default"
+        ]
+      }
+    ],
+    "text": "Example Game is located at C:\\Games\\Example."
+  },
+  {
+    "choice": "gpt-5.6-luna",
+    "firstMs": 2204,
+    "totalMs": 4415,
+    "timings": {
+      "sessionMs": 442.40820000000167,
+      "subscriptionMs": 2.097200000000157,
+      "promptMs": 5.25249999999869,
+      "postPromptFirstTokenMs": 1753.1645000000026
+    },
+    "usage": {
+      "input": 700,
+      "output": 15,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "observed": [
+      {
+        "model": "gpt-5.6-luna",
+        "reasoning": "low",
+        "requested": "default",
+        "status": 200,
+        "returnedTiers": [
+          "auto",
+          "default"
+        ]
+      }
+    ],
+    "text": "Example Game is located at C:\\Games\\Example."
+  },
+  {
+    "choice": "gpt-5.6-luna#fast",
+    "firstMs": 2357,
+    "totalMs": 2972,
+    "timings": {
+      "sessionMs": 403.7730999999985,
+      "subscriptionMs": 1.2934999999997672,
+      "promptMs": 4.516299999999319,
+      "postPromptFirstTokenMs": 1947.2681999999986
+    },
+    "usage": {
+      "input": 701,
+      "output": 15,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "observed": [
+      {
+        "model": "gpt-5.6-luna",
+        "reasoning": "low",
+        "requested": "priority",
+        "status": 200,
+        "returnedTiers": [
+          "auto",
+          "default"
+        ]
+      }
+    ],
+    "text": "Example Game is located at C:\\Games\\Example."
+  }
+]

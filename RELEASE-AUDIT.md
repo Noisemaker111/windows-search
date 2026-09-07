@@ -171,3 +171,42 @@ DO NOT RELEASE remains the recommendation. Native hardware shortcuts and focus,
 actual target-app launch confirmation, DPI/monitor behavior, useful current web
 retrieval, real proxy/model outage recovery and login/uninstall lifecycle remain
 unverified. The latency improvement is material but does not close these gates.
+
+## Luna Normal/Fast service-tier control
+
+This is service speed, independent of reasoning. Luna remains at low reasoning;
+Normal sends service_tier=default and Fast selects an OpenCode model variant with
+service_tier=priority. Session-pool keys distinguish the two. The selector persists,
+is disabled for other models, cancels an in-flight answer on changes, and does not
+submit until Enter/click. Answer provenance says Fast requested, not Fast served.
+
+Inspection of CLIProxyAPI v7.2.147 found its Chat Completions request translation
+constructs a new payload without service_tier. Six initial chat-path probes
+therefore did not verify Fast. Luna now uses the installed OpenCode native
+@opencode-ai/ai/providers/openai/responses adapter against the same subscription
+proxy. The generic compatible-responses package was rejected by the installed
+host during setup; the supported native adapter was then verified successfully.
+The Responses translator preserves priority and removes other service_tier values.
+No service-tier override was found in the running proxy's configuration.
+
+Six final Responses checks used the same short public synthetic path prompt and
+fresh sessions, with three requests per mode in varied order. All six sent
+reasoning.effort=low; the observed requests had the intended default/priority tier.
+All completed successfully with the supplied path. All final tier values returned
+by upstream were default (initial events were auto), including all three priority
+requests. Raw sanitized observations are in luna-service-tier-results.json.
+
+Observed first/completion ms: Normal 3825/4550, 5049/6069, 2204/4415; Fast requested
+1943/2909, 2969/3589, 2357/2972. These include fresh session creation and one initial
+host-start admission delay. They are NOT a valid comparison of delivered Fast
+versus Normal, because every response reported default. No 2x speed or cost claim
+is made; billed credits were not observed. Upstream/account support or downgrade
+remains unresolved. Do not advertise this route as delivering Fast acceleration.
+
+25 tests / 100 assertions, strict typecheck, UI syntax, 11 fake-host native checks
+and compilation, and nine headless Edge journeys passed. New checks cover exact
+OpenCode model/variant identity, Responses routing, unchanged low effort, foreign
+model rejection, persistence, zero auto-submission, normal/fast request identity,
+other-model disabling and narrow layout. All owned sessions, relay and test host
+were cleaned up. Installed startup, bar, shared proxy and OpenCode were untouched.
+Physical desktop release gates and current-answer grounding remain outstanding.

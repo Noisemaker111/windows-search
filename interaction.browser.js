@@ -54,3 +54,20 @@ test('native window identity, dismissal cancellation and focus select the existi
  await page.evaluate(()=>window.dispatchEvent(new Event('focus')))
  await expect(q).toBeFocused();expect(await q.evaluate(e=>e.value.slice(e.selectionStart,e.selectionEnd))).toBe('Calculator')
 })
+
+test('Luna Normal/Fast is independent of reasoning, persists, and never auto-submits',async({page})=>{
+ const payloads=[]
+ await page.route('**/ask',r=>{payloads.push(r.request().postDataJSON());return r.fulfill({contentType:'text/event-stream',body:event({type:'delta',text:'Fixture answer'})+event({type:'done',firstTokenMs:10,totalMs:20})})})
+ await expect(page.getByRole('combobox',{name:'Service speed'})).toBeDisabled()
+ await page.locator('#model').selectOption('gpt-5.6-luna');await page.locator('#speed').selectOption('fast')
+ await expect(page.locator('#status')).toContainText('more credits');expect(payloads).toHaveLength(0)
+ await page.reload();await expect(page.locator('#model')).toHaveValue('gpt-5.6-luna');await expect(page.locator('#speed')).toHaveValue('fast');expect(payloads).toHaveLength(0)
+ await page.locator('#q').fill('Where is Calculator');await page.locator('#q').press('Enter')
+ await expect(page.locator('#status')).toHaveText('Answer complete');expect(payloads[0].model).toBe('gpt-5.6-luna#fast')
+ await expect(page.locator('#answer-label')).toHaveText('OpenCode · Luna · low reasoning · Fast requested')
+ await page.locator('#speed').selectOption('normal');expect(payloads).toHaveLength(1)
+ await page.locator('#q').press('Enter');await expect(page.locator('#status')).toHaveText('Answer complete');expect(payloads[1].model).toBe('gpt-5.6-luna')
+ await page.locator('#model').selectOption('grok-4.6');await expect(page.locator('#speed')).toBeDisabled();await expect(page.locator('#speed')).toHaveValue('normal')
+ await page.setViewportSize({width:360,height:600});await page.locator('#model').selectOption('gpt-5.6-luna');await page.locator('#speed').selectOption('fast')
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
+})

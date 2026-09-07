@@ -49,3 +49,28 @@ prepare on deliberate submission. No preparation invokes inference, and prompted
 sessions are never reused. Local suggestions use a 40ms debounce. Responses carry
 phase timings and input/output token usage for diagnosis; these are not billing
 figures. See RELEASE-AUDIT.md for measured warm results and remaining release gates.
+
+## Luna service speed
+
+Luna uses low reasoning with a separate Normal / Fast selector. Fast requests
+`service_tier: priority`; it does not reduce reasoning or select a different
+model. Choices persist locally. Selecting/changing a model or service speed never
+submits a prompt. Haiku remains the initial default, and Sol/Grok remain available.
+
+Luna uses OpenCode's native OpenAI Responses adapter with the existing loopback
+subscription proxy. The proxy's Chat Completions translator drops service_tier;
+its Responses translator preserves priority. No direct paid API route or new
+credential is introduced. Activating this config in an installation requires the
+dedicated OpenCode host to reload it; this PR does not change the running install.
+
+Fast is explicitly a request. In six isolated real Responses checks (three Normal,
+three Fast), all final service-tier metadata reported default. Thus Fast delivery
+and a speed benefit are NOT established for this subscription route. The UI says
+Fast requested and does not claim that priority was served. See the release audit
+and luna-service-tier-results.json. The account/upstream capability or downgrade
+needs resolution before advertising working acceleration.
+
+[Codex Fast documentation](https://learn.chatgpt.com/docs/agent-configuration/speed)
+currently describes GPT-5.6 Fast as 1.5x model speed with 2.5x credit consumption;
+API pricing is separate. These are product-level terms, not measured charges for
+this proxy account. The selector warns that Fast uses more credits.

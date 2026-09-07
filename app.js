@@ -1,5 +1,13 @@
 const $=s=>document.querySelector(s)
 const q=$('#q'),model=$('#model'),out=$('#out'),status=$('#status'),hitsEl=$('#hits'),answer=$('#answer'),empty=$('#empty'),results=$('#results'),askButton=$('#ask'),clearButton=$('#clear'),stopButton=$('#stop')
+const speed=$('#speed')
+function readPreference(key){try{return localStorage.getItem(key)}catch{return null}}
+function savePreference(key,value){try{localStorage.setItem(key,value)}catch{}}
+const savedModel=readPreference('search-model')
+if([...model.options].some(o=>o.value===savedModel))model.value=savedModel
+function syncSpeed(){speed.disabled=model.value!=='gpt-5.6-luna';speed.value=!speed.disabled&&readPreference('search-luna-speed')==='fast'?'fast':'normal'}
+syncSpeed()
+function selectedModel(){return model.value==='gpt-5.6-luna'&&speed.value==='fast'?'gpt-5.6-luna#fast':model.value}
 const paths={
  search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/>',
  arrow:'<path d="M12 19V5m-6 6 6-6 6 6"/>',
@@ -62,9 +70,9 @@ async function ask(selection){
  clearTimeout(timer);lookupId++;lookupController?.abort();cancel()
  controller=new AbortController();const signal=controller.signal,id=++answerId;setPending(true)
  answer.hidden=false;out.textContent='';$('#launch').hidden=true;$('#sources').replaceChildren();status.textContent='Finding your answer…';$('#timing').textContent=''
- $('#answer-label').textContent='OpenCode · '+model.selectedOptions[0].textContent
+ $('#answer-label').textContent='OpenCode · '+model.selectedOptions[0].textContent+(model.value==='gpt-5.6-luna'?(speed.value==='fast'?' · Fast requested':' · Normal'):'')
  try{
-  const r=await fetch('/ask',{method:'POST',headers:{'content-type':'application/json'},signal,body:JSON.stringify({query,model:model.value,clientId,selection})})
+  const r=await fetch('/ask',{method:'POST',headers:{'content-type':'application/json'},signal,body:JSON.stringify({query,model:selectedModel(),clientId,selection})})
   if(!r.ok)throw Error((await r.json()).error||r.status)
   const reader=r.body.getReader(),decoder=new TextDecoder();let buffer='',completed=false
   while(true){
@@ -98,7 +106,8 @@ q.addEventListener('keydown',e=>{
 askButton.onclick=()=>ask(active>=0?hits[active]?.id:undefined)
 stopButton.onclick=()=>{cancel();status.textContent='Answer stopped'}
 clearButton.onclick=()=>{q.value='';edited();q.focus()}
-model.onchange=()=>{cancel();status.textContent='Model changed · Enter to ask';answer.hidden=true}
+model.onchange=()=>{savePreference('search-model',model.value);syncSpeed();cancel();status.textContent='Model changed · Enter to ask';answer.hidden=true}
+speed.onchange=()=>{savePreference('search-luna-speed',speed.value);cancel();status.textContent=speed.value==='fast'?'Fast requested · uses more credits · Enter to ask':'Normal service · Enter to ask';answer.hidden=true}
 document.querySelectorAll('[data-query]').forEach(b=>b.onclick=()=>{q.value=b.dataset.query;edited();q.focus()})
 window.addEventListener('focus',()=>{
  if(nativeWindow){q.focus();q.select()}
