@@ -8,6 +8,7 @@ on the opencode-config repository.
 Run from this repository root:
 - bun install --frozen-lockfile
 - bun run test
+- bun run test:native
 - bun run typecheck
 - bun run check:ui
 - bun run test:ui

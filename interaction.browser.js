@@ -41,3 +41,16 @@ test('model change after outage makes no call and leaves a usable retry',async({
  await page.route('**/ask',async r=>{count++;await r.fulfill(count===1?{status:503,json:{error:'Model unavailable'}}:{contentType:'text/event-stream',body:event({type:'delta',text:'Recovered'})+event({type:'done',firstTokenMs:1,totalMs:2})})})
  const q=page.getByRole('combobox',{name:'Ask this PC'});await q.fill('Calculator');await q.press('Enter');await expect(page.locator('#out')).toHaveText('Model unavailable');await page.locator('#model').selectOption('gpt-5.6-sol');expect(count).toBe(1);await q.press('Enter');await expect(page.locator('#out')).toHaveText('Recovered')
 })
+
+test('native window identity, dismissal cancellation and focus select the existing query',async({page})=>{
+ await page.goto('/?native=1&windowId=0123456789abcdef0123456789abcdef')
+ await expect(page).toHaveTitle('Windows Search [8331] 0123456789abcdef0123456789abcdef')
+ await page.route('**/ask',async r=>{await new Promise(resolve=>setTimeout(resolve,250));await r.fulfill({contentType:'text/event-stream',body:event({type:'delta',text:'STALE'})+event({type:'done',firstTokenMs:1,totalMs:2})}).catch(()=>{})})
+ const q=page.getByRole('combobox',{name:'Ask this PC'});await q.fill('Calculator');await q.press('Enter');await expect(page.locator('#stop')).toBeVisible()
+ await page.evaluate(()=>window.dispatchEvent(new Event('blur')))
+ await expect(page.locator('#stop')).toBeVisible()
+ await page.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});document.dispatchEvent(new Event('visibilitychange'))})
+ await expect(page.locator('#status')).toHaveText('Answer stopped');await page.waitForTimeout(300);await expect(page.locator('#out')).toHaveText('')
+ await page.evaluate(()=>window.dispatchEvent(new Event('focus')))
+ await expect(q).toBeFocused();expect(await q.evaluate(e=>e.value.slice(e.selectionStart,e.selectionEnd))).toBe('Calculator')
+})

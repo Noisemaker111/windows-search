@@ -14,6 +14,9 @@ const paths={
 }
 const svg=name=>'<svg viewBox="0 0 24 24" aria-hidden="true">'+paths[name]+'</svg>'
 $('#search-icon').innerHTML=svg('search');askButton.innerHTML=svg('arrow');clearButton.innerHTML=svg('close');$('#answer-icon').innerHTML=svg('sparkle');$('#empty-icon').innerHTML=svg('sparkle')
+const nativeWindow=new URLSearchParams(location.search).get('native')==='1'
+const windowId=new URLSearchParams(location.search).get('windowId')||''
+if(nativeWindow)document.title='Windows Search ['+location.port+']'+(/^[a-f0-9]{32}$/.test(windowId)?' '+windowId:'')
 const clientId=crypto.randomUUID()
 let hits=[],active=-1,lookupId=0,answerId=0,controller,lookupController,timer,pending=false,composing=false
 function render(){
@@ -97,5 +100,14 @@ stopButton.onclick=()=>{cancel();status.textContent='Answer stopped'}
 clearButton.onclick=()=>{q.value='';edited();q.focus()}
 model.onchange=()=>{cancel();status.textContent='Model changed · Enter to ask';answer.hidden=true}
 document.querySelectorAll('[data-query]').forEach(b=>b.onclick=()=>{q.value=b.dataset.query;edited();q.focus()})
-window.addEventListener('focus',()=>{if(document.activeElement===document.body)q.focus()})
+window.addEventListener('focus',()=>{
+ if(nativeWindow){q.focus();q.select()}
+ else if(document.activeElement===document.body)q.focus()
+})
+function leaveWindow(){
+ const wasPending=pending;cancel();clearTimeout(timer);lookupId++;lookupController?.abort()
+ if(wasPending)status.textContent='Answer stopped'
+}
+if(nativeWindow)document.addEventListener('visibilitychange',()=>{if(document.hidden)leaveWindow()})
+window.addEventListener('pagehide',leaveWindow)
 edited();q.focus()
