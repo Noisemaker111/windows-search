@@ -5,9 +5,8 @@ $root=$PSScriptRoot
 $startup=Join-Path $env:APPDATA 'Microsoft\Windows\Start Menu\Programs\Startup\OpenCode Search Shim.lnk'
 $backup=Join-Path $root 'startup-before.lnk'
 if((Test-Path $startup) -and -not(Test-Path $backup)){Copy-Item -LiteralPath $startup -Destination $backup}
-$legacy=Join-Path $env:USERPROFILE '.config\opencode\cliproxyapi'
-$owned=@((Join-Path $legacy 'search-shim.ts'),(Join-Path $legacy 'search-shim-hotkey.ps1'),(Join-Path $root 'main.ts'),(Join-Path $root 'hotkey.ps1'))
-# Stop only the old search app and this candidate's bar/hook. Never stop OpenCode or proxies.
+$owned=@((Join-Path $root 'main.ts'),(Join-Path $root 'hotkey.ps1'))
+# Stop only this checkout's bar/hook. OpenCode and proxies are externally owned.
 foreach($process in Get-CimInstance Win32_Process){
   if($process.Name -notin @('bun.exe','powershell.exe')){continue}
   if($process.CommandLine -and ($owned | Where-Object {$process.CommandLine.Contains($_)})){

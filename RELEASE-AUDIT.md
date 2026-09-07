@@ -1,3 +1,12 @@
+# Standalone repository status
+
+This audit was performed before extraction from opencode-config. The application
+now lives in Noisemaker111/windows-search, with its own package and Windows CI.
+All references below to config PR #3, config tests, desktop-inert rules and old
+checkout paths are historical evidence. Those repository-specific failures are
+NOT release gates for this app. Native behavior, latency, retrieval, launch and
+lifecycle findings remain applicable. No installation or deployment was performed.
+
 # Release audit — initial assessment (2026-09-07)
 
 Recommendation before changes: DO NOT RELEASE. Earlier README/PR observations are historical, not verification of this audit. Installed service: 201 entries, OpenCode reachable. Native use was attempted first: @oai/sky initialized but list_windows failed with native pipe missing (os error 2). Visible browser checks were blocked by approval review. No physical shortcut or desktop experience claim is justified.

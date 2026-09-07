@@ -9,10 +9,7 @@ try {
   $hostExe=Join-Path $env:APPDATA 'npm\node_modules\@opencode-ai\cli\bin\opencode2.exe'
   if(-not (Test-Path $hostExe)){throw 'Installed opencode2 executable not found'}
   function Listening([int]$Number) { [bool](Get-NetTCPConnection -LocalPort $Number -State Listen -ErrorAction SilentlyContinue) }
-  if(-not (Listening 3011)){
-    $grok=Join-Path $env:USERPROFILE '.config\opencode\models\grok-sub-proxy.ts'
-    if(Test-Path $grok){Start-Process $bun -ArgumentList ('"'+$grok+'"') -WorkingDirectory $root -WindowStyle Hidden -RedirectStandardOutput "$root\grok.out.log" -RedirectStandardError "$root\grok.err.log"}
-  }
+  # Subscription proxies are externally managed runtime dependencies.
   if(-not (Listening 8322)){
     $env:OPENCODE_CONFIG_DIR=Join-Path $root 'runtime-config'
     $env:OPENCODE_CONFIG_PROJECT_DISABLE='1'
