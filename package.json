@@ -1,0 +1,14 @@
+{
+  "name": "opencode-windows-search",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "bun main.ts",
+    "test": "bun test pc.test.ts",
+    "typecheck": "tsc --noEmit --strict --lib esnext --target esnext --module preserve --moduleResolution bundler --types bun main.ts pc.ts opencode.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.14",
+    "typescript": "5.8.2"
+  }
+}
