@@ -1,49 +1,27 @@
 # OpenCode Windows search bar
 
-A loopback search/launch bar backed by the installed OpenCode v2 server. Enter always searches the PC and sends the hits to the selected OpenCode model. Clicking a result opens the indexed target. Exact app/game names and explicit open/play/run requests launch automatically; location questions do not.
+**Experimental — do not release for daily use.** See [RELEASE-AUDIT.md](RELEASE-AUDIT.md) for verified defects, measurements, acceptance criteria and remaining release blockers. The native shortcut/focus lifecycle is not verified, and Escape currently stops/clears rather than dismissing the window.
 
-Haiku (claude-haiku-4-5-20251001) is the default. Luna and Sol use the existing CLIProxyAPI at 127.0.0.1:8317; Grok uses grok-sub-proxy at 127.0.0.1:3011. The four-entry model allowlist has no metered xai route. The bar never directly calls a model completion API.
+The loopback shim indexes Steam libraries, Start-menu shortcuts/Get-StartApps, and immediate Projects contents. It is not a full-disk or recursive file search. Every deliberate submission uses the installed OpenCode v2 host. Haiku is the default through CLIProxyAPI; Luna/Sol use the same subscription proxy and Grok uses the existing SuperGrok proxy. No metered xai route is allowed.
 
-The index includes installed Steam manifests and libraries, Start menu shortcuts and Get-StartApps, and immediate contents of C:\Users\Jk101\Projects. It refreshes every minute. It is not an exhaustive recursive index of every disk file. Every submitted query searches this index before answering. Web/general queries without local results retrieve Bing RSS snippets; if retrieval is unavailable, OpenCode answers from general knowledge and labels that limitation. Local location requests are not sent to web search.
+Typing, paste, local suggestions, example buttons, and model changes never submit to AI. Local lookup has a 120ms debounce. Enter/Ask submits; selecting a result with mouse or arrows/Enter requests its launch and submits through the same OpenCode path. Repeated Enter while pending is suppressed; a fresh submission after completion can retry. Editing, Stop, and Escape cancel the answer. Only exact normalized app/game names or explicit commands naming an exact result can auto-launch. Prefixes, acronyms and fuzzy suggestions require selection.
 
-The model receives verified results and launch outcomes; it cannot execute commands. Launch endpoints accept only matching identifiers and targets in the current index, require JSON, and reject foreign browser origins. All services bind to loopback. The dedicated OpenCode server generates its own local password, read from its private local stdout log by the shim; it never reaches the browser. The dedicated database and logs are ignored by Git.
+Launch receipts mean Windows accepted the dispatch request; they do not prove the intended application opened. Removed disk targets, including Steam installation paths, fail before dispatch. Broken shortcuts and packaged-app/protocol failures remain native verification work.
 
-## Run and verify
+For eligible general queries with no local matches, the existing Bing RSS retrieval is filtered for obvious irrelevance. Source chips identify snippets, not full-page verification. Current facts without relevant evidence must be reported as unverifiable. The relevance heuristic and existing local/web routing are limited; reliable web answering is still a release blocker. The model cannot call tools or invent locations.
 
-From this directory:
+From this package directory:
 
-- bun install --frozen-lockfile
-- bun run test
-- bun run typecheck
-- powershell.exe -NoProfile -File .\hotkey.ps1 -Check
-- powershell.exe -NoProfile -File .\start.ps1 -Port 8321
+- `bun install --frozen-lockfile`
+- `bun run test`
+- `bun run typecheck`
+- `bun run check:ui`
+- `bun run test:ui` — requires a running candidate at port 8331 by default; `SEARCH_TEST_URL` overrides it. Uses installed Edge headlessly under Node, controlled responses for launches/outages, and real page code. It does not exercise Windows shortcuts.
 
-Open http://127.0.0.1:8321/ for candidate testing. Production/default bar port is 8320, dedicated OpenCode port is 8322. Start uses the installed OpenCode binary with an isolated configuration and database, leaving other OpenCode sessions alone. CLIProxyAPI is reused and must already be running. The existing SuperGrok proxy is started hidden if its port is absent.
+To run an isolated shim, set `SEARCH_SHIM_PORT` to an unused port and run `bun main.ts`. `SEARCH_OPENCODE_URL` selects the existing dedicated OpenCode host (default 8322); `SEARCH_OPENCODE_LOG` points at that host's private stdout log if testing another checkout. The credential stays server-side. Do not start a second host against a shared database. `node measure-ui.mjs` measures five real game-location submissions against the candidate at 8331; it makes real subscription-backed calls.
 
-For this explicitly requested local installation, run powershell.exe -NoProfile -File .\install.ps1 from the reviewed checkout. It backs up the existing login shortcut, replaces only search-bar processes, and sets up hidden startup. No Explorer injection or Windows search binary replacement is involved.
+The candidate exports local-search, retrieval, session-creation, subscription, prompt-admission and post-admission-first-token timings in the done event. The last phase includes host scheduling, proxy and model time; it is not pure model latency. Browser submit-to-visible-text latency must also be measured.
 
-To undo login startup, restore startup-before.lnk to the same Startup shortcut path. Stop only the task's main.ts and hotkey.ps1 processes and launch the previous search-shim-launch.vbs if returning to the prior bar. Do not terminate unrelated OpenCode processes.
+`start.ps1`/`install.ps1` are the existing experimental startup mechanism, not a verified release installer. Startup uses the shared dedicated host port, profile and mutex. Restoring `startup-before.lnk` restores the saved login entry, but full rollback, window cleanup, sign-in startup and absence of owned orphan processes have not been established. Do not install or publish this candidate on the strength of package tests.
 
-## Observed candidate verification
-
-The actual Edge Ask window was used to submit “Where is 7 Days to Die”, “Where are my projects”, “Calculator”, and “Why is the sky blue?”. The game answer used C:\Program Files (x86)\Steam\steamapps\common\7 Days To Die and the Projects answer used C:\Users\Jk101\Projects with real child folders. Calculator started (verified OS process), and clicking Projects produced successful launch feedback. The web answer showed NASA and other source links.
-
-Observed first token times in the bar were 1.40–2.00 seconds (one later Projects run: 1.90 seconds); total times were 2.31–2.97 seconds. These are actual end-to-end UI observations, not a guaranteed latency. Short route checks also succeeded through OpenCode for Luna, Sol, and SuperGrok.
-
-Physical Win+S/Alt+Space verification is pending: native keyboard automation was unavailable. The helper compiled and reported successful hook registration. Browser-emulated Alt+Space does not exercise the Windows hook.
-
-
-Package regression tests and strict typecheck passed. Repository gate: 733 passed, 1 skipped, 0 failed. Static smoke passes until the pre-existing headless-process violation in ui-lab/pen-mcp.ts; no search-bar violations remain.
-
-
-## Typing, typos, and UX verification
-
-Local suggestions use a 120 ms debounce. Typing, pasting, changing models, and clicking examples do not call AI. Enter/Ask deliberately submits; held/repeated Enter and repeated identical submissions are suppressed. Editing, Escape, and Stop cancel the stream and interrupt its OpenCode execution. Arrow keys select a result; Enter on that selection opens it and asks OpenCode. IME composition cannot accidentally submit.
-
-Typo tests cover calcluator, claculator, calculatr, calulator, 7 dyas to die, 7 days to dei, wher is 7 days to die, and proejcts/projcts. Ambiguous corrections remain suggestions. Steam duplicates collapse into one result; stable target IDs survive index refresh.
-
-Real UI measurements: rapid typing/replacement produced 2 local searches, 0 submissions, 0 model calls, and 0 active OpenCode executions. Four Enter presses produced exactly 1 submission and 1 model call. Editing during an answer and Escape produced 2 cancellations, no stale answer overwrite, and 0 active OpenCode executions afterward. Selecting the Calculator typo match with Down/Enter produced a launch receipt and an observed CalculatorApp process. Windows icon extraction cached 152 icons; the real 7 Days to Die icon was visually verified.
-
-Local matching over 201 real indexed items, 200 runs across six queries: median 0.65 ms, p95 2.14 ms. This excludes the 120 ms debounce, network/UI rendering, and model latency.
-
-The redesign includes real cached icons with vector fallbacks, typo badges, keyboard hints, streaming skeleton, stop/clear controls, source chips, and readable packaged-app labels. Run bun run check:ui for client syntax validation alongside the tests and strict server typecheck.
+Current checks: 13 package tests and 7 headless interaction tests pass; typecheck and UI syntax pass. Native desktop verification remains blocked by the missing Computer Use bridge and visible-UI approval rejection. The full repository test gate has an independently reproduced existing runtime-slot failure. See the audit for exact evidence and smoke results.

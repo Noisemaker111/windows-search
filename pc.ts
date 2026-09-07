@@ -18,12 +18,15 @@ export function distance(a: string, b: string) {
   }
   return rows[a.length][b.length]
 }
+const wordsInitials = (name:string) => name.split(" ").filter(Boolean).map(w=>w[0]).join("")
 export function search(index: Hit[], query: string) {
   const n = needle(query)
   if (!n) return []
   function score(h: Hit) {
     const a=normalize(h.name)
     if(a===n) return 100
+    const aliases: Record<string,string[]> = {"visual studio code":["vs code","vscode"],"calculator":["calc"]}
+    if(aliases[a]?.includes(n) || (wordsInitials(a)===n && n.length>=2)) return 84
     if(a.startsWith(n)) return 95
     if(a.includes(n)) return 90
     if(n.length<3) return 0
@@ -51,8 +54,10 @@ export function search(index: Hit[], query: string) {
 }
 
 export function launchIntent(query: string, hits: (Hit & {score?:number})[]) {
-  if (!hits.length || /^(where|find|locate|what|how|why|who|when)\b/i.test(query.trim())) return false
-  if (/^(open|run|launch|start|play)\b/i.test(query.trim())) return !(hits[0].score!==undefined && hits[0].score<100 && hits[1]?.score!==undefined && hits[0].score-hits[1].score<3)
+  if (!hits.length) return false
+  const explicit = /^(open|run|launch|start|play)\s+/i.test(query.trim())
+  // Suggestions are not authorization: even a unique fuzzy/prefix match needs selection.
+  if (explicit) return normalize(hits[0].name) === needle(query)
   return ["app","game"].includes(hits[0].kind) && normalize(hits[0].name) === normalize(query)
 }
 export async function buildIndex() {
@@ -119,7 +124,7 @@ export async function buildIndex() {
   return hits
 }
 export async function launch(hit: Hit) {
-  if (!hit.launch.startsWith("shell:") && !hit.launch.startsWith("steam:") && !(await stat(hit.path).catch(() => null)))
+  if (!hit.launch.startsWith("shell:") && !(await stat(hit.path).catch(() => null)))
     throw new Error("This result no longer exists. Refresh the search.")
   const encoded = Buffer.from(hit.launch,"utf8").toString("base64")
   const proc = Bun.spawn(["powershell.exe","-NoProfile","-NonInteractive","-Command",

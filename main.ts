@@ -1,5 +1,6 @@
 import { buildIndex, search, launchIntent, launch } from "./pc"
 import { complete, models, request } from "./opencode"
+import { relevant } from "./evidence"
 import { join } from "node:path"
 import { mkdir } from "node:fs/promises"
 const port = Number(process.env.SEARCH_SHIM_PORT || 8321)
@@ -18,14 +19,14 @@ void cacheIcons()
 setInterval(async()=> { try { index = await buildIndex(); indexedAt=Date.now();void cacheIcons() } catch(e) { console.error("Index refresh:",String(e)) } },60000)
 const launches: unknown[] = []
 const xml = (s:string) => s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g,"$1").replace(/<[^>]*>/g,"").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/&#39;/g,"'")
-async function web(query:string) {
+async function web(query:string, signal:AbortSignal) {
   try {
-    const r = await fetch("https://www.bing.com/search?format=rss&q="+encodeURIComponent(query),{signal:AbortSignal.timeout(3000)})
+    const r = await fetch("https://www.bing.com/search?format=rss&q="+encodeURIComponent(query),{signal:AbortSignal.any([signal,AbortSignal.timeout(3000)])})
     if (!r.ok) return []
     return [...(await r.text()).matchAll(/<item>([\s\S]*?)<\/item>/g)].slice(0,4).map(m=>{
       const field=(n:string)=>xml(m[1].match(new RegExp("<"+n+">([\\s\\S]*?)</"+n+">"))?.[1]||"")
       return {title:field("title"),url:field("link"),content:field("description")}
-    }).filter(x=>x.url.startsWith("https://"))
+    }).filter(x=>x.url.startsWith("https://")&&relevant(query,x))
   } catch { return [] }
 }
 const server = Bun.serve({
@@ -58,16 +59,20 @@ const server = Bun.serve({
       if (!body || typeof body.model!=="string" || typeof body.query!=="string" || !body.query.trim() || body.query.length>4000 || !models.some(m=>m.id===body.model))
         return Response.json({error:"A query and supported model are required"},{status:400})
       stats.submissions++
-      const hits=search(index,body.query)
-      const selected=hits.find(h=>h.id===body.selection)
       const started=performance.now()
+      const hits=search(index,body.query)
+      const localSearchMs=performance.now()-started
+      const selected=hits.find(h=>h.id===body.selection)
       const abort=new AbortController()
       const clientId=typeof body.clientId==="string"?body.clientId.slice(0,80):crypto.randomUUID()
       clients.get(clientId)?.abort();clients.set(clientId,abort)
-      const signal=AbortSignal.any([abort.signal,req.signal,AbortSignal.timeout(50000)])
+      const disconnected=AbortSignal.any([abort.signal,req.signal])
+      const deadline=new AbortController()
+      const deadlineTimer=setTimeout(()=>deadline.abort(new Error("Answer timed out")),50000)
+      const signal=AbortSignal.any([disconnected,deadline.signal])
       const stream = new ReadableStream({
         async start(controller) {
-          const send=(event:unknown)=> { if(!signal.aborted) controller.enqueue(new TextEncoder().encode("data: "+JSON.stringify(event)+"\n\n")) }
+          const send=(event:unknown)=> { if(!disconnected.aborted) controller.enqueue(new TextEncoder().encode("data: "+JSON.stringify(event)+"\n\n")) }
           try {
             send({type:"hits",hits})
             let launched:unknown, launchError:string|undefined
@@ -75,20 +80,22 @@ const server = Bun.serve({
               try { launched=await launch(selected||hits[0]); launches.push(launched); send({type:"launch",result:launched}) }
               catch(e) { launchError=String(e); send({type:"launchError",message:launchError}) }
             }
-            const sources=!hits.length && !/^(where|find|locate|open|play|run|launch)\b/i.test(body.query.trim()) ? await web(body.query) : []
-            const source=hits.length?"This PC":sources.length?"Web":"General knowledge · no local hit"
+            const retrievalStart=performance.now()
+            const sources=!hits.length && !/^(where|find|locate|open|play|run|launch)\b/i.test(body.query.trim()) ? await web(body.query,signal) : []
+            const retrievalMs=performance.now()-retrievalStart
+            const source=hits.length?"This PC · indexed locations":sources.length?"Web snippets · check sources":"No verified answer sources"
             send({type:"context",source,sources})
             let first:number|undefined
             signal.throwIfAborted()
             stats.modelCalls++
             const result = await complete(body.model,JSON.stringify({
-              query:body.query,pcHits:hits,launchOutcome:launched,launchError,webSources:sources,
+              query:body.query,retrievedAt:new Date().toISOString(),pcHits:hits,launchOutcome:launched,launchError,webSources:sources,
               instruction:"Answer the query in 1-3 short sentences with actual paths where relevant. For packaged Windows apps, use the app name and launch outcome; do not print internal shell:AppsFolder identifiers. "+
-                (hits.length?"Use the supplied disk evidence.":sources.length?"Say this is a web answer and cite supplied source URLs.":"Say this is a general answer with no local hit; do not pretend you searched the live web.")
+                (hits.length?"Use supplied disk evidence only for location questions. A launch requested receipt is not confirmation that the app opened. Do not infer current facts from local paths.":sources.length?"Use supplied snippets only if they directly support the answer; cite those URLs. Otherwise say you cannot verify the answer.":"For a missing local item say not found in indexed locations. For current facts say you cannot verify them. Only general explanations may use explicitly labeled model knowledge. Never invent paths or current facts.")
             }),delta=>{first??=performance.now()-started;send({type:"delta",text:delta})},signal)
-            send({type:"done",model:result.model,firstTokenMs:Math.round(first||0),totalMs:Math.round(performance.now()-started)})
+            send({type:"done",model:result.model,firstTokenMs:Math.round(first||0),totalMs:Math.round(performance.now()-started),timings:{localSearchMs,retrievalMs,...result.timings}})
           } catch(e) { send({type:"error",message:String(e)}) }
-          finally { if(signal.aborted)stats.cancelled++;if(clients.get(clientId)===abort)clients.delete(clientId);try {controller.close()} catch {} }
+          finally { clearTimeout(deadlineTimer);if(signal.aborted)stats.cancelled++;if(clients.get(clientId)===abort)clients.delete(clientId);try {controller.close()} catch {} }
         },
         cancel() {abort.abort()}
       })

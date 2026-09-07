@@ -4,3 +4,6 @@ node_modules/
 
 startup-before.lnk
 .cache/
+
+test-results/
+playwright-report/

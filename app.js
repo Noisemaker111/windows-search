@@ -15,20 +15,21 @@ const paths={
 const svg=name=>'<svg viewBox="0 0 24 24" aria-hidden="true">'+paths[name]+'</svg>'
 $('#search-icon').innerHTML=svg('search');askButton.innerHTML=svg('arrow');clearButton.innerHTML=svg('close');$('#answer-icon').innerHTML=svg('sparkle');$('#empty-icon').innerHTML=svg('sparkle')
 const clientId=crypto.randomUUID()
-let hits=[],active=-1,lookupId=0,answerId=0,controller,lookupController,timer,pending=false,composing=false,lastKey=''
+let hits=[],active=-1,lookupId=0,answerId=0,controller,lookupController,timer,pending=false,composing=false
 function render(){
- results.hidden=!hits.length;empty.hidden=!!q.value.trim();$('#count').textContent=hits.length+' result'+(hits.length===1?'':'s')
+ q.setAttribute('aria-expanded',String(!!hits.length));results.hidden=!hits.length;empty.hidden=!!q.value.trim();$('#count').textContent=hits.length+' result'+(hits.length===1?'':'s')
  hitsEl.replaceChildren();q.removeAttribute('aria-activedescendant')
  hits.forEach((h,i)=>{
-  const b=document.createElement('button');b.className='hit'+(i===active?' active':'');b.id='hit-'+h.id;b.setAttribute('role','option');b.setAttribute('aria-selected',String(i===active))
+  const b=document.createElement('button');b.className='hit'+(i===active?' active':'');b.id='hit-'+h.id;b.setAttribute('role','option');b.tabIndex=-1;b.setAttribute('aria-selected',String(i===active))
   const icon=document.createElement('span');icon.className='hit-icon '+h.kind;icon.innerHTML=svg(/calculator/i.test(h.name)?'calculator':h.kind)
   if(!h.path.startsWith('shell:')){const img=document.createElement('img');img.alt='';img.src='/icons/'+h.id+'.png';img.onload=()=>icon.replaceChildren(img)}
   const body=document.createElement('span');body.className='hit-body'
   const name=document.createElement('span');name.className='name';name.textContent=h.name
   if(h.match==='fuzzy'){const badge=document.createElement('span');badge.className='match-label';badge.textContent='Closest match';name.append(badge)}
+  b.setAttribute('aria-label',h.name+' · '+h.path+' · Open and ask OpenCode');
   const path=document.createElement('span');path.className='path';path.textContent=h.path.startsWith("shell:")?"Windows app · Installed on this PC":h.path;path.title=h.path
   const action=document.createElement('span');action.className='hit-action';action.innerHTML='Open '+svg('open')
-  body.append(name,path);b.append(icon,body,action);b.onclick=()=>run(h);hitsEl.append(b)
+  body.append(name,path);b.append(icon,body,action);b.onclick=()=>{q.focus();ask(h.id)};hitsEl.append(b)
   if(i===active){q.setAttribute('aria-activedescendant',b.id);b.scrollIntoView({block:'nearest'})}
  })
  $('#footer-hint').innerHTML=active>=0?'<kbd>Enter</kbd> open selection & ask <kbd>Esc</kbd> clear':'<kbd>↑</kbd><kbd>↓</kbd> choose <kbd>Enter</kbd> ask'
@@ -38,7 +39,7 @@ function cancel(){
  answerId++;controller?.abort();controller=undefined;setPending(false);if(!out.textContent)answer.hidden=true
 }
 function edited(){
- cancel();lastKey='';lookupId++;lookupController?.abort();clearTimeout(timer);hits=[];active=-1;render()
+ cancel();lookupId++;lookupController?.abort();clearTimeout(timer);hits=[];active=-1;render()
  answer.hidden=true;out.textContent='';$('#sources').replaceChildren();$('#launch').hidden=true;$('#timing').textContent=''
  clearButton.hidden=!q.value;askButton.disabled=!q.value.trim();status.textContent=q.value.trim()?'Finding local matches…':'Your PC, a little closer.'
  if(!composing)timer=setTimeout(lookup,120)
@@ -52,24 +53,17 @@ async function lookup(){
   if(!pending)status.textContent=hits.length?'Local matches · Enter to ask OpenCode':'No local match · Enter to ask OpenCode'
  }catch(e){if(e.name!=='AbortError'&&id===lookupId)status.textContent='Search unavailable. Try again.'}
 }
-async function run(h){
- if(h.launching)return;h.launching=true
- const box=$('#launch');box.hidden=false;box.className='';box.textContent='Opening '+h.name+'…'
- try{const r=await fetch('/run',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({id:h.id,launch:h.launch})});const j=await r.json();if(!r.ok)throw Error(j.error);box.textContent='Launch requested · '+j.name}
- catch(e){box.className='error';box.textContent=e.message}
- finally{h.launching=false}
-}
 async function ask(selection){
- const query=q.value.trim(),key=JSON.stringify([query,model.value,selection||''])
- if(!query||composing||pending||key===lastKey)return
- lastKey=key;clearTimeout(timer);lookupId++;lookupController?.abort();cancel()
+ const query=q.value.trim()
+ if(!query||composing||pending)return
+ clearTimeout(timer);lookupId++;lookupController?.abort();cancel()
  controller=new AbortController();const signal=controller.signal,id=++answerId;setPending(true)
  answer.hidden=false;out.textContent='';$('#launch').hidden=true;$('#sources').replaceChildren();status.textContent='Finding your answer…';$('#timing').textContent=''
  $('#answer-label').textContent='OpenCode · '+model.selectedOptions[0].textContent
  try{
   const r=await fetch('/ask',{method:'POST',headers:{'content-type':'application/json'},signal,body:JSON.stringify({query,model:model.value,clientId,selection})})
   if(!r.ok)throw Error((await r.json()).error||r.status)
-  const reader=r.body.getReader(),decoder=new TextDecoder();let buffer=''
+  const reader=r.body.getReader(),decoder=new TextDecoder();let buffer='',completed=false
   while(true){
    const {done,value}=await reader.read();if(done)break;buffer+=decoder.decode(value,{stream:true});const lines=buffer.split('\n');buffer=lines.pop()
    for(const line of lines){
@@ -77,15 +71,17 @@ async function ask(selection){
     if(e.type==='hits'){hits=e.hits;active=selection?hits.findIndex(h=>h.id===selection):-1;render()}
     if(e.type==='context'){status.textContent=e.source;for(const s of e.sources){const a=document.createElement('a');a.href=s.url;a.target='_blank';a.rel='noopener';a.textContent=s.title||new URL(s.url).hostname;a.title=s.title;$('#sources').append(a)}}
     if(e.type==='delta')out.textContent+=e.text
-    if(e.type==='launch'){$('#launch').hidden=false;$('#launch').textContent='Opening '+e.result.name}
-    if(e.type==='launchError'){$('#launch').hidden=false;$('#launch').textContent=e.message}
-    if(e.type==='done')$('#timing').textContent=(e.firstTokenMs/1000).toFixed(1)+'s to answer'
+    if(e.type==='launch'){$('#launch').hidden=false;$('#launch').className='';$('#launch').textContent='Launch requested · '+e.result.name}
+    if(e.type==='launchError'){$('#launch').hidden=false;$('#launch').className='error';$('#launch').textContent=e.message}
+    if(e.type==='done'){completed=true;$('#timing').textContent=(e.firstTokenMs/1000).toFixed(1)+'s first text · '+(e.totalMs/1000).toFixed(1)+'s total';status.textContent='Answer complete'}
     if(e.type==='error')throw Error(e.message)
    }
   }
- }catch(e){if(e.name!=='AbortError'&&id===answerId){lastKey='';status.textContent='Unable to finish that answer';out.textContent=e.message}}
- finally{if(id===answerId)setPending(false)}
+  if(!completed&&!signal.aborted)throw Error('Connection ended before the answer finished. Try again.')
+ }catch(e){if(e.name!=='AbortError'&&id===answerId){status.textContent='Unable to finish that answer';out.textContent=e.message}}
+ finally{if(id===answerId){setPending(false)}}
 }
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.repeat)e.preventDefault()},true)
 q.addEventListener('input',edited)
 q.addEventListener('compositionstart',()=>{composing=true;clearTimeout(timer)})
 q.addEventListener('compositionend',()=>{composing=false;edited()})
@@ -94,12 +90,12 @@ q.addEventListener('keydown',e=>{
  if(e.key==='Enter'){e.preventDefault();if(!e.repeat)ask(active>=0?hits[active]?.id:undefined)}
  if(e.key==='ArrowDown'&&hits.length){e.preventDefault();active=Math.min(active+1,hits.length-1);render()}
  if(e.key==='ArrowUp'&&hits.length){e.preventDefault();active=Math.max(active-1,0);render()}
- if(e.key==='Escape'){e.preventDefault();if(pending){cancel();lastKey='';status.textContent='Answer stopped';return}q.value='';edited()}
+ if(e.key==='Escape'){e.preventDefault();if(pending){cancel();status.textContent='Answer stopped';return}q.value='';edited()}
 })
 askButton.onclick=()=>ask(active>=0?hits[active]?.id:undefined)
-stopButton.onclick=()=>{cancel();lastKey='';status.textContent='Answer stopped'}
+stopButton.onclick=()=>{cancel();status.textContent='Answer stopped'}
 clearButton.onclick=()=>{q.value='';edited();q.focus()}
-model.onchange=()=>{cancel();lastKey='';status.textContent='Model changed · Enter to ask';answer.hidden=true}
+model.onchange=()=>{cancel();status.textContent='Model changed · Enter to ask';answer.hidden=true}
 document.querySelectorAll('[data-query]').forEach(b=>b.onclick=()=>{q.value=b.dataset.query;edited();q.focus()})
 window.addEventListener('focus',()=>{if(document.activeElement===document.body)q.focus()})
 edited();q.focus()

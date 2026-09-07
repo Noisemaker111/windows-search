@@ -1,5 +1,5 @@
 import { test, expect } from "bun:test"
-import {search,launchIntent,projects, type Hit} from "./pc"
+import {search,launchIntent,launch,projects, type Hit} from "./pc"
 const hits:Hit[]=[
 {id:"1",name:"7 Days to Die",path:"C:\\Program Files (x86)\\Steam\\steamapps\\common\\7 Days To Die",launch:"steam://rungameid/251570",kind:"game"},
 {id:"2",name:"Projects",path:projects,launch:projects,kind:"folder"},
@@ -22,7 +22,7 @@ test("typos, transpositions, dropped letters and misspelled question prefixes",(
  for(const q of ["where are my proejcts","where are my projcts","my projects"])expect(search(hits,q)[0]?.id).toBe("2")
  for(const q of ["potato spaceship","cat","nonexistentappzz"])expect(search(hits,q)).toEqual([])
  expect(launchIntent("calcluator",search(hits,"calcluator"))).toBe(false)
- expect(launchIntent("open calcluator",search(hits,"open calcluator"))).toBe(true)
+ expect(launchIntent("open calcluator",search(hits,"open calcluator"))).toBe(false)
 })
 test("ambiguous corrections stay suggestions and duplicate shortcuts collapse",()=>{
  const similar:Hit[]=[{...hits[3],name:"Notes",id:"a"},{...hits[3],name:"Votes",id:"b"}]
@@ -34,6 +34,16 @@ test("ambiguous corrections stay suggestions and duplicate shortcuts collapse",(
 test("short ambiguous prefixes never auto-launch and long text stays bounded",()=>{
  const apps=[hits[3],{...hits[3],id:"counter",name:"Counter Strike"}]
  expect(launchIntent("open c",search(apps,"open c"))).toBe(false)
- expect(launchIntent("open calc",search(apps,"open calc"))).toBe(true)
+ expect(launchIntent("open calc",search(apps,"open calc"))).toBe(false)
  expect(search(hits,"a".repeat(4000))).toEqual([])
 })
+
+ test("no unique fuzzy or partial result authorizes a launch",()=>{
+ for(const q of ["open c","open calcluator","launch calculatr","play 7 dyas to die","open calc","wher is Calculator","where is Calculator"])
+ expect(launchIntent(q,search(hits,q))).toBe(false)
+ const code={...hits[3],name:"Visual Studio Code",id:"code"}
+ expect(search([code],"VS Code")[0]?.id).toBe("code")
+ expect(launchIntent("open VS Code",search([code],"open VS Code"))).toBe(false)
+ })
+
+test("removed Steam install fails before protocol dispatch",async()=>{await expect(launch({...hits[0],path:"C:/nonexistent-release-audit-fixture/removed-game"})).rejects.toThrow("no longer exists")})
