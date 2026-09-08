@@ -1,8 +1,9 @@
 import {test,expect} from 'bun:test'
-import {mkdtemp,mkdir,writeFile,rm,symlink,realpath} from 'node:fs/promises'
+import {mkdtemp,mkdir,writeFile,rm,symlink,realpath,rename} from 'node:fs/promises'
 import {join,resolve} from 'node:path'
 import {tmpdir} from 'node:os'
 import {discoverFiles} from './discovery'
+import {DiscoverySessions} from './discovery-sessions'
 import {search,launchIntent} from './pc'
 
 test('deep discovery, duplicate paths, folder clues, Unicode and scope limits',async()=>{
@@ -33,4 +34,36 @@ test('deep discovery, duplicate paths, folder clues, Unicode and scope limits',a
   const scoped=await discoverFiles({terms:['common.md'],root:'test',under:'copy20'},roots)
   expect(scoped.hits).toHaveLength(1);expect(scoped.coverage.truncated).toBe(false)
  }finally{if(resolve(base).startsWith(resolve(temporaryRoot)+'\\windows-search-discovery-'))await rm(base,{recursive:true,force:true})}
+})
+
+test('continuations advance, consume tokens once, expire and cancel without retaining scans',async()=>{
+ const temporaryRoot=await realpath(tmpdir()),base=await mkdtemp(join(temporaryRoot,'windows-search-discovery-'))
+ try{
+  for(let i=0;i<20;i++)await writeFile(join(base,'file-'+i+'.txt'),'fixture')
+  const roots=[{id:'test',path:base}],sessions=new DiscoverySessions(roots,60000,{entries:3,milliseconds:1000})
+  let page=await sessions.start({terms:['file'],root:'test'}),visited=0;const paths=new Set<string>();let pages=0
+  while(true){pages++;expect(page.coverage.visited).toBeGreaterThan(visited);visited=page.coverage.visited;page.hits.forEach(h=>paths.add(h.path))
+   if(!('nextCursor' in page))break
+   const cursor=page.nextCursor;page=await sessions.resume(cursor)
+   await expect(sessions.resume(cursor)).rejects.toThrow('already used')
+  }
+  expect(pages).toBe(7);expect(visited).toBe(20);expect(paths.size).toBe(20);expect(sessions.size).toBe(0)
+  const partial=await sessions.start({terms:['file']});if(!('nextCursor' in partial))throw Error('Expected continuation')
+  const abort=new AbortController();abort.abort();await expect(sessions.resume(partial.nextCursor,abort.signal)).rejects.toThrow();expect(sessions.size).toBe(0)
+  const expiring=new DiscoverySessions(roots,-1,{entries:3,milliseconds:1000});const expired=await expiring.start({terms:['file']})
+  if(!('nextCursor' in expired))throw Error('Expected continuation');await expect(expiring.resume(expired.nextCursor)).rejects.toThrow('expired');expect(expiring.size).toBe(0)
+  await sessions.dispose();await expiring.dispose()
+ }finally{if(resolve(base).startsWith(resolve(temporaryRoot)+'\\windows-search-discovery-'))await rm(base,{recursive:true,force:true})}
+})
+
+test('a directory replaced by an outside junction while paused is not followed',async()=>{
+ const temporaryRoot=await realpath(tmpdir()),base=await mkdtemp(join(temporaryRoot,'windows-search-discovery-'))
+ const root=join(base,'files'),branch=join(root,'branch'),outside=join(base,'outside')
+ const sessions=new DiscoverySessions([{id:'test',path:root}],60000,{entries:1,milliseconds:1000})
+ try{
+  await mkdir(branch,{recursive:true});await mkdir(outside);await writeFile(join(branch,'note.txt'),'fixture');await writeFile(join(outside,'note.txt'),'outside fixture')
+  const first=await sessions.start({terms:['note']});if(!('nextCursor' in first))throw Error('Expected pause inside branch')
+  await rename(branch,join(base,'held'));await symlink(outside,branch,'junction')
+  const next=await sessions.resume(first.nextCursor);expect(next.hits).toHaveLength(0);expect(next.coverage.excludedEntries).toBeGreaterThan(0)
+ }finally{await sessions.dispose();if(resolve(base).startsWith(resolve(temporaryRoot)+'\\windows-search-discovery-'))await rm(base,{recursive:true,force:true})}
 })

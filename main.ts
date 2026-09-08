@@ -118,8 +118,8 @@ const server = Bun.serve({
               while(discovered.size>500)discovered.delete(discovered.keys().next().value!)
               for(const hit of found)if(!hits.some(h=>h.path===hit.path))hits.push({...hit,match:'discovered',score:50})
               send({type:'hits',hits});send({type:'coverage',coverage:result.coverage})
-            },()=>{first=undefined;send({type:'searching'})})
-            send({type:"done",model:result.model,firstTokenMs:Math.round(first||0),totalMs:Math.round(performance.now()-started),timings:{localSearchMs,retrievalMs,...result.timings},preparedSession:result.preparedSession,promptBytes:Buffer.byteLength(prompt),usage:result.usage})
+            },()=>{first=undefined;send({type:'searching'})},()=>{first=undefined;send({type:'searching'})})
+            send({type:"done",model:result.model,firstTokenMs:Math.round(first||0),totalMs:Math.round(performance.now()-started),timings:{localSearchMs,retrievalMs,...result.timings},preparedSession:result.preparedSession,promptBytes:Buffer.byteLength(prompt),usage:result.usage,investigationRepairs:result.investigationRepairs})
           } catch(e) { send({type:"error",message:String(e)}) }
           finally { clearTimeout(deadlineTimer);if(signal.aborted)stats.cancelled++;if(clients.get(clientId)===abort)clients.delete(clientId);try {controller.close()} catch {} }
         },

@@ -1,5 +1,9 @@
 # PC discovery audit — 2026-09-07
 
+Follow-up: [deep-search benchmark](DEEP-BENCHMARK.md) documents the current depth-20
+default, continuation/recovery behavior and Windows Search index comparison.
+The measurements and depth-6 behavior below describe the earlier candidate.
+
 Recommendation: **do not release yet**. The bar can now investigate files it did
 not know at startup. This is a tested improvement to a candidate branch, not a
 claim about the installed bar. Native shortcut/focus, launch identity, login,

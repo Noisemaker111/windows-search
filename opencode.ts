@@ -51,7 +51,7 @@ export async function ensurePcSearch(call:typeof request,signal:AbortSignal){
   }
 }
 export function createCompleter(call: typeof request = request, timeoutMs = 45000, pool?:EmptySessionPool) {
-return async function complete(modelID: string, text: string, onDelta: (text:string)=>void, signal:AbortSignal,onDiscovery?:(result:unknown)=>void|Promise<void>,onSearch?:()=>void) {
+return async function complete(modelID: string, text: string, onDelta: (text:string)=>void, signal:AbortSignal,onDiscovery?:(result:unknown)=>void|Promise<void>,onSearch?:(name:string)=>void,onRetry?:()=>void) {
   const started=performance.now()
   const timings={sessionMs:0,subscriptionMs:0,promptMs:0,postPromptFirstTokenMs:0}
   const model = models.find(m => m.id===modelID)
@@ -64,6 +64,7 @@ return async function complete(modelID: string, text: string, onDelta: (text:str
   const timer=setTimeout(()=>events.abort(new Error("OpenCode answer timed out")),timeoutMs)
   const combined = AbortSignal.any([events.signal,signal])
   const discoveryTools=new Set<string>()
+  let pendingCursor:string|undefined,discoveredHits=false,investigationRepairs=0
   let full = "", succeeded=false
   let usage:Tokens|undefined
   try {
@@ -94,20 +95,28 @@ return async function complete(modelID: string, text: string, onDelta: (text:str
         if (!line.startsWith("data:")) continue
         const event = JSON.parse(line.slice(5))
         if (event.data?.sessionID !== session) continue
-        if(event.type==="session.tool.input.started"&&/(?:^|[_.])search_files$/.test(event.data.name)){discoveryTools.add(event.data.id);full='';timings.postPromptFirstTokenMs=0;onSearch?.()}
+        if(event.type==="session.tool.input.started"&&/(?:^|[_.])(?:search_files|continue_file_search)$/.test(event.data.name)){discoveryTools.add(event.data.id);full='';timings.postPromptFirstTokenMs=0;onSearch?.(event.data.name)}
         if(event.type==="session.tool.success"&&discoveryTools.has(event.data.id)){
-          for(const part of event.data.content||[])if(part.type==='text'){let result;try{result=JSON.parse(part.text)}catch{continue}await onDiscovery?.(result)}
+          for(const part of event.data.content||[])if(part.type==='text'){let result;try{result=JSON.parse(part.text)}catch{continue}
+            if(Array.isArray(result?.hits)&&result.coverage){discoveredHits ||= result.hits.length>0;pendingCursor=typeof result.nextCursor==='string'?result.nextCursor:undefined}
+            await onDiscovery?.(result)}
         }
         if(event.type==="session.step.ended"&&event.data.tokens){
           const t=event.data.tokens as Tokens
           usage={input:(usage?.input||0)+t.input,output:(usage?.output||0)+t.output,reasoning:(usage?.reasoning||0)+t.reasoning,cache:{read:(usage?.cache.read||0)+t.cache.read,write:(usage?.cache.write||0)+t.cache.write}}
         }
-        if (event.type==="session.text.delta") { if(!full)timings.postPromptFirstTokenMs=performance.now()-admitted; full += event.data.delta; onDelta(event.data.delta) }
+        if (event.type==="session.text.delta") { if(!full)timings.postPromptFirstTokenMs=performance.now()-admitted; full += event.data.delta; if(!pendingCursor||discoveredHits)onDelta(event.data.delta) }
         if (event.type==="session.execution.failed") throw new Error(JSON.stringify(event.data.error))
         if (event.type==="session.execution.succeeded") {
+          if(pendingCursor&&!discoveredHits){
+            onRetry?.();full=''
+            if(investigationRepairs++)throw Error('File search is incomplete. No match in the checked portion; remaining folders were not checked.')
+            await call('/api/session/'+session+'/prompt',{text:JSON.stringify({instruction:'The last scan is incomplete, so absence has not been established. Call continue_file_search with this cursor before answering. If still incomplete, explicitly state that limit; never claim the whole location was searched.',cursor:pendingCursor})},combined)
+            continue
+          }
           if (!full.trim()) throw new Error("OpenCode returned an empty answer")
           succeeded=true
-          return {session,model:modelID,text:full,timings,preparedSession,usage}
+          return {session,model:modelID,text:full,timings,preparedSession,usage,investigationRepairs}
         }
       }
     }

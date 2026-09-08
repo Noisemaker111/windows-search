@@ -109,3 +109,11 @@ or uploads. Ground-truth filenames stay in ignored `.cache`; the separate report
 contains ranks, depths and timings. See [discovery audit](DISCOVERY-AUDIT.md) for
 measurements, remaining blockers and the distinction between local scanner tests
 and model-driven search. Recommendation remains **do not release**.
+# Deep investigation benchmark
+
+See [the deep-search benchmark](DEEP-BENCHMARK.md) for the 100-case retrieval suite,
+Windows Search index baseline, actual model failures and browser measurements.
+Scans now default to depth 20 and return a continuation when the traversal budget
+is exhausted. OpenCode can continue without rescanning the same prefix. This still
+searches names and paths, not file contents. The results do not establish a 100×
+advantage or release readiness.

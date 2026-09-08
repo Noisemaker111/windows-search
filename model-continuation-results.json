@@ -1,0 +1,107 @@
+{
+  "conditions": "Synthetic roots only; traversal budget deliberately reduced to 12 entries to exercise continuation, production default remains 50000.",
+  "rows": [
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "case": "continue-deep",
+      "tools": [
+        "pc_search_files",
+        "pc_continue_file_search"
+      ],
+      "found": true,
+      "visited": [
+        12,
+        23
+      ],
+      "firstAnswerMs": 7706,
+      "totalMs": 8568,
+      "answer": "Found: `<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md`",
+      "usage": {
+        "input": 6683,
+        "output": 327,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "case": "vague-parent-typo",
+      "tools": [
+        "pc_search_files",
+        "pc_continue_file_search"
+      ],
+      "found": true,
+      "visited": [
+        12,
+        24
+      ],
+      "firstAnswerMs": 6934,
+      "totalMs": 7629,
+      "answer": "**<fixture>\\projects\\solar-panel-rollout\\meetings\\meeting-slides.pptx**",
+      "usage": {
+        "input": 6768,
+        "output": 287,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "case": "continue-deep",
+      "tools": [
+        "pc_search_files",
+        "pc_continue_file_search",
+        "pc_search_files",
+        "pc_continue_file_search"
+      ],
+      "found": true,
+      "visited": [
+        12,
+        21,
+        12,
+        23
+      ],
+      "firstAnswerMs": 21895,
+      "totalMs": 23034,
+      "answer": "<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md",
+      "usage": {
+        "input": 7853,
+        "output": 226,
+        "reasoning": 219,
+        "cache": {
+          "read": 1536,
+          "write": 0
+        }
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "case": "vague-parent-typo",
+      "tools": [
+        "pc_search_files"
+      ],
+      "found": true,
+      "visited": [
+        3
+      ],
+      "firstAnswerMs": 7863,
+      "totalMs": 9009,
+      "answer": "<fixture>\\projects\\solar-panel-rollout\\meetings\\meeting-slides.pptx",
+      "usage": {
+        "input": 2892,
+        "output": 88,
+        "reasoning": 49,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    }
+  ]
+}

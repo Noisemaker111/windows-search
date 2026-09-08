@@ -1,6 +1,25 @@
 import {test,expect} from 'bun:test'
 import {createCompleter,ensurePcSearch} from './opencode'
 import {relevant,wantsWeb} from './evidence'
+for(const recovers of [true,false])test('incomplete empty scans get one grounded recovery, never a false absence answer: '+recovers,async()=>{
+ let stream!:ReadableStreamDefaultController<Uint8Array>,prompts=0,retries=0;const shown:string[]=[]
+ const call=async(path:string,body?:unknown)=>{
+  if(path.startsWith('/api/mcp?'))return Response.json({data:[{name:'pc',status:{status:'connected'}}]})
+  if(path==='/api/session')return Response.json({data:{id:'owned'}})
+  if(path==='/api/event')return new Response(new ReadableStream<Uint8Array>({start(c){stream=c}}))
+  if(path.endsWith('/prompt')){
+   prompts++;const recovered=recovers&&prompts===2
+   if(prompts===2)expect(JSON.parse((body as {text:string}).text).cursor).toBe('continue')
+   const result=recovered?{hits:[{name:'fixture.txt'}],coverage:{limited:false}}:{hits:[],coverage:{limited:true},nextCursor:'continue'}
+   for(const [type,data] of [['session.tool.input.started',{id:'tool'+prompts,name:prompts===1?'pc_search_files':'pc_continue_file_search'}],['session.tool.success',{id:'tool'+prompts,content:[{type:'text',text:JSON.stringify(result)}]}],['session.text.delta',{delta:recovered?'Found fixture.txt':'It does not exist on your PC'}],['session.execution.succeeded',{}]] as Array<[string,Record<string,unknown>]>)stream.enqueue(new TextEncoder().encode('data: '+JSON.stringify({type,data:{sessionID:'owned',...data}})+'\n\n'))
+  }
+  return Response.json({})
+ }
+ const promise=createCompleter(call)('claude-haiku-4-5-20251001','find file',d=>shown.push(d),AbortSignal.timeout(1000),()=>{},()=>{},()=>{retries++})
+ if(recovers){const result=await promise;expect(result.text).toBe('Found fixture.txt');expect(result.investigationRepairs).toBe(1);expect(shown).toEqual(['Found fixture.txt']);expect(retries).toBe(1)}
+ else{await expect(promise).rejects.toThrow('incomplete');expect(shown).toEqual([])}
+ expect(prompts).toBe(2)
+})
 test('index misses and vague personal-file names are not sent to web search',()=>{
  for(const q of ['quarterly budget.pdf','slides for the solar panel project','my latest tax documents','where is my current budget','heliotrop migration plan'])expect(wantsWeb(q)).toBe(false)
  for(const q of ['Who is the current president of France?','weather in Paris','search the web for solar panel grants'])expect(wantsWeb(q)).toBe(true)

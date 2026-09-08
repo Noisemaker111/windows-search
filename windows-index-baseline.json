@@ -1,0 +1,167 @@
+{
+    "found":  11,
+    "rows":  [
+                 {
+                     "returned":  1,
+                     "elapsedMs":  72,
+                     "root":  "desktop",
+                     "sample":  0,
+                     "rank":  1,
+                     "depth":  2
+                 },
+                 {
+                     "returned":  1,
+                     "elapsedMs":  9,
+                     "root":  "desktop",
+                     "sample":  1,
+                     "rank":  0,
+                     "depth":  2
+                 },
+                 {
+                     "returned":  0,
+                     "elapsedMs":  10,
+                     "root":  "desktop",
+                     "sample":  2,
+                     "rank":  0,
+                     "depth":  5
+                 },
+                 {
+                     "returned":  0,
+                     "elapsedMs":  10,
+                     "root":  "desktop",
+                     "sample":  3,
+                     "rank":  0,
+                     "depth":  5
+                 },
+                 {
+                     "returned":  2,
+                     "elapsedMs":  10,
+                     "root":  "documents",
+                     "sample":  4,
+                     "rank":  2,
+                     "depth":  2
+                 },
+                 {
+                     "returned":  2,
+                     "elapsedMs":  10,
+                     "root":  "documents",
+                     "sample":  5,
+                     "rank":  1,
+                     "depth":  2
+                 },
+                 {
+                     "returned":  0,
+                     "elapsedMs":  10,
+                     "root":  "documents",
+                     "sample":  6,
+                     "rank":  0,
+                     "depth":  7
+                 },
+                 {
+                     "returned":  0,
+                     "elapsedMs":  11,
+                     "root":  "documents",
+                     "sample":  7,
+                     "rank":  0,
+                     "depth":  7
+                 },
+                 {
+                     "returned":  1,
+                     "elapsedMs":  8,
+                     "root":  "downloads",
+                     "sample":  8,
+                     "rank":  1,
+                     "depth":  0
+                 },
+                 {
+                     "returned":  1,
+                     "elapsedMs":  10,
+                     "root":  "downloads",
+                     "sample":  9,
+                     "rank":  1,
+                     "depth":  0
+                 },
+                 {
+                     "returned":  1,
+                     "elapsedMs":  11,
+                     "root":  "downloads",
+                     "sample":  10,
+                     "rank":  1,
+                     "depth":  3
+                 },
+                 {
+                     "returned":  1,
+                     "elapsedMs":  10,
+                     "root":  "downloads",
+                     "sample":  11,
+                     "rank":  1,
+                     "depth":  4
+                 },
+                 {
+                     "returned":  0,
+                     "elapsedMs":  18,
+                     "root":  "projects",
+                     "sample":  12,
+                     "rank":  0,
+                     "depth":  2
+                 },
+                 {
+                     "returned":  0,
+                     "elapsedMs":  15,
+                     "root":  "projects",
+                     "sample":  13,
+                     "rank":  0,
+                     "depth":  1
+                 },
+                 {
+                     "returned":  0,
+                     "elapsedMs":  16,
+                     "root":  "projects",
+                     "sample":  14,
+                     "rank":  0,
+                     "depth":  3
+                 },
+                 {
+                     "returned":  6,
+                     "elapsedMs":  21,
+                     "root":  "projects",
+                     "sample":  15,
+                     "rank":  0,
+                     "depth":  3
+                 },
+                 {
+                     "returned":  1,
+                     "elapsedMs":  10,
+                     "root":  "pictures",
+                     "sample":  16,
+                     "rank":  1,
+                     "depth":  1
+                 },
+                 {
+                     "returned":  1,
+                     "elapsedMs":  10,
+                     "root":  "pictures",
+                     "sample":  17,
+                     "rank":  1,
+                     "depth":  1
+                 },
+                 {
+                     "returned":  1,
+                     "elapsedMs":  9,
+                     "root":  "videos",
+                     "sample":  18,
+                     "rank":  1,
+                     "depth":  2
+                 },
+                 {
+                     "returned":  1,
+                     "elapsedMs":  10,
+                     "root":  "videos",
+                     "sample":  19,
+                     "rank":  1,
+                     "depth":  2
+                 }
+             ],
+    "samples":  20,
+    "interface":  "Windows Search SYSTEMINDEX, exact filename, top 20; not Win+S UI"
+}
