@@ -1,0 +1,79 @@
+{
+  "conditions": "Headless installed Edge, isolated candidate bar and OpenCode host, live subscription models, real incomplete filename metadata, no launch; not physical native shortcut verification.",
+  "rows": [
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "case": "real-partial-desktop",
+      "typingModelCalls": 0,
+      "targetInResults": true,
+      "visibleRows": 15,
+      "answerChars": 423,
+      "answerPathsFromEvidence": 3,
+      "done": {
+        "type": "done",
+        "model": "claude-haiku-4-5-20251001",
+        "firstTokenMs": 5817,
+        "totalMs": 7872,
+        "timings": {
+          "localSearchMs": 9.406999999999243,
+          "retrievalMs": 0.4327999999986787,
+          "sessionMs": 7.879400000001624,
+          "subscriptionMs": 1.8974999999991269,
+          "promptMs": 42.22479999999996,
+          "postPromptFirstTokenMs": 5752.275799999999
+        },
+        "preparedSession": true,
+        "promptBytes": 1687,
+        "usage": {
+          "input": 5767,
+          "output": 246,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "investigationRepairs": 0
+      },
+      "launchEvents": 0,
+      "errorEvents": 0
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "case": "real-partial-desktop",
+      "typingModelCalls": 0,
+      "targetInResults": true,
+      "visibleRows": 15,
+      "answerChars": 289,
+      "answerPathsFromEvidence": 2,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 8792,
+        "totalMs": 11127,
+        "timings": {
+          "localSearchMs": 12.594000000004598,
+          "retrievalMs": 0.03440000000409782,
+          "sessionMs": 6.97620000000461,
+          "subscriptionMs": 1.682200000002922,
+          "promptMs": 43.65249999999651,
+          "postPromptFirstTokenMs": 8724.4631
+        },
+        "preparedSession": true,
+        "promptBytes": 1687,
+        "usage": {
+          "input": 4439,
+          "output": 125,
+          "reasoning": 27,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "investigationRepairs": 0
+      },
+      "launchEvents": 0,
+      "errorEvents": 0
+    }
+  ]
+}

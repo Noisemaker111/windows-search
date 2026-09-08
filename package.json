@@ -10,7 +10,8 @@
     "test:ui": "playwright test",
     "test:native": "powershell.exe -NoProfile -NonInteractive -File ./native.test.ps1",
     "bench:discovery:local": "bun bench-local-discovery.ts",
-    "bench:discovery:deep": "bun bench-deep-discovery.ts"
+    "bench:discovery:deep": "bun bench-deep-discovery.ts",
+    "bench:discovery:ai": "bun bench-real-ai.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",

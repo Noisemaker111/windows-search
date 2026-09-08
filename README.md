@@ -111,6 +111,8 @@ measurements, remaining blockers and the distinction between local scanner tests
 and model-driven search. Recommendation remains **do not release**.
 # Deep investigation benchmark
 
+See [the real-file AI benchmark](REAL-AI-BENCHMARK.md) for live Haiku/Luna quality,
+latency, token measurements and remaining grounding failures.
 See [the deep-search benchmark](DEEP-BENCHMARK.md) for the 100-case retrieval suite,
 Windows Search index baseline, actual model failures and browser measurements.
 Scans now default to depth 20 and return a continuation when the traversal budget

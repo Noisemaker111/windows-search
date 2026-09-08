@@ -4,6 +4,10 @@ The goal is much more useful PC search. **100× better is not established. Do no
 release yet.** This update measures retrieval, agent decisions and browser journeys
 separately. It does not turn a synthetic scanner score into an overall product score.
 
+Follow-up: [real-file AI benchmark](REAL-AI-BENCHMARK.md) records 48 authorized
+real-metadata model submissions and four live browser journeys, answer-policy and
+stream fixes, and a reproduced fabricated-path release blocker.
+
 ## Comparisons
 
 | Boundary measured | Before | Current evidence |
@@ -96,8 +100,7 @@ Native automation cannot currently run: the computer-use plugin requires a suppo
 Runtime repair must expose that supported entry point, verify a read-only window
 listing, and resume Win+S/Alt+Space testing without replacing shared services.
 
-Real filename/path transfer to the external subscription proxy still needs explicit
-approval after automatic review rejected it. Synthetic model tests continue within
-the permitted boundary. Content/OCR search, broader drive coverage, physical focus
+The user subsequently authorized real filename/path transfer; those tests are now
+recorded in REAL-AI-BENCHMARK.md. Content/OCR search, broader drive coverage, physical focus
 and shortcuts, launch verification, login and rollback remain unqualified. This PR
 does not install the candidate, change startup, merge, or deploy anything.
