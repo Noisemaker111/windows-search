@@ -1,0 +1,1482 @@
+[
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 0,
+    "kind": "exact location",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 637.0099999999998,
+    "firstMs": 3824.4341000000004,
+    "totalMs": 4395.5796,
+    "timings": {
+      "sessionMs": 0.26350000000002183,
+      "subscriptionMs": 3.5790000000001783,
+      "promptMs": 1708.4034999999994,
+      "postPromptFirstTokenMs": 2110.3872
+    },
+    "usage": {
+      "input": 616,
+      "output": 34,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 0,
+    "kind": "exact location",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 813.4591,
+    "firstMs": 4097.6956,
+    "totalMs": 5320.494,
+    "timings": {
+      "sessionMs": 0.032000000000152795,
+      "subscriptionMs": 2.2457000000003973,
+      "promptMs": 7.78019999999924,
+      "postPromptFirstTokenMs": 4087.3386
+    },
+    "usage": {
+      "input": 764,
+      "output": 31,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku 3.5",
+    "id": "claude-3-5-haiku-20241022",
+    "round": 0,
+    "kind": "exact location",
+    "error": "Error: {\"type\":\"provider.no-route\",\"message\":\"Model unavailable: cliproxyapi/claude-3-5-haiku-20241022\"}",
+    "totalMs": 45.04110000000037
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 0,
+    "kind": "exact location",
+    "error": "Error: {\"type\":\"provider.no-route\",\"message\":\"Model unavailable: cliproxyapi/gpt-5.3-codex-spark\"}",
+    "totalMs": 38.63959999999861
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 0,
+    "kind": "exact location",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 704.5303000000004,
+    "firstMs": 4346.108900000001,
+    "totalMs": 5137.0851999999995,
+    "timings": {
+      "sessionMs": 0.041800000000876025,
+      "subscriptionMs": 2.269399999999223,
+      "promptMs": 10.11540000000059,
+      "postPromptFirstTokenMs": 4333.414799999999
+    },
+    "usage": {
+      "input": 553,
+      "output": 0,
+      "reasoning": 230,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 0,
+    "kind": "transposed typo",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 0.10169999999925494,
+    "firstMs": 3884.442500000001,
+    "totalMs": 5305.4108000000015,
+    "timings": {
+      "sessionMs": 0.03250000000116415,
+      "subscriptionMs": 2.5279000000009546,
+      "promptMs": 8.50119999999879,
+      "postPromptFirstTokenMs": 3873.0308000000005
+    },
+    "usage": {
+      "input": 766,
+      "output": 31,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 0,
+    "kind": "transposed typo",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 0.06520000000091386,
+    "firstMs": 5293.123,
+    "totalMs": 6011.770500000002,
+    "timings": {
+      "sessionMs": 0.04569999999876018,
+      "subscriptionMs": 62.423399999999674,
+      "promptMs": 19.80500000000029,
+      "postPromptFirstTokenMs": 5210.422699999999
+    },
+    "usage": {
+      "input": 556,
+      "output": 0,
+      "reasoning": 281,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 0,
+    "kind": "transposed typo",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 0.03329999999914435,
+    "firstMs": 1328.5068999999967,
+    "totalMs": 1799.7003000000004,
+    "timings": {
+      "sessionMs": 0.04500000000189175,
+      "subscriptionMs": 1.9576000000015483,
+      "promptMs": 69.1314999999995,
+      "postPromptFirstTokenMs": 1256.191600000002
+    },
+    "usage": {
+      "input": 619,
+      "output": 34,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 0,
+    "kind": "projects",
+    "hits": 12,
+    "sources": 0,
+    "preparationMs": 0.02860000000509899,
+    "firstMs": 3361.394500000002,
+    "totalMs": 3848.311099999999,
+    "timings": {
+      "sessionMs": 0.05829999999696156,
+      "subscriptionMs": 1.6641000000017812,
+      "promptMs": 77.1102000000028,
+      "postPromptFirstTokenMs": 3282.1849999999977
+    },
+    "usage": {
+      "input": 851,
+      "output": 0,
+      "reasoning": 154,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 0,
+    "kind": "projects",
+    "hits": 12,
+    "sources": 0,
+    "preparationMs": 0.033699999999953434,
+    "firstMs": 1113.1532000000007,
+    "totalMs": 2041.7787000000026,
+    "timings": {
+      "sessionMs": 0.05910000000585569,
+      "subscriptionMs": 1.3152000000045518,
+      "promptMs": 29.813799999996263,
+      "postPromptFirstTokenMs": 1081.5746
+    },
+    "usage": {
+      "input": 922,
+      "output": 68,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 0,
+    "kind": "projects",
+    "hits": 12,
+    "sources": 0,
+    "preparationMs": 0.021300000000337604,
+    "firstMs": 1707.2669000000024,
+    "totalMs": 3518.3513999999996,
+    "timings": {
+      "sessionMs": 0.03680000000167638,
+      "subscriptionMs": 2.4860999999946216,
+      "promptMs": 37.14050000000134,
+      "postPromptFirstTokenMs": 1667.2672999999995
+    },
+    "usage": {
+      "input": 1033,
+      "output": 79,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 0,
+    "kind": "vague local intent",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.015500000001338776,
+    "firstMs": 6271.7528999999995,
+    "totalMs": 6869.731500000002,
+    "timings": {
+      "sessionMs": 0.04039999999804422,
+      "subscriptionMs": 2.2854000000006636,
+      "promptMs": 6.459100000000035,
+      "postPromptFirstTokenMs": 6262.8004
+    },
+    "usage": {
+      "input": 539,
+      "output": 0,
+      "reasoning": 368,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 0,
+    "kind": "vague local intent",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.033699999999953434,
+    "firstMs": 1479.5072999999975,
+    "totalMs": 2628.7321999999986,
+    "timings": {
+      "sessionMs": 0.04299999999784632,
+      "subscriptionMs": 68.63910000000033,
+      "promptMs": 9.463999999999942,
+      "postPromptFirstTokenMs": 1400.4199999999983
+    },
+    "usage": {
+      "input": 597,
+      "output": 46,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 0,
+    "kind": "vague local intent",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.03570000000036089,
+    "firstMs": 3735.4455000000016,
+    "totalMs": 5567.847999999998,
+    "timings": {
+      "sessionMs": 0.08790000000590226,
+      "subscriptionMs": 5.295700000002398,
+      "promptMs": 74.67740000000049,
+      "postPromptFirstTokenMs": 3654.877900000007
+    },
+    "usage": {
+      "input": 750,
+      "output": 15,
+      "reasoning": 35,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 0,
+    "kind": "missing local item",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.04040000000532018,
+    "firstMs": 6658.533300000003,
+    "totalMs": 7240.140700000004,
+    "timings": {
+      "sessionMs": 0.06719999999768334,
+      "subscriptionMs": 1.9565000000002328,
+      "promptMs": 68.01559999999881,
+      "postPromptFirstTokenMs": 6587.9446000000025
+    },
+    "usage": {
+      "input": 541,
+      "output": 0,
+      "reasoning": 339,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 0,
+    "kind": "missing local item",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.021999999997206032,
+    "firstMs": 1301.9369000000006,
+    "totalMs": 1890.407699999996,
+    "timings": {
+      "sessionMs": 0.06540000000677537,
+      "subscriptionMs": 1.5715999999956694,
+      "promptMs": 7.304900000002817,
+      "postPromptFirstTokenMs": 1292.6974999999948
+    },
+    "usage": {
+      "input": 602,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 0,
+    "kind": "missing local item",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.05550000000221189,
+    "firstMs": 3402.828600000008,
+    "totalMs": 4281.492800000007,
+    "timings": {
+      "sessionMs": 1.0742000000027474,
+      "subscriptionMs": 4.70350000000326,
+      "promptMs": 69.86230000000796,
+      "postPromptFirstTokenMs": 3326.6687999999995
+    },
+    "usage": {
+      "input": 749,
+      "output": 17,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 0,
+    "kind": "current web",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.037899999995715916,
+    "firstMs": 1432.0561000000016,
+    "totalMs": 2022.5188999999955,
+    "timings": {
+      "sessionMs": 0.08520000000135042,
+      "subscriptionMs": 2.021199999988312,
+      "promptMs": 9.547399999995832,
+      "postPromptFirstTokenMs": 1420.079500000007
+    },
+    "usage": {
+      "input": 597,
+      "output": 19,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 0,
+    "kind": "current web",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.03670000001147855,
+    "firstMs": 2481.724000000002,
+    "totalMs": 3277.829899999997,
+    "timings": {
+      "sessionMs": 0.04320000000006985,
+      "subscriptionMs": 1.3646000000007916,
+      "promptMs": 5.093899999992573,
+      "postPromptFirstTokenMs": 2475.081699999995
+    },
+    "usage": {
+      "input": 752,
+      "output": 20,
+      "reasoning": 44,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 0,
+    "kind": "current web",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.03569999999308493,
+    "firstMs": 12331.43359999999,
+    "totalMs": 13124.964699999997,
+    "timings": {
+      "sessionMs": 0.055000000007566996,
+      "subscriptionMs": 1.6898000000073807,
+      "promptMs": 73.18450000000303,
+      "postPromptFirstTokenMs": 12256.173599999995
+    },
+    "usage": {
+      "input": 539,
+      "output": 0,
+      "reasoning": 690,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 0,
+    "kind": "general explanation",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.054799999998067506,
+    "firstMs": 2240.265100000004,
+    "totalMs": 3219.1977000000043,
+    "timings": {
+      "sessionMs": 0.062099999995552935,
+      "subscriptionMs": 2.592000000004191,
+      "promptMs": 64.55989999999292,
+      "postPromptFirstTokenMs": 2172.6206999999995
+    },
+    "usage": {
+      "input": 747,
+      "output": 24,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 0,
+    "kind": "general explanation",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.020699999993667006,
+    "firstMs": 4594.701399999991,
+    "totalMs": 5726.141499999998,
+    "timings": {
+      "sessionMs": 0.07229999999981374,
+      "subscriptionMs": 1.794000000008964,
+      "promptMs": 8.57860000000801,
+      "postPromptFirstTokenMs": 4584.002400000012
+    },
+    "usage": {
+      "input": 536,
+      "output": 0,
+      "reasoning": 186,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 0,
+    "kind": "general explanation",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.021900000007008202,
+    "firstMs": 1366.1257999999943,
+    "totalMs": 2345.4738999999972,
+    "timings": {
+      "sessionMs": 0.06380000000353903,
+      "subscriptionMs": 1.314200000007986,
+      "promptMs": 69.73570000000473,
+      "postPromptFirstTokenMs": 1294.6456999999937
+    },
+    "usage": {
+      "input": 597,
+      "output": 39,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 1,
+    "kind": "exact location",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 0.018800000005285256,
+    "firstMs": 3969.4086000000098,
+    "totalMs": 5031.164499999999,
+    "timings": {
+      "sessionMs": 0.08539999999629799,
+      "subscriptionMs": 1.5709000000060769,
+      "promptMs": 89.89410000000498,
+      "postPromptFirstTokenMs": 3877.600099999996
+    },
+    "usage": {
+      "input": 765,
+      "output": 31,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 1,
+    "kind": "exact location",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 0.03740000000107102,
+    "firstMs": 3552.2783999999956,
+    "totalMs": 4331.691499999986,
+    "timings": {
+      "sessionMs": 0.05680000000575092,
+      "subscriptionMs": 1.4547999999922467,
+      "promptMs": 8.108599999992293,
+      "postPromptFirstTokenMs": 3542.1826
+    },
+    "usage": {
+      "input": 554,
+      "output": 0,
+      "reasoning": 148,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 1,
+    "kind": "exact location",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 0.030499999993480742,
+    "firstMs": 1613.483500000002,
+    "totalMs": 2130.469200000007,
+    "timings": {
+      "sessionMs": 0.10439999999653082,
+      "subscriptionMs": 1.7042999999976018,
+      "promptMs": 8.191500000000815,
+      "postPromptFirstTokenMs": 1603.0956000000006
+    },
+    "usage": {
+      "input": 617,
+      "output": 34,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 1,
+    "kind": "transposed typo",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 0.013500000000931323,
+    "firstMs": 3519.9762000000046,
+    "totalMs": 4262.351500000004,
+    "timings": {
+      "sessionMs": 0.054899999988265336,
+      "subscriptionMs": 1.396099999998114,
+      "promptMs": 6.139899999994668,
+      "postPromptFirstTokenMs": 3512.2316000000137
+    },
+    "usage": {
+      "input": 556,
+      "output": 0,
+      "reasoning": 163,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 1,
+    "kind": "transposed typo",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 0.016700000007404014,
+    "firstMs": 1374.6068999999989,
+    "totalMs": 1838.4002999999939,
+    "timings": {
+      "sessionMs": 0.0771999999997206,
+      "subscriptionMs": 1.2890000000043074,
+      "promptMs": 63.42930000000342,
+      "postPromptFirstTokenMs": 1309.507700000002
+    },
+    "usage": {
+      "input": 618,
+      "output": 34,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 1,
+    "kind": "transposed typo",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 0.018299999996088445,
+    "firstMs": 3144.833400000003,
+    "totalMs": 4181.515200000009,
+    "timings": {
+      "sessionMs": 0.0878999999986263,
+      "subscriptionMs": 2.37050000000454,
+      "promptMs": 48.300900000002,
+      "postPromptFirstTokenMs": 3093.757599999997
+    },
+    "usage": {
+      "input": 765,
+      "output": 31,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 1,
+    "kind": "projects",
+    "hits": 12,
+    "sources": 0,
+    "preparationMs": 0.028200000000651926,
+    "firstMs": 3741.815400000007,
+    "totalMs": 4383.146399999998,
+    "timings": {
+      "sessionMs": 0.053800000008777715,
+      "subscriptionMs": 1.516700000007404,
+      "promptMs": 74.10649999999441,
+      "postPromptFirstTokenMs": 3665.680699999997
+    },
+    "usage": {
+      "input": 854,
+      "output": 0,
+      "reasoning": 143,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 1,
+    "kind": "projects",
+    "hits": 12,
+    "sources": 0,
+    "preparationMs": 0.03879999999480788,
+    "firstMs": 1327.1913000000059,
+    "totalMs": 2374.9712,
+    "timings": {
+      "sessionMs": 0.07839999999850988,
+      "subscriptionMs": 1.5705999999918276,
+      "promptMs": 91.69589999999152,
+      "postPromptFirstTokenMs": 1233.6175999999978
+    },
+    "usage": {
+      "input": 924,
+      "output": 72,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 1,
+    "kind": "projects",
+    "hits": 12,
+    "sources": 0,
+    "preparationMs": 0.020399999993969686,
+    "firstMs": 2600.9159999999974,
+    "totalMs": 3424.6296999999904,
+    "timings": {
+      "sessionMs": 0.06040000000211876,
+      "subscriptionMs": 1.5777999999991152,
+      "promptMs": 93.21169999999984,
+      "postPromptFirstTokenMs": 2505.7003000000113
+    },
+    "usage": {
+      "input": 1031,
+      "output": 20,
+      "reasoning": 29,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 1,
+    "kind": "vague local intent",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.01780000000144355,
+    "firstMs": 5723.385100000014,
+    "totalMs": 6205.408800000005,
+    "timings": {
+      "sessionMs": 0.09679999999934807,
+      "subscriptionMs": 1.7195999999821652,
+      "promptMs": 61.23129999998491,
+      "postPromptFirstTokenMs": 5659.505100000009
+    },
+    "usage": {
+      "input": 540,
+      "output": 0,
+      "reasoning": 314,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 1,
+    "kind": "vague local intent",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.04039999999804422,
+    "firstMs": 1325.986200000014,
+    "totalMs": 2107.7020000000193,
+    "timings": {
+      "sessionMs": 0.07089999999152496,
+      "subscriptionMs": 1.5512999999918975,
+      "promptMs": 68.09380000000237,
+      "postPromptFirstTokenMs": 1255.9396000000124
+    },
+    "usage": {
+      "input": 600,
+      "output": 15,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 1,
+    "kind": "vague local intent",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.023799999995389953,
+    "firstMs": 2362.0510000000068,
+    "totalMs": 3347.9784999999974,
+    "timings": {
+      "sessionMs": 0.06409999998868443,
+      "subscriptionMs": 2.2026999999943655,
+      "promptMs": 55.7725999999966,
+      "postPromptFirstTokenMs": 2303.6798000000126
+    },
+    "usage": {
+      "input": 749,
+      "output": 17,
+      "reasoning": 28,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 1,
+    "kind": "missing local item",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.013500000000931323,
+    "firstMs": 1422.7509000000136,
+    "totalMs": 2137.5738999999885,
+    "timings": {
+      "sessionMs": 0.06349999998928979,
+      "subscriptionMs": 1.5066999999980908,
+      "promptMs": 10.240699999994831,
+      "postPromptFirstTokenMs": 1410.7523999999976
+    },
+    "usage": {
+      "input": 604,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 1,
+    "kind": "missing local item",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.1820000000006985,
+    "firstMs": 5243.589000000007,
+    "totalMs": 9007.986800000013,
+    "timings": {
+      "sessionMs": 0.07899999999790452,
+      "subscriptionMs": 1.5414999999920838,
+      "promptMs": 65.34919999999693,
+      "postPromptFirstTokenMs": 5176.267399999982
+    },
+    "usage": {
+      "input": 750,
+      "output": 17,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 1,
+    "kind": "missing local item",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.018499999976484105,
+    "firstMs": 5718.509399999981,
+    "totalMs": 6264.226699999999,
+    "timings": {
+      "sessionMs": 0.06580000001122244,
+      "subscriptionMs": 2.4747000000206754,
+      "promptMs": 9.36019999999553,
+      "postPromptFirstTokenMs": 5706.2663000000175
+    },
+    "usage": {
+      "input": 539,
+      "output": 0,
+      "reasoning": 285,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 1,
+    "kind": "current web",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.31909999999334104,
+    "firstMs": 2965.359300000011,
+    "totalMs": 3796.1777,
+    "timings": {
+      "sessionMs": 0.05919999998877756,
+      "subscriptionMs": 1.5076999999873806,
+      "promptMs": 71.51939999999013,
+      "postPromptFirstTokenMs": 2891.984700000001
+    },
+    "usage": {
+      "input": 750,
+      "output": 18,
+      "reasoning": 61,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 1,
+    "kind": "current web",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.036900000006426126,
+    "firstMs": 12061.537400000001,
+    "totalMs": 12630.698000000004,
+    "timings": {
+      "sessionMs": 0.0781999999890104,
+      "subscriptionMs": 2.955099999991944,
+      "promptMs": 55.630999999993946,
+      "postPromptFirstTokenMs": 12002.303899999999
+    },
+    "usage": {
+      "input": 540,
+      "output": 0,
+      "reasoning": 710,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 1,
+    "kind": "current web",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.013000000006286427,
+    "firstMs": 1257.886599999998,
+    "totalMs": 1807.156799999997,
+    "timings": {
+      "sessionMs": 0.0689999999885913,
+      "subscriptionMs": 1.4365999999863561,
+      "promptMs": 50.08190000001923,
+      "postPromptFirstTokenMs": 1206.0348999999987
+    },
+    "usage": {
+      "input": 599,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Grok · SuperGrok",
+    "id": "grok-4.6",
+    "round": 1,
+    "kind": "general explanation",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.034699999989243224,
+    "firstMs": 7632.310700000002,
+    "totalMs": 8129.185100000002,
+    "timings": {
+      "sessionMs": 0.08520000000135042,
+      "subscriptionMs": 1.7813000000023749,
+      "promptMs": 7.924200000008568,
+      "postPromptFirstTokenMs": 7622.232599999988
+    },
+    "usage": {
+      "input": 535,
+      "output": 0,
+      "reasoning": 471,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku",
+    "id": "claude-haiku-4-5-20251001",
+    "round": 1,
+    "kind": "general explanation",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.022999999986495823,
+    "firstMs": 1187.2068999999901,
+    "totalMs": 1874.0542999999889,
+    "timings": {
+      "sessionMs": 0.07750000001396984,
+      "subscriptionMs": 1.2589999999909196,
+      "promptMs": 6.677800000004936,
+      "postPromptFirstTokenMs": 1178.7335999999777
+    },
+    "usage": {
+      "input": 595,
+      "output": 29,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Luna",
+    "id": "gpt-5.6-luna",
+    "round": 1,
+    "kind": "general explanation",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 0.0094999999855645,
+    "firstMs": 1651.5256999999983,
+    "totalMs": 2404.5474000000104,
+    "timings": {
+      "sessionMs": 0.03839999999036081,
+      "subscriptionMs": 1.6682000000146218,
+      "promptMs": 62.84810000000289,
+      "postPromptFirstTokenMs": 1586.7104999999865
+    },
+    "usage": {
+      "input": 750,
+      "output": 24,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Haiku 3.5",
+    "id": "claude-3-5-haiku-20241022",
+    "round": 0,
+    "kind": "exact location",
+    "error": "Error: {\"type\":\"provider.invalid-request\",\"message\":\"model: claude-3-5-haiku-20241022\",\"status\":404}",
+    "totalMs": 3250.2682000000004
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 0,
+    "kind": "exact location",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 577.2422000000006,
+    "firstMs": 2059.6517999999996,
+    "totalMs": 2477.717099999999,
+    "timings": {
+      "sessionMs": 0.02959999999984575,
+      "subscriptionMs": 2.38340000000062,
+      "promptMs": 10.178000000000793,
+      "postPromptFirstTokenMs": 2046.6590000000006
+    },
+    "usage": {
+      "input": 470,
+      "output": 33,
+      "reasoning": 149,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 0,
+    "kind": "transposed typo",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 655.5097000000005,
+    "firstMs": 2008.8343000000004,
+    "totalMs": 2511.4270000000015,
+    "timings": {
+      "sessionMs": 0.03919999999925494,
+      "subscriptionMs": 2.105600000000777,
+      "promptMs": 9.867299999999886,
+      "postPromptFirstTokenMs": 1996.4755999999998
+    },
+    "usage": {
+      "input": 471,
+      "output": 33,
+      "reasoning": 207,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 0,
+    "kind": "projects",
+    "hits": 12,
+    "sources": 0,
+    "preparationMs": 806.3174999999992,
+    "firstMs": 5362.599200000001,
+    "totalMs": 5863.2026000000005,
+    "timings": {
+      "sessionMs": 0.03280000000086147,
+      "subscriptionMs": 2.540999999999258,
+      "promptMs": 47.92289999999957,
+      "postPromptFirstTokenMs": 5311.8542
+    },
+    "usage": {
+      "input": 735,
+      "output": 21,
+      "reasoning": 263,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 0,
+    "kind": "vague local intent",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 586.0051999999996,
+    "firstMs": 2530.3139999999985,
+    "totalMs": 3062.375,
+    "timings": {
+      "sessionMs": 0.05640000000130385,
+      "subscriptionMs": 2.358299999999872,
+      "promptMs": 7.516899999998714,
+      "postPromptFirstTokenMs": 2519.7078
+    },
+    "usage": {
+      "input": 454,
+      "output": 36,
+      "reasoning": 370,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 0,
+    "kind": "missing local item",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 620.267200000002,
+    "firstMs": 3552.2399000000005,
+    "totalMs": 4046.651399999999,
+    "timings": {
+      "sessionMs": 0.05939999999827705,
+      "subscriptionMs": 1.7572000000000116,
+      "promptMs": 6.083900000001449,
+      "postPromptFirstTokenMs": 3544.0290000000023
+    },
+    "usage": {
+      "input": 455,
+      "output": 20,
+      "reasoning": 243,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 0,
+    "kind": "current web",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 627.0553,
+    "firstMs": 3768.3567999999977,
+    "totalMs": 4454.390599999999,
+    "timings": {
+      "sessionMs": 0.023700000001554145,
+      "subscriptionMs": 2.1283999999977823,
+      "promptMs": 7.0024000000012165,
+      "postPromptFirstTokenMs": 3758.988300000001
+    },
+    "usage": {
+      "input": 456,
+      "output": 18,
+      "reasoning": 323,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 0,
+    "kind": "general explanation",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 646.1309999999976,
+    "firstMs": 1702.4472000000023,
+    "totalMs": 2150.900999999998,
+    "timings": {
+      "sessionMs": 0.032799999997223495,
+      "subscriptionMs": 1.7815000000009604,
+      "promptMs": 6.197000000000116,
+      "postPromptFirstTokenMs": 1693.6605999999992
+    },
+    "usage": {
+      "input": 452,
+      "output": 35,
+      "reasoning": 239,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 1,
+    "kind": "exact location",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 541.8079999999973,
+    "firstMs": 2023.9645000000019,
+    "totalMs": 2536.254200000003,
+    "timings": {
+      "sessionMs": 0.03739999999379506,
+      "subscriptionMs": 1.9961000000039348,
+      "promptMs": 7.35729999999603,
+      "postPromptFirstTokenMs": 2014.2935999999972
+    },
+    "usage": {
+      "input": 469,
+      "output": 33,
+      "reasoning": 252,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 1,
+    "kind": "transposed typo",
+    "hits": 1,
+    "sources": 0,
+    "preparationMs": 658.4366000000009,
+    "firstMs": 1764.8506999999954,
+    "totalMs": 2259.357299999996,
+    "timings": {
+      "sessionMs": 0.03299999999580905,
+      "subscriptionMs": 3.5415999999968335,
+      "promptMs": 20.288399999997637,
+      "postPromptFirstTokenMs": 1740.5328000000009
+    },
+    "usage": {
+      "input": 471,
+      "output": 33,
+      "reasoning": 187,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 1,
+    "kind": "projects",
+    "hits": 12,
+    "sources": 0,
+    "preparationMs": 643.5638000000035,
+    "firstMs": 1854.3038000000015,
+    "totalMs": 2402.0305000000008,
+    "timings": {
+      "sessionMs": 0.04769999999552965,
+      "subscriptionMs": 1.4339000000036322,
+      "promptMs": 33.39120000000548,
+      "postPromptFirstTokenMs": 1819.0946999999942
+    },
+    "usage": {
+      "input": 733,
+      "output": 198,
+      "reasoning": 615,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 1,
+    "kind": "vague local intent",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 607.5701999999947,
+    "firstMs": 2449.891800000005,
+    "totalMs": 2947.997000000003,
+    "timings": {
+      "sessionMs": 0.03529999999591382,
+      "subscriptionMs": 1.6264999999984866,
+      "promptMs": 10.429700000000594,
+      "postPromptFirstTokenMs": 2437.5115000000005
+    },
+    "usage": {
+      "input": 454,
+      "output": 32,
+      "reasoning": 219,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 1,
+    "kind": "missing local item",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 649.6520000000019,
+    "firstMs": 2050.588100000001,
+    "totalMs": 2493.770599999996,
+    "timings": {
+      "sessionMs": 0.02079999999841675,
+      "subscriptionMs": 1.8997000000017579,
+      "promptMs": 9.752300000000105,
+      "postPromptFirstTokenMs": 2038.7493000000031
+    },
+    "usage": {
+      "input": 454,
+      "output": 19,
+      "reasoning": 229,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 1,
+    "kind": "current web",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 541.8408000000054,
+    "firstMs": 1855.7249999999985,
+    "totalMs": 2274.2558999999965,
+    "timings": {
+      "sessionMs": 0.035499999998137355,
+      "subscriptionMs": 2.286600000006729,
+      "promptMs": 7.01579999999376,
+      "postPromptFirstTokenMs": 1846.0121
+    },
+    "usage": {
+      "input": 455,
+      "output": 29,
+      "reasoning": 374,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  },
+  {
+    "model": "Spark",
+    "id": "gpt-5.3-codex-spark",
+    "round": 1,
+    "kind": "general explanation",
+    "hits": 0,
+    "sources": 0,
+    "preparationMs": 493.43560000000434,
+    "firstMs": 2445.439099999996,
+    "totalMs": 2884.2888999999996,
+    "timings": {
+      "sessionMs": 0.03949999999895226,
+      "subscriptionMs": 1.3535999999949127,
+      "promptMs": 4.224099999999453,
+      "postPromptFirstTokenMs": 2439.577599999997
+    },
+    "usage": {
+      "input": 452,
+      "output": 40,
+      "reasoning": 264,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    }
+  }
+]

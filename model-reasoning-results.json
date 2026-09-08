@@ -1,0 +1,5044 @@
+[
+  {
+    "key": "matrix-0",
+    "model": "gpt-5.6-terra",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 3193.2438,
+    "totalMs": 3744.2001999999993,
+    "usage": {
+      "input": 754,
+      "output": 19,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.14289999999999736,
+      "subscriptionMs": 2.2842999999999734,
+      "promptMs": 1219.3759,
+      "postPromptFirstTokenMs": 1969.1512
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-terra",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1279.6182
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die"
+  },
+  {
+    "key": "matrix-1",
+    "model": "gpt-5.6-terra",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 2545.9572,
+    "totalMs": 4473.3752,
+    "usage": {
+      "input": 753,
+      "output": 19,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.027199999999538704,
+      "subscriptionMs": 1.668999999999869,
+      "promptMs": 9.733100000000377,
+      "postPromptFirstTokenMs": 2534.2781999999997
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-terra",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 2044.4970000000003
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die"
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1489.5336000000007,
+    "totalMs": 2164.1337000000003,
+    "usage": {
+      "input": 754,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04039999999986321,
+      "subscriptionMs": 2.2958999999991647,
+      "promptMs": 5.923099999999977,
+      "postPromptFirstTokenMs": 1480.8875000000007
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1029.2703999999994
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1314.9112000000005,
+    "totalMs": 1954.376400000001,
+    "usage": {
+      "input": 756,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.030899999999746797,
+      "subscriptionMs": 1.500899999999092,
+      "promptMs": 4.51220000000103,
+      "postPromptFirstTokenMs": 1308.670900000001
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 864.4624999999996
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1206.9632000000001,
+    "totalMs": 2044.3295999999991,
+    "usage": {
+      "input": 839,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.06090000000040163,
+      "subscriptionMs": 1.4236999999993714,
+      "promptMs": 4.580400000000736,
+      "postPromptFirstTokenMs": 1200.6204000000016
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 746.8261000000002
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1053.7635999999984,
+    "totalMs": 1901.4457999999977,
+    "usage": {
+      "input": 840,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.05869999999777065,
+      "subscriptionMs": 1.4219999999986612,
+      "promptMs": 4.533699999999953,
+      "postPromptFirstTokenMs": 1047.5602999999974
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 603.4168000000027
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-6",
+    "model": "claude-opus-4-5-20251101",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1622.8163999999997,
+    "totalMs": 1949.2216999999982,
+    "usage": {
+      "input": 604,
+      "output": 22,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.06450000000040745,
+      "subscriptionMs": 2.270300000000134,
+      "promptMs": 4.683000000000902,
+      "postPromptFirstTokenMs": 1615.5586000000003
+    },
+    "wire": [
+      {
+        "model": "claude-opus-4-5-20251101",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 979.7127
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-7",
+    "model": "claude-opus-4-5-20251101",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 2345.0132000000012,
+    "totalMs": 2688.142,
+    "usage": {
+      "input": 633,
+      "output": 75,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04139999999824795,
+      "subscriptionMs": 1.3771000000015192,
+      "promptMs": 4.204799999999523,
+      "postPromptFirstTokenMs": 2339.103299999999
+    },
+    "wire": [
+      {
+        "model": "claude-opus-4-5-20251101",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 846.3007999999973
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-8",
+    "model": "claude-opus-4-1-20250805",
+    "provider": "cliproxyapi",
+    "effort": "default",
+    "declared": [],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: {\"type\":\"provider.invalid-request\",\"message\":\"model: claude-opus-4-1-20250805\",\"status\":404}",
+    "totalMs": 906.045900000001,
+    "wire": [
+      {
+        "model": "claude-opus-4-1-20250805",
+        "effort": "absent",
+        "status": 404,
+        "headersMs": 217.43730000000141
+      }
+    ]
+  },
+  {
+    "key": "matrix-9",
+    "model": "claude-opus-4-1-20250805",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: OpenCode answer timed out",
+    "totalMs": 25013.5057,
+    "wire": [
+      {
+        "model": "claude-opus-4-1-20250805",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 3.101300000002084
+      },
+      {
+        "model": "claude-opus-4-1-20250805",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 3.714299999999639
+      },
+      {
+        "model": "claude-opus-4-1-20250805",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 4.131999999997788
+      },
+      {
+        "model": "claude-opus-4-1-20250805",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 3.835899999998219
+      }
+    ]
+  },
+  {
+    "key": "matrix-10",
+    "model": "gpt-6-astra",
+    "provider": "cliproxyapi",
+    "effort": "default",
+    "declared": [],
+    "basis": "probe; support unverified",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1902.5103999999992,
+    "totalMs": 2741.1048999999985,
+    "usage": {
+      "input": 752,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.030699999995704275,
+      "subscriptionMs": 1.4894999999960419,
+      "promptMs": 6.620600000002014,
+      "postPromptFirstTokenMs": 1893.9956999999995
+    },
+    "wire": [
+      {
+        "model": "gpt-6-astra",
+        "effort": "absent",
+        "status": 200,
+        "headersMs": 1454.6401000000042
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-11",
+    "model": "gpt-6-astra",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [],
+    "basis": "probe; support unverified",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1964.7969999999987,
+    "totalMs": 2865.5464999999967,
+    "usage": {
+      "input": 754,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03730000000359723,
+      "subscriptionMs": 1.403600000005099,
+      "promptMs": 7.7502000000022235,
+      "postPromptFirstTokenMs": 1955.3933000000034
+    },
+    "wire": [
+      {
+        "model": "gpt-6-astra",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1520.6108999999997
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-12",
+    "model": "claude-opus-4-6",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 2436.5737999999983,
+    "totalMs": 2775.6609000000026,
+    "usage": {
+      "input": 604,
+      "output": 22,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03670000000420259,
+      "subscriptionMs": 1.1612999999997555,
+      "promptMs": 3.7678000000014435,
+      "postPromptFirstTokenMs": 2431.270900000003
+    },
+    "wire": [
+      {
+        "model": "claude-opus-4-6",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 1760.1085999999996
+      }
+    ],
+    "text": "7 Days to Die is installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-13",
+    "model": "claude-opus-4-6",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 2095.4416999999958,
+    "totalMs": 2444.8885999999984,
+    "usage": {
+      "input": 606,
+      "output": 22,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.052100000000791624,
+      "subscriptionMs": 1.3738000000012107,
+      "promptMs": 3.481099999997241,
+      "postPromptFirstTokenMs": 2090.282100000004
+    },
+    "wire": [
+      {
+        "model": "claude-opus-4-6",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1422.0829000000012
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-14",
+    "model": "claude-opus-4-7",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 2504.542499999996,
+    "totalMs": 2989.3187000000034,
+    "usage": {
+      "input": 861,
+      "output": 28,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.016999999999825377,
+      "subscriptionMs": 1.1546999999991385,
+      "promptMs": 3.513200000001234,
+      "postPromptFirstTokenMs": 2499.719600000004
+    },
+    "wire": [
+      {
+        "model": "claude-opus-4-7",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 1957.8631999999925
+      }
+    ],
+    "text": "7 Days to Die is at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-15",
+    "model": "claude-opus-4-7",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 2142.4986000000063,
+    "totalMs": 2537.3657999999996,
+    "usage": {
+      "input": 860,
+      "output": 29,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.052400000000488944,
+      "subscriptionMs": 1.640400000003865,
+      "promptMs": 3.824900000006892,
+      "postPromptFirstTokenMs": 2136.6149000000005
+    },
+    "wire": [
+      {
+        "model": "claude-opus-4-7",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1602.701000000001
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-16",
+    "model": "claude-opus-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1687.0959000000003,
+    "totalMs": 2211.387600000002,
+    "usage": {
+      "input": 839,
+      "output": 27,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.06900000000314321,
+      "subscriptionMs": 1.6198000000003958,
+      "promptMs": 4.536399999997229,
+      "postPromptFirstTokenMs": 1680.598199999993
+    },
+    "wire": [
+      {
+        "model": "claude-opus-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 1239.4679000000033
+      }
+    ],
+    "text": "7 Days to Die is installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-17",
+    "model": "claude-opus-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1739.333500000008,
+    "totalMs": 2270.5581999999995,
+    "usage": {
+      "input": 842,
+      "output": 27,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.022199999992153607,
+      "subscriptionMs": 1.0688999999983935,
+      "promptMs": 3.5372999999963213,
+      "postPromptFirstTokenMs": 1734.5782999999938
+    },
+    "wire": [
+      {
+        "model": "claude-opus-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1286.5400999999983
+      }
+    ],
+    "text": "7 Days to Die is installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-18",
+    "model": "claude-fable-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: {\"type\":\"provider.invalid-request\",\"message\":\"\\\"thinking.type.disabled\\\" is not supported for this model. Thinking defaults to adaptive mode when not specified; use \\\"thinking.type.enabled\\\" with \\\"budget_tokens\\\" for extended thinking.\",\"status\":400}",
+    "totalMs": 873.1377000000066,
+    "wire": [
+      {
+        "model": "claude-fable-5",
+        "effort": "none",
+        "status": 400,
+        "headersMs": 215.97430000000168
+      }
+    ]
+  },
+  {
+    "key": "matrix-19",
+    "model": "claude-fable-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: OpenCode answer timed out",
+    "totalMs": 25014.941099999996,
+    "wire": [
+      {
+        "model": "claude-fable-5",
+        "effort": "low",
+        "status": 429,
+        "headersMs": 311.5320999999967
+      },
+      {
+        "model": "claude-fable-5",
+        "effort": "low",
+        "status": 429,
+        "headersMs": 4.30889999998908
+      },
+      {
+        "model": "claude-fable-5",
+        "effort": "low",
+        "status": 429,
+        "headersMs": 3.682300000000396
+      },
+      {
+        "model": "claude-fable-5",
+        "effort": "low",
+        "status": 429,
+        "headersMs": 4.366200000004028
+      }
+    ]
+  },
+  {
+    "key": "matrix-20",
+    "model": "claude-3-7-sonnet-20250219",
+    "provider": "cliproxyapi",
+    "effort": "default",
+    "declared": [],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: {\"type\":\"provider.invalid-request\",\"message\":\"model: claude-3-7-sonnet-20250219\",\"status\":404}",
+    "totalMs": 850.1601999999984,
+    "wire": [
+      {
+        "model": "claude-3-7-sonnet-20250219",
+        "effort": "absent",
+        "status": 404,
+        "headersMs": 210.5243000000046
+      }
+    ]
+  },
+  {
+    "key": "matrix-21",
+    "model": "claude-3-7-sonnet-20250219",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: OpenCode answer timed out",
+    "totalMs": 25011.438899999994,
+    "wire": [
+      {
+        "model": "claude-3-7-sonnet-20250219",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 3.635099999999511
+      },
+      {
+        "model": "claude-3-7-sonnet-20250219",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 4.5561000000016065
+      },
+      {
+        "model": "claude-3-7-sonnet-20250219",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 4.201600000000326
+      },
+      {
+        "model": "claude-3-7-sonnet-20250219",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 2.8523000000132015
+      }
+    ]
+  },
+  {
+    "key": "matrix-22",
+    "model": "claude-fable-5-1",
+    "provider": "cliproxyapi",
+    "effort": "default",
+    "declared": [],
+    "basis": "probe; support unverified",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: {\"type\":\"provider.invalid-request\",\"message\":\"Claude Code 2.1.220 does not support this model; version 2.1.251 or newer is required. Run 'claude update', or update the Claude desktop app, then try again.\",\"status\":400}",
+    "totalMs": 930.5281000000105,
+    "wire": [
+      {
+        "model": "claude-fable-5-1",
+        "effort": "absent",
+        "status": 400,
+        "headersMs": 265.41590000000724
+      }
+    ]
+  },
+  {
+    "key": "matrix-23",
+    "model": "claude-fable-5-1",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [],
+    "basis": "probe; support unverified",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: {\"type\":\"provider.invalid-request\",\"message\":\"Claude Code 2.1.220 does not support this model; version 2.1.251 or newer is required. Run 'claude update', or update the Claude desktop app, then try again.\",\"status\":400}",
+    "totalMs": 944.2618000000075,
+    "wire": [
+      {
+        "model": "claude-fable-5-1",
+        "effort": "low",
+        "status": 400,
+        "headersMs": 290.1232000000018
+      }
+    ]
+  },
+  {
+    "key": "matrix-24",
+    "model": "gpt-5.5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: {\"type\":\"provider.invalid-request\",\"message\":\"The model `gpt-5.5` does not exist or you do not have access to it.\",\"status\":404}",
+    "totalMs": 5384.4234,
+    "wire": [
+      {
+        "model": "gpt-5.5",
+        "effort": "low",
+        "status": 404,
+        "headersMs": 4740.599599999987
+      }
+    ]
+  },
+  {
+    "key": "matrix-25",
+    "model": "gpt-5.5",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: {\"type\":\"provider.invalid-request\",\"message\":\"The model `gpt-5.5` does not exist or you do not have access to it.\",\"status\":404}",
+    "totalMs": 1182.839399999997,
+    "wire": [
+      {
+        "model": "gpt-5.5",
+        "effort": "medium",
+        "status": 404,
+        "headersMs": 506.6296999999904
+      }
+    ]
+  },
+  {
+    "key": "matrix-26",
+    "model": "claude-sonnet-4-5-20250929",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1647.8912000000128,
+    "totalMs": 1983.5829000000085,
+    "usage": {
+      "input": 604,
+      "output": 22,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04970000000321306,
+      "subscriptionMs": 1.5130000000062864,
+      "promptMs": 5.091300000000047,
+      "postPromptFirstTokenMs": 1641.0945000000065
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-4-5-20250929",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 1058.4728999999934
+      }
+    ],
+    "text": "7 Days to Die is installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-27",
+    "model": "claude-sonnet-4-5-20250929",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 3407.982699999993,
+    "totalMs": 3792.9414999999863,
+    "usage": {
+      "input": 636,
+      "output": 158,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.09119999999529682,
+      "subscriptionMs": 1.4135999999998603,
+      "promptMs": 4.238199999992503,
+      "postPromptFirstTokenMs": 3401.897900000011
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-4-5-20250929",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 916.813599999994
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-28",
+    "model": "claude-sonnet-4-6",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1685.9535000000033,
+    "totalMs": 2079.5053999999946,
+    "usage": {
+      "input": 607,
+      "output": 22,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.05890000000363216,
+      "subscriptionMs": 1.4504000000015367,
+      "promptMs": 3.504400000005262,
+      "postPromptFirstTokenMs": 1680.6050999999861
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-4-6",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 1159.5843999999925
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-29",
+    "model": "claude-sonnet-4-6",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1987.809099999984,
+    "totalMs": 2503.844599999982,
+    "usage": {
+      "input": 607,
+      "output": 22,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.026199999992968515,
+      "subscriptionMs": 1.0710000000253785,
+      "promptMs": 5.6736000000091735,
+      "postPromptFirstTokenMs": 1980.8812000000034
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-4-6",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1524.4691999999923
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-30",
+    "model": "claude-opus-4-20250514",
+    "provider": "cliproxyapi",
+    "effort": "default",
+    "declared": [],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: {\"type\":\"provider.invalid-request\",\"message\":\"model: claude-opus-4-20250514\",\"status\":404}",
+    "totalMs": 859.4478999999992,
+    "wire": [
+      {
+        "model": "claude-opus-4-20250514",
+        "effort": "absent",
+        "status": 404,
+        "headersMs": 167.49319999999716
+      }
+    ]
+  },
+  {
+    "key": "matrix-31",
+    "model": "claude-opus-4-20250514",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: OpenCode answer timed out",
+    "totalMs": 25012.936000000016,
+    "wire": [
+      {
+        "model": "claude-opus-4-20250514",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 5.1639000000141095
+      },
+      {
+        "model": "claude-opus-4-20250514",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 3.20250000001397
+      },
+      {
+        "model": "claude-opus-4-20250514",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 4.636400000017602
+      },
+      {
+        "model": "claude-opus-4-20250514",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 4.542599999986123
+      }
+    ]
+  },
+  {
+    "key": "matrix-32",
+    "model": "gpt-5.6-sol",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1630.2350999999908,
+    "totalMs": 2589.64969999998,
+    "usage": {
+      "input": 753,
+      "output": 18,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.0864000000001397,
+      "subscriptionMs": 1.8115000000107102,
+      "promptMs": 4.317899999994552,
+      "postPromptFirstTokenMs": 1623.6322000000218
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-sol",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1164.132500000007
+      }
+    ],
+    "text": "7 Days to Die is at C:\\Games\\7 Days To Die"
+  },
+  {
+    "key": "matrix-33",
+    "model": "gpt-5.6-sol",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1629.2558999999892,
+    "totalMs": 2643.970499999996,
+    "usage": {
+      "input": 754,
+      "output": 19,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.07229999999981374,
+      "subscriptionMs": 1.5696999999927357,
+      "promptMs": 4.5886999999929685,
+      "postPromptFirstTokenMs": 1622.6980999999796
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-sol",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1098.8319999999949
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die"
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1066.8629000000074,
+    "totalMs": 1474.2562000000034,
+    "usage": {
+      "input": 604,
+      "output": 22,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.023699999990640208,
+      "subscriptionMs": 1.8166999999957625,
+      "promptMs": 5.642200000002049,
+      "postPromptFirstTokenMs": 1059.09169999999
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 493.8787000000011
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 2163.212599999999,
+    "totalMs": 2566.7363000000187,
+    "usage": {
+      "input": 633,
+      "output": 147,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03440000000409782,
+      "subscriptionMs": 1.4741999999969266,
+      "promptMs": 3.9794000000110827,
+      "postPromptFirstTokenMs": 2157.3978999999817
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 801.6908999999869
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-36",
+    "model": "claude-opus-4-8",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1597.4470999999903,
+    "totalMs": 2171.016399999993,
+    "usage": {
+      "input": 841,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.0326000000059139,
+      "subscriptionMs": 2.834900000016205,
+      "promptMs": 3.589899999991758,
+      "postPromptFirstTokenMs": 1590.8379000000132
+    },
+    "wire": [
+      {
+        "model": "claude-opus-4-8",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 1041.706199999986
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-37",
+    "model": "claude-opus-4-8",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1580.5964000000095,
+    "totalMs": 2060.9305000000168,
+    "usage": {
+      "input": 839,
+      "output": 15,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.028800000000046566,
+      "subscriptionMs": 1.6106000000145286,
+      "promptMs": 4.636300000012852,
+      "postPromptFirstTokenMs": 1574.161699999997
+    },
+    "wire": [
+      {
+        "model": "claude-opus-4-8",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1060.4839999999967
+      }
+    ],
+    "text": "C:\\Games\\7 Days To Die"
+  },
+  {
+    "key": "matrix-38",
+    "model": "claude-sonnet-4-20250514",
+    "provider": "cliproxyapi",
+    "effort": "default",
+    "declared": [],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: {\"type\":\"provider.invalid-request\",\"message\":\"model: claude-sonnet-4-20250514\",\"status\":404}",
+    "totalMs": 979.4200999999885,
+    "wire": [
+      {
+        "model": "claude-sonnet-4-20250514",
+        "effort": "absent",
+        "status": 404,
+        "headersMs": 179.867900000012
+      }
+    ]
+  },
+  {
+    "key": "matrix-39",
+    "model": "claude-sonnet-4-20250514",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "error": "Error: OpenCode answer timed out",
+    "totalMs": 25010.243199999997,
+    "wire": [
+      {
+        "model": "claude-sonnet-4-20250514",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 3.948499999998603
+      },
+      {
+        "model": "claude-sonnet-4-20250514",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 4.943399999989197
+      },
+      {
+        "model": "claude-sonnet-4-20250514",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 4.657999999995809
+      },
+      {
+        "model": "claude-sonnet-4-20250514",
+        "effort": "low",
+        "status": 503,
+        "headersMs": 3.340600000025006
+      }
+    ]
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1311.402700000006,
+    "totalMs": 1674.4697999999917,
+    "usage": {
+      "input": 456,
+      "output": 22,
+      "reasoning": 47,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.0704000000259839,
+      "subscriptionMs": 0.9666999999899417,
+      "promptMs": 4.7225000000034925,
+      "postPromptFirstTokenMs": 1305.3250999999873
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 915.9391999999934
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1563.699099999998,
+    "totalMs": 1941.837599999999,
+    "usage": {
+      "input": 458,
+      "output": 22,
+      "reasoning": 261,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.05919999998877756,
+      "subscriptionMs": 1.2630000000062864,
+      "promptMs": 3.190900000015972,
+      "postPromptFirstTokenMs": 1558.9277999999758
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1070.7543000000005
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-42",
+    "model": "grok-4.6",
+    "provider": "grok-sub",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1962.8996000000043,
+    "totalMs": 2363.2639999999956,
+    "usage": {
+      "input": 544,
+      "output": 0,
+      "reasoning": 68,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.014800000004470348,
+      "subscriptionMs": 1.290000000008149,
+      "promptMs": 3.903099999995902,
+      "postPromptFirstTokenMs": 1957.5435000000289
+    },
+    "wire": [
+      {
+        "model": "grok-4.6",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 604.3036999999895
+      }
+    ],
+    "text": "7 Days to Die is at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-43",
+    "model": "grok-4.6",
+    "provider": "grok-sub",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "screen",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 2747.4170999999915,
+    "totalMs": 3047.617499999993,
+    "usage": {
+      "input": 544,
+      "output": 0,
+      "reasoning": 112,
+      "cache": {
+        "read": 128,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.02509999999892898,
+      "subscriptionMs": 1.36099999997532,
+      "promptMs": 3.673899999994319,
+      "postPromptFirstTokenMs": 2742.122700000007
+    },
+    "wire": [
+      {
+        "model": "grok-4.6",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 605.6153999999806
+      }
+    ],
+    "text": "C:\\Games\\7 Days To Die"
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1690.5447,
+    "totalMs": 2411.0826,
+    "usage": {
+      "input": 753,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.21309999999994034,
+      "subscriptionMs": 1.6421000000000276,
+      "promptMs": 7.4133999999999105,
+      "postPromptFirstTokenMs": 1677.9406
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1121.4423
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1920.3898000000004,
+    "totalMs": 2655.6078,
+    "usage": {
+      "input": 752,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.07200000000011642,
+      "subscriptionMs": 1.766099999999824,
+      "promptMs": 4.966300000000047,
+      "postPromptFirstTokenMs": 1913.3527
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1400.0746
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1599.8310999999994,
+    "totalMs": 2141.2749999999996,
+    "usage": {
+      "input": 841,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.028699999999844295,
+      "subscriptionMs": 1.5217000000002372,
+      "promptMs": 4.414600000000064,
+      "postPromptFirstTokenMs": 1593.6944000000003
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 1072.6327999999994
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1212.682499999999,
+    "totalMs": 2164.3516999999993,
+    "usage": {
+      "input": 840,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.11819999999897846,
+      "subscriptionMs": 1.608299999999872,
+      "promptMs": 3.859099999999671,
+      "postPromptFirstTokenMs": 1206.7467000000015
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 646.1010999999999
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1319.0323000000008,
+    "totalMs": 1701.7126000000007,
+    "usage": {
+      "input": 606,
+      "output": 22,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.041799999999057036,
+      "subscriptionMs": 1.3487000000004628,
+      "promptMs": 5.573599999999715,
+      "postPromptFirstTokenMs": 1311.8418000000001
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 643.6550000000007
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 2444.3372000000018,
+    "totalMs": 2906.9680000000008,
+    "usage": {
+      "input": 634,
+      "output": 163,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.11460000000079162,
+      "subscriptionMs": 1.8823000000011234,
+      "promptMs": 3.982900000000882,
+      "postPromptFirstTokenMs": 2437.816499999999
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 616.6401999999998
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 3405.9971000000005,
+    "totalMs": 3765.0574000000015,
+    "usage": {
+      "input": 459,
+      "output": 22,
+      "reasoning": 80,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.08730000000286964,
+      "subscriptionMs": 2.061200000000099,
+      "promptMs": 6.010300000001735,
+      "postPromptFirstTokenMs": 3397.564000000002
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 2851.7602000000006
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "exact",
+    "firstMs": 1430.6097000000009,
+    "totalMs": 1804.9916999999987,
+    "usage": {
+      "input": 458,
+      "output": 22,
+      "reasoning": 223,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.016800000001239823,
+      "subscriptionMs": 1.3493999999991502,
+      "promptMs": 4.610199999999168,
+      "postPromptFirstTokenMs": 1424.4963000000025
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1007.6376999999993
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "semantic-evidence",
+    "firstMs": 1991.3058999999994,
+    "totalMs": 2644.722999999998,
+    "usage": {
+      "input": 854,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03930000000036671,
+      "subscriptionMs": 1.2436999999990803,
+      "promptMs": 74.95319999999992,
+      "postPromptFirstTokenMs": 1914.648799999999
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1377.6209999999992
+      }
+    ],
+    "text": "7 Days to Die is installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "semantic-evidence",
+    "firstMs": 1711.107,
+    "totalMs": 3096.0250000000015,
+    "usage": {
+      "input": 855,
+      "output": 25,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04539999999906286,
+      "subscriptionMs": 1.0777000000016415,
+      "promptMs": 61.189000000002125,
+      "postPromptFirstTokenMs": 1648.5950000000012
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1168.0486999999994
+      }
+    ],
+    "text": "The zombie survival game installed is 7 Days to Die at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "semantic-evidence",
+    "firstMs": 4996.625999999997,
+    "totalMs": 5453.538200000003,
+    "usage": {
+      "input": 1027,
+      "output": 27,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04769999999916763,
+      "subscriptionMs": 1.254000000000815,
+      "promptMs": 71.90730000000258,
+      "postPromptFirstTokenMs": 4923.211000000003
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 4457.880600000004
+      }
+    ],
+    "text": "7 Days to Die is installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "semantic-evidence",
+    "firstMs": 5016.749000000003,
+    "totalMs": 5488.4509000000035,
+    "usage": {
+      "input": 1027,
+      "output": 31,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.059900000000197906,
+      "subscriptionMs": 1.2510000000038417,
+      "promptMs": 58.473799999999756,
+      "postPromptFirstTokenMs": 4956.619599999998
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 4472.016100000001
+      }
+    ],
+    "text": "Found it: 7 Days to Die, located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "semantic-evidence",
+    "firstMs": 1362.839899999999,
+    "totalMs": 1765.3845999999976,
+    "usage": {
+      "input": 712,
+      "output": 23,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.19039999999949941,
+      "subscriptionMs": 1.356099999997241,
+      "promptMs": 58.14379999999801,
+      "postPromptFirstTokenMs": 1302.9248000000007
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 772.2025999999969
+      }
+    ],
+    "text": "You have 7 Days to Die installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "semantic-evidence",
+    "firstMs": 2562.526399999995,
+    "totalMs": 2888.929099999994,
+    "usage": {
+      "input": 740,
+      "output": 196,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.049999999995634425,
+      "subscriptionMs": 1.377200000002631,
+      "promptMs": 59.358000000000175,
+      "postPromptFirstTokenMs": 2501.5838000000003
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 426.4444000000003
+      }
+    ],
+    "text": "7 Days to Die is installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "semantic-evidence",
+    "firstMs": 1575.8997000000018,
+    "totalMs": 1932.4786000000022,
+    "usage": {
+      "input": 558,
+      "output": 28,
+      "reasoning": 125,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.06579999999667052,
+      "subscriptionMs": 1.0776000000041677,
+      "promptMs": 60.16440000000148,
+      "postPromptFirstTokenMs": 1514.271799999995
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1088.765600000006
+      }
+    ],
+    "text": "The zombie survival game is 7 Days to Die, installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "semantic-evidence",
+    "firstMs": 1732.625,
+    "totalMs": 2069.941399999996,
+    "usage": {
+      "input": 558,
+      "output": 29,
+      "reasoning": 388,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.042699999998148996,
+      "subscriptionMs": 1.272899999996298,
+      "promptMs": 63.409300000006624,
+      "postPromptFirstTokenMs": 1667.7206000000006
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1252.685599999997
+      }
+    ],
+    "text": "The zombie survival game you have installed is 7 Days to Die at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "current-unverified",
+    "firstMs": 2267.423999999999,
+    "totalMs": 2606.272799999999,
+    "usage": {
+      "input": 753,
+      "output": 15,
+      "reasoning": 25,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.28269999999611173,
+      "subscriptionMs": 36.712899999998626,
+      "promptMs": 6.790899999999965,
+      "postPromptFirstTokenMs": 2223.4180999999953
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1668.301400000004
+      }
+    ],
+    "text": "The current president of France is Emmanuel Macron."
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "current-unverified",
+    "firstMs": 3064.705399999999,
+    "totalMs": 3449.501599999996,
+    "usage": {
+      "input": 753,
+      "output": 17,
+      "reasoning": 51,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.021999999997206032,
+      "subscriptionMs": 1.4754000000029919,
+      "promptMs": 42.88499999999476,
+      "postPromptFirstTokenMs": 3020.147800000006
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 2424.3366000000024
+      }
+    ],
+    "text": "General knowledge: Emmanuel Macron is the president of France."
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "current-unverified",
+    "firstMs": 5162.203999999998,
+    "totalMs": 6259.0783999999985,
+    "usage": {
+      "input": 828,
+      "output": 55,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.07899999999790452,
+      "subscriptionMs": 1.444500000005064,
+      "promptMs": 46.762000000002445,
+      "postPromptFirstTokenMs": 5113.504199999996
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 4526.274399999995
+      }
+    ],
+    "text": "No web snippets were supplied, so I can't verify this current fact. General knowledge (possibly outdated): as of my training, Emmanuel Macron was president of France."
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "current-unverified",
+    "firstMs": 1697.260699999999,
+    "totalMs": 2642.6056000000026,
+    "usage": {
+      "input": 827,
+      "output": 53,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.0654999999969732,
+      "subscriptionMs": 36.50100000000384,
+      "promptMs": 4.696799999997893,
+      "postPromptFirstTokenMs": 1655.7665999999954
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1143.820599999999
+      }
+    ],
+    "text": "(General knowledge) I don't have verified current web data on this, but as of my last knowledge, Emmanuel Macron is the President of France—this may have changed since."
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "current-unverified",
+    "firstMs": 996.1059000000023,
+    "totalMs": 1382.4260999999897,
+    "usage": {
+      "input": 596,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.09200000000419095,
+      "subscriptionMs": 1.183099999994738,
+      "promptMs": 41.80870000000141,
+      "postPromptFirstTokenMs": 952.6707999999999
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 457.17989999999554
+      }
+    ],
+    "text": "Emmanuel Macron is the current president of France as of September 2026."
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "current-unverified",
+    "firstMs": 4516.996100000004,
+    "totalMs": 5106.958400000003,
+    "usage": {
+      "input": 630,
+      "output": 346,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.0635000000038417,
+      "subscriptionMs": 1.3059999999968568,
+      "promptMs": 42.27030000000377,
+      "postPromptFirstTokenMs": 4473.189299999998
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 495.7540000000008
+      }
+    ],
+    "text": "Emmanuel Macron has been president of France since 2017, but I cannot verify current information without web sources supplied to this search."
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "current-unverified",
+    "firstMs": 1798.052800000005,
+    "totalMs": 2135.493000000002,
+    "usage": {
+      "input": 454,
+      "output": 18,
+      "reasoning": 243,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04080000000249129,
+      "subscriptionMs": 37.061900000000605,
+      "promptMs": 6.506999999997788,
+      "postPromptFirstTokenMs": 1754.1331000000064
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1254.217300000004
+      }
+    ],
+    "text": "Model knowledge: The current president of France is Emmanuel Macron."
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "current-unverified",
+    "firstMs": 2122.2237000000023,
+    "totalMs": 2437.566200000001,
+    "usage": {
+      "input": 456,
+      "output": 18,
+      "reasoning": 367,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.049299999998766,
+      "subscriptionMs": 1.3075000000098953,
+      "promptMs": 51.3295999999973,
+      "postPromptFirstTokenMs": 2069.330999999991
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1622.5211999999883
+      }
+    ],
+    "text": "Model knowledge: The current President of France is Emmanuel Macron."
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "exact",
+    "firstMs": 1783.885500000004,
+    "totalMs": 2414.648700000005,
+    "usage": {
+      "input": 753,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03939999999420252,
+      "subscriptionMs": 38.8119999999908,
+      "promptMs": 5.737200000003213,
+      "postPromptFirstTokenMs": 1739.1141000000061
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1206.6987999999983
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "exact",
+    "firstMs": 4386.392800000001,
+    "totalMs": 5008.7402,
+    "usage": {
+      "input": 754,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.07339999999385327,
+      "subscriptionMs": 38.76030000000901,
+      "promptMs": 5.599100000006729,
+      "postPromptFirstTokenMs": 4341.36970000001
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 3826.2351999999955
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "exact",
+    "firstMs": 4522.767800000001,
+    "totalMs": 5005.144,
+    "usage": {
+      "input": 841,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.024900000003981404,
+      "subscriptionMs": 36.04099999999744,
+      "promptMs": 8.684999999997672,
+      "postPromptFirstTokenMs": 4477.814800000007
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 3976.167699999991
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "exact",
+    "firstMs": 1782.457699999999,
+    "totalMs": 2259.4026000000013,
+    "usage": {
+      "input": 838,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.02800000000570435,
+      "subscriptionMs": 39.36140000000887,
+      "promptMs": 6.886100000003353,
+      "postPromptFirstTokenMs": 1735.7896000000037
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1206.3179999999993
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "exact",
+    "firstMs": 1122.6013999999996,
+    "totalMs": 1497.1542999999947,
+    "usage": {
+      "input": 607,
+      "output": 22,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04320000000006985,
+      "subscriptionMs": 49.407199999986915,
+      "promptMs": 5.944600000002538,
+      "postPromptFirstTokenMs": 1066.8328000000038
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 490.1218999999983
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "exact",
+    "firstMs": 2297.4207999999926,
+    "totalMs": 2605.69249999999,
+    "usage": {
+      "input": 634,
+      "output": 155,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.05490000000281725,
+      "subscriptionMs": 39.2097999999969,
+      "promptMs": 7.266900000002352,
+      "postPromptFirstTokenMs": 2250.5667000000103
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 517.2291000000114
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "exact",
+    "firstMs": 1466.0070000000123,
+    "totalMs": 1775.3702000000048,
+    "usage": {
+      "input": 457,
+      "output": 22,
+      "reasoning": 74,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.019100000004982576,
+      "subscriptionMs": 35.625700000004144,
+      "promptMs": 5.441500000000815,
+      "postPromptFirstTokenMs": 1424.7492000000057
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1037.7240999999922
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "exact",
+    "firstMs": 2162.802800000005,
+    "totalMs": 2505.1205000000045,
+    "usage": {
+      "input": 457,
+      "output": 22,
+      "reasoning": 145,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.023699999990640208,
+      "subscriptionMs": 38.74580000000424,
+      "promptMs": 5.05439999999362,
+      "postPromptFirstTokenMs": 2118.8199000000022
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1614.3454000000056
+      }
+    ],
+    "text": "7 Days to Die is located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "semantic-evidence",
+    "firstMs": 2400.7042999999976,
+    "totalMs": 3117.430500000002,
+    "usage": {
+      "input": 852,
+      "output": 25,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.026100000002770685,
+      "subscriptionMs": 1.2946999999985565,
+      "promptMs": 61.66860000000452,
+      "postPromptFirstTokenMs": 2337.5559000000067
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1826.974199999997
+      }
+    ],
+    "text": "The installed zombie survival game is 7 Days to Die at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "semantic-evidence",
+    "firstMs": 1523.789300000004,
+    "totalMs": 2265.7100000000064,
+    "usage": {
+      "input": 853,
+      "output": 27,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.029399999999441206,
+      "subscriptionMs": 1.5344000000040978,
+      "promptMs": 82.95249999999942,
+      "postPromptFirstTokenMs": 1439.1132999999973
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 925.4964999999938
+      }
+    ],
+    "text": "The zombie survival game you have installed is 7 Days to Die at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "semantic-evidence",
+    "firstMs": 5333.408500000005,
+    "totalMs": 5766.637600000002,
+    "usage": {
+      "input": 1027,
+      "output": 27,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.0268999999971129,
+      "subscriptionMs": 39.21130000000994,
+      "promptMs": 23.354200000001583,
+      "postPromptFirstTokenMs": 5270.627099999998
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 4765.98030000001
+      }
+    ],
+    "text": "7 Days to Die is installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "semantic-evidence",
+    "firstMs": 5083.779599999994,
+    "totalMs": 5550.668699999995,
+    "usage": {
+      "input": 1026,
+      "output": 32,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03830000000016298,
+      "subscriptionMs": 1.4052999999985332,
+      "promptMs": 62.628799999991315,
+      "postPromptFirstTokenMs": 5019.260800000004
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 4523.963500000013
+      }
+    ],
+    "text": "Found it: 7 Days to Die, installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "semantic-evidence",
+    "firstMs": 1026.5108999999939,
+    "totalMs": 1462.3561999999802,
+    "usage": {
+      "input": 713,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.4085999999952037,
+      "subscriptionMs": 38.61209999999846,
+      "promptMs": 25.57970000000205,
+      "postPromptFirstTokenMs": 961.6492000000144
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 456.46570000000065
+      }
+    ],
+    "text": "Your zombie survival game 7 Days to Die is installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "semantic-evidence",
+    "firstMs": 1992.2387000000163,
+    "totalMs": 2326.756699999998,
+    "usage": {
+      "input": 742,
+      "output": 114,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.05520000000251457,
+      "subscriptionMs": 43.1526999999769,
+      "promptMs": 24.17970000000787,
+      "postPromptFirstTokenMs": 1924.6972999999998
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 475.40829999998095
+      }
+    ],
+    "text": "7 Days to Die is installed at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "semantic-evidence",
+    "firstMs": 2025.9526999999944,
+    "totalMs": 2351.275399999984,
+    "usage": {
+      "input": 559,
+      "output": 31,
+      "reasoning": 107,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.092899999988731,
+      "subscriptionMs": 38.84309999999823,
+      "promptMs": 23.753700000001118,
+      "postPromptFirstTokenMs": 1963.1132999999973
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1567.0521000000008
+      }
+    ],
+    "text": "The zombie survival game you have installed is 7 Days to Die, located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "semantic-evidence",
+    "firstMs": 2132.7062999999907,
+    "totalMs": 2481.833799999993,
+    "usage": {
+      "input": 557,
+      "output": 30,
+      "reasoning": 221,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.02969999998458661,
+      "subscriptionMs": 1.5994000000064261,
+      "promptMs": 57.96259999999893,
+      "postPromptFirstTokenMs": 2072.9245999999985
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1682.6320000000123
+      }
+    ],
+    "text": "The zombie survival game appears to be 7 Days to Die, located at C:\\Games\\7 Days To Die."
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "current-unverified",
+    "firstMs": 3173.12089999998,
+    "totalMs": 3482.989600000001,
+    "usage": {
+      "input": 749,
+      "output": 20,
+      "reasoning": 38,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.024600000004284084,
+      "subscriptionMs": 36.69080000001122,
+      "promptMs": 5.5816999999806285,
+      "postPromptFirstTokenMs": 3130.6823999999906
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 2549.6757999999973
+      }
+    ],
+    "text": "According to model knowledge, Emmanuel Macron is the current president of France."
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "current-unverified",
+    "firstMs": 2892.5581999999995,
+    "totalMs": 3209.488000000012,
+    "usage": {
+      "input": 751,
+      "output": 17,
+      "reasoning": 64,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.05100000000675209,
+      "subscriptionMs": 38.412799999990966,
+      "promptMs": 5.079799999977695,
+      "postPromptFirstTokenMs": 2848.666499999992
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 2343.8589999999967
+      }
+    ],
+    "text": "Model knowledge: Emmanuel Macron is the president of France."
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "current-unverified",
+    "firstMs": 1742.279600000009,
+    "totalMs": 2892.5559999999823,
+    "usage": {
+      "input": 827,
+      "output": 73,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.0714999999909196,
+      "subscriptionMs": 42.87290000001667,
+      "promptMs": 4.865799999999581,
+      "postPromptFirstTokenMs": 1694.2375000000175
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 1182.0043000000005
+      }
+    ],
+    "text": "Not found in indexed locations, and no web data was supplied for this query, so I can't verify current facts. (General knowledge: as of my training, Emmanuel Macron was president of France, but I can't confirm this is still current.)"
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "current-unverified",
+    "firstMs": 1667.7213000000047,
+    "totalMs": 2780.6073000000033,
+    "usage": {
+      "input": 827,
+      "output": 69,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.015099999989615753,
+      "subscriptionMs": 37.11449999999604,
+      "promptMs": 8.03090000001248,
+      "postPromptFirstTokenMs": 1622.4060999999929
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1096.525399999984
+      }
+    ],
+    "text": "Not found in indexed locations or supplied web snippets, so I can't confirm this as a current fact. As general model knowledge (which may be outdated), Emmanuel Macron was president of France as of my last training data."
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "current-unverified",
+    "firstMs": 1069.8379000000132,
+    "totalMs": 1395.1509000000078,
+    "usage": {
+      "input": 599,
+      "output": 14,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.023599999985890463,
+      "subscriptionMs": 39.862999999983,
+      "promptMs": 4.635099999984959,
+      "postPromptFirstTokenMs": 1025.1753999999783
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 519.8861000000034
+      }
+    ],
+    "text": "Emmanuel Macron is the current president of France."
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "current-unverified",
+    "firstMs": 3897.8710999999894,
+    "totalMs": 4384.65340000001,
+    "usage": {
+      "input": 632,
+      "output": 296,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.028200000000651926,
+      "subscriptionMs": 1.1845000000030268,
+      "promptMs": 41.65169999998761,
+      "postPromptFirstTokenMs": 3854.8573000000033
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 537.3540000000212
+      }
+    ],
+    "text": "No local match found. As of my knowledge cutoff, I cannot verify current facts for September 2026 without supplied web search results."
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "current-unverified",
+    "firstMs": 1735.0984000000171,
+    "totalMs": 2094.2982000000193,
+    "usage": {
+      "input": 456,
+      "output": 18,
+      "reasoning": 196,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.021800000016810372,
+      "subscriptionMs": 36.77019999999902,
+      "promptMs": 5.0512999999918975,
+      "postPromptFirstTokenMs": 1693.123099999997
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1208.2667000000074
+      }
+    ],
+    "text": "Model knowledge: the current President of France is Emmanuel Macron."
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "current-unverified",
+    "firstMs": 1859.9206999999878,
+    "totalMs": 2182.1622999999963,
+    "usage": {
+      "input": 456,
+      "output": 18,
+      "reasoning": 364,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.01959999999962747,
+      "subscriptionMs": 54.94639999998617,
+      "promptMs": 5.449499999987893,
+      "postPromptFirstTokenMs": 1799.3466999999946
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1367.6978999999992
+      }
+    ],
+    "text": "Model knowledge: Emmanuel Macron is the current President of France."
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 1724.7845000000002,
+    "totalMs": 2407.5802,
+    "usage": {
+      "input": 832,
+      "output": 20,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.1361999999999739,
+      "subscriptionMs": 1.1195000000000164,
+      "promptMs": 4.449800000000039,
+      "postPromptFirstTokenMs": 1716.8389000000002
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1302.0286
+      }
+    ],
+    "text": "Your projects are located in C:\\Projects, including Project0 through Project5."
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 1458.167,
+    "totalMs": 1912.8442,
+    "usage": {
+      "input": 834,
+      "output": 13,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03870000000006257,
+      "subscriptionMs": 1.231999999999971,
+      "promptMs": 4.119000000000142,
+      "postPromptFirstTokenMs": 1452.558
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1022.1574999999998
+      }
+    ],
+    "text": "Your projects are located in C:\\Projects."
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 5553.857099999999,
+    "totalMs": 6149.2117,
+    "usage": {
+      "input": 983,
+      "output": 40,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03130000000055588,
+      "subscriptionMs": 1.096400000000358,
+      "promptMs": 3.2408000000004904,
+      "postPromptFirstTokenMs": 5549.3334
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 5123.446
+      }
+    ],
+    "text": "Your main Projects folder is at C:\\Projects, with Project 0 through Project 5 as subfolders inside it."
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 964.7565999999988,
+    "totalMs": 1669.4429999999993,
+    "usage": {
+      "input": 982,
+      "output": 37,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04770000000098662,
+      "subscriptionMs": 1.097300000001269,
+      "promptMs": 3.1772000000000844,
+      "postPromptFirstTokenMs": 960.135400000001
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 530.2191000000003
+      }
+    ],
+    "text": "Your main Projects folder is at C:\\Projects, with subfolders Project0 through Project5 inside it."
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 968.5523000000012,
+    "totalMs": 1472.7552000000014,
+    "usage": {
+      "input": 687,
+      "output": 26,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.06719999999950232,
+      "subscriptionMs": 1.0395000000007713,
+      "promptMs": 2.7815000000009604,
+      "postPromptFirstTokenMs": 964.4809999999998
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 526.0509000000002
+      }
+    ],
+    "text": "Your projects are located in C:\\Projects, with individual projects in subdirectories Project0 through Project5."
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 2188.6613999999972,
+    "totalMs": 2484.1600999999973,
+    "usage": {
+      "input": 717,
+      "output": 160,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04099999999743886,
+      "subscriptionMs": 1.110899999999674,
+      "promptMs": 3.042699999998149,
+      "postPromptFirstTokenMs": 2184.325499999999
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 602.6057000000001
+      }
+    ],
+    "text": "Your projects are located in C:\\Projects, which contains Project 0 through Project 5 as subdirectories."
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 1797.213499999998,
+    "totalMs": 2191.0579,
+    "usage": {
+      "input": 536,
+      "output": 68,
+      "reasoning": 159,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.10169999999925494,
+      "subscriptionMs": 2.0346000000026834,
+      "promptMs": 4.128099999998085,
+      "postPromptFirstTokenMs": 1790.6090000000004
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1365.9055999999982
+      }
+    ],
+    "text": "Your projects are indexed at C:\\Projects, with Project 0 through Project 5 located at C:\\Projects\\Project0, C:\\Projects\\Project1, C:\\Projects\\Project2, C:\\Projects\\Project3, C:\\Projects\\Project4, and C:\\Projects\\Project5."
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 1780.3648999999969,
+    "totalMs": 2083.9918,
+    "usage": {
+      "input": 535,
+      "output": 60,
+      "reasoning": 244,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03320000000167056,
+      "subscriptionMs": 0.9386999999987893,
+      "promptMs": 3.827099999998609,
+      "postPromptFirstTokenMs": 1775.3536999999997
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1327.0851000000002
+      }
+    ],
+    "text": "Your projects are in C:\\Projects, with entries at C:\\Projects\\Project0, C:\\Projects\\Project1, C:\\Projects\\Project2, C:\\Projects\\Project3, C:\\Projects\\Project4, and C:\\Projects\\Project5."
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 2438.9964,
+    "totalMs": 3807.9920999999995,
+    "usage": {
+      "input": 833,
+      "output": 27,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.02019999999902211,
+      "subscriptionMs": 1.6068000000013853,
+      "promptMs": 37.65629999999874,
+      "postPromptFirstTokenMs": 2399.5047000000013
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1905.2626999999993
+      }
+    ],
+    "text": "Your projects are in C:\\Projects, including C:\\Projects\\Project0 through C:\\Projects\\Project5."
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 1578.636400000003,
+    "totalMs": 2424.073400000001,
+    "usage": {
+      "input": 834,
+      "output": 28,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.028900000001158332,
+      "subscriptionMs": 1.0767999999989115,
+      "promptMs": 37.39589999999953,
+      "postPromptFirstTokenMs": 1539.8970000000008
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1061.0563000000002
+      }
+    ],
+    "text": "Your projects are located in C:\\Projects, including C:\\Projects\\Project0 through C:\\Projects\\Project5."
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 1196.679799999998,
+    "totalMs": 2269.145700000001,
+    "usage": {
+      "input": 985,
+      "output": 60,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04739999999947031,
+      "subscriptionMs": 1.0829999999987194,
+      "promptMs": 44.22109999999884,
+      "postPromptFirstTokenMs": 1151.1646
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 670.8192999999992
+      }
+    ],
+    "text": "Your main Projects folder is at C:\\Projects, with individual projects (Project 0–5) in subfolders C:\\Projects\\Project0 through C:\\Projects\\Project5."
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 5045.793300000005,
+    "totalMs": 5671.747900000002,
+    "usage": {
+      "input": 988,
+      "output": 36,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04260000000067521,
+      "subscriptionMs": 1.0506999999997788,
+      "promptMs": 36.01980000000185,
+      "postPromptFirstTokenMs": 5008.504800000002
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 4526.718799999995
+      }
+    ],
+    "text": "Your main Projects folder is at C:\\Projects, containing Project0 through Project5 as subfolders."
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 1053.4239000000016,
+    "totalMs": 1500.2944999999963,
+    "usage": {
+      "input": 686,
+      "output": 21,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.06180000000313157,
+      "subscriptionMs": 1.0985000000000582,
+      "promptMs": 43.558600000003935,
+      "postPromptFirstTokenMs": 1008.3879000000015
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 509.088499999998
+      }
+    ],
+    "text": "Your projects are located in C:\\Projects, which contains Project0 through Project5."
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 2773.5382000000027,
+    "totalMs": 3093.589700000004,
+    "usage": {
+      "input": 715,
+      "output": 181,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03229999999894062,
+      "subscriptionMs": 0.8329000000012456,
+      "promptMs": 35.8411000000051,
+      "postPromptFirstTokenMs": 2736.698400000001
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 545.7440999999963
+      }
+    ],
+    "text": "Your projects are located in C:\\Projects, with subdirectories for Project0 through Project5."
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 1698.780899999998,
+    "totalMs": 2057.8043999999936,
+    "usage": {
+      "input": 537,
+      "output": 62,
+      "reasoning": 197,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.021000000000640284,
+      "subscriptionMs": 1.0452000000004773,
+      "promptMs": 36.60269999999582,
+      "postPromptFirstTokenMs": 1660.9775999999983
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1155.7319999999963
+      }
+    ],
+    "text": "Your projects are located at C:\\Projects, with entries listed as C:\\Projects\\Project0, C:\\Projects\\Project1, C:\\Projects\\Project2, C:\\Projects\\Project3, C:\\Projects\\Project4, and C:\\Projects\\Project5."
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "projects",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 4731.107900000003,
+    "totalMs": 5186.509299999998,
+    "usage": {
+      "input": 537,
+      "output": 58,
+      "reasoning": 339,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.02990000000136206,
+      "subscriptionMs": 1.3183999999964726,
+      "promptMs": 41.81779999999708,
+      "postPromptFirstTokenMs": 4687.769800000002
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 4211.698499999999
+      }
+    ],
+    "text": "Your projects are at C:\\Projects, specifically C:\\Projects\\Project0, C:\\Projects\\Project1, C:\\Projects\\Project2, C:\\Projects\\Project3, C:\\Projects\\Project4, and C:\\Projects\\Project5."
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 2199.306600000011,
+    "totalMs": 2580.864100000006,
+    "usage": {
+      "input": 747,
+      "output": 10,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.1299999999901047,
+      "subscriptionMs": 1.9012000000075204,
+      "promptMs": 42.282399999996414,
+      "postPromptFirstTokenMs": 2154.707500000004
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1631.928700000004
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 2549.104600000006,
+    "totalMs": 2941.7130000000034,
+    "usage": {
+      "input": 746,
+      "output": 24,
+      "reasoning": 46,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.0580000000045402,
+      "subscriptionMs": 1.4263999999966472,
+      "promptMs": 48.007199999992736,
+      "postPromptFirstTokenMs": 2499.319499999998
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1888.7403999999951
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 1591.6111000000092,
+    "totalMs": 1925.7274000000034,
+    "usage": {
+      "input": 824,
+      "output": 12,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.08390000001236331,
+      "subscriptionMs": 37.65460000000894,
+      "promptMs": 4.174799999993411,
+      "postPromptFirstTokenMs": 1549.4517999999953
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 1079.0629000000044
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 1220.8323999999993,
+    "totalMs": 2053.400999999998,
+    "usage": {
+      "input": 825,
+      "output": 13,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04739999999583233,
+      "subscriptionMs": 1.9103999999933876,
+      "promptMs": 43.743699999991804,
+      "postPromptFirstTokenMs": 1174.9695000000065
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 675.6417000000074
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 993.8987000000052,
+    "totalMs": 1521.2204999999958,
+    "usage": {
+      "input": 593,
+      "output": 33,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.07880000000295695,
+      "subscriptionMs": 37.30000000000291,
+      "promptMs": 5.3782999999966705,
+      "postPromptFirstTokenMs": 950.843000000008
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 455.87480000000505
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 2923.9382999999943,
+    "totalMs": 3237.1869000000006,
+    "usage": {
+      "input": 625,
+      "output": 229,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.09369999999762513,
+      "subscriptionMs": 37.074099999998,
+      "promptMs": 6.020699999993667,
+      "postPromptFirstTokenMs": 2880.5651999999973
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 511.5625
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 2189.7032999999938,
+    "totalMs": 2529.8603999999905,
+    "usage": {
+      "input": 452,
+      "output": 53,
+      "reasoning": 278,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03800000000046566,
+      "subscriptionMs": 1.2704999999987194,
+      "promptMs": 44.48189999999886,
+      "postPromptFirstTokenMs": 2143.766599999988
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1646.1788000000088
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 0,
+    "kind": "projects",
+    "firstMs": 1742.697199999995,
+    "totalMs": 2075.5991000000067,
+    "usage": {
+      "input": 451,
+      "output": 27,
+      "reasoning": 501,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.11969999999564607,
+      "subscriptionMs": 1.3326000000088243,
+      "promptMs": 42.443700000003446,
+      "postPromptFirstTokenMs": 1698.4553999999916
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1261.3586000000068
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-2",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 3846.708500000008,
+    "totalMs": 4898.2353,
+    "usage": {
+      "input": 746,
+      "output": 22,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.06539999999222346,
+      "subscriptionMs": 1.4694999999774154,
+      "promptMs": 40.21180000001914,
+      "postPromptFirstTokenMs": 3804.6453000000038
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 3302.272100000002
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-3",
+    "model": "gpt-5.6-luna",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 3030.9888999999966,
+    "totalMs": 3635.8462,
+    "usage": {
+      "input": 748,
+      "output": 31,
+      "reasoning": 76,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.04880000001867302,
+      "subscriptionMs": 37.52180000001681,
+      "promptMs": 5.789099999994505,
+      "postPromptFirstTokenMs": 2987.3310000000056
+    },
+    "wire": [
+      {
+        "model": "gpt-5.6-luna",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 2481.4066000000166
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-4",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 2146.961899999995,
+    "totalMs": 2484.1218999999983,
+    "usage": {
+      "input": 826,
+      "output": 12,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.06400000001303852,
+      "subscriptionMs": 36.36350000000675,
+      "promptMs": 5.424800000007963,
+      "postPromptFirstTokenMs": 2104.8444000000018
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 1610.5190999999759
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-5",
+    "model": "claude-sonnet-5",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none",
+      "low",
+      "medium",
+      "high",
+      "xhigh",
+      "max"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 1559.1640000000189,
+    "totalMs": 1890.1175999999978,
+    "usage": {
+      "input": 825,
+      "output": 12,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.021099999983562157,
+      "subscriptionMs": 37.70540000000619,
+      "promptMs": 8.371899999998277,
+      "postPromptFirstTokenMs": 1512.9284000000043
+    },
+    "wire": [
+      {
+        "model": "claude-sonnet-5",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 1018.3556000000099
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-34",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "none",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 1064.6676000000152,
+    "totalMs": 1509.5550999999978,
+    "usage": {
+      "input": 596,
+      "output": 25,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.03580000001238659,
+      "subscriptionMs": 36.2213000000047,
+      "promptMs": 8.256499999988591,
+      "postPromptFirstTokenMs": 1019.9893999999913
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "none",
+        "status": 200,
+        "headersMs": 514.2336999999825
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-35",
+    "model": "claude-haiku-4-5-20251001",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "none"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 2650.5316000000166,
+    "totalMs": 3148.786000000022,
+    "usage": {
+      "input": 623,
+      "output": 211,
+      "reasoning": 0,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.02609999998821877,
+      "subscriptionMs": 37.45920000001206,
+      "promptMs": 5.573600000003353,
+      "postPromptFirstTokenMs": 2607.3351999999722
+    },
+    "wire": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 487.8959999999788
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-40",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "low",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 5325.675999999978,
+    "totalMs": 5645.680299999978,
+    "usage": {
+      "input": 450,
+      "output": 45,
+      "reasoning": 386,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.05749999999534339,
+      "subscriptionMs": 40.74639999997453,
+      "promptMs": 6.09429999999702,
+      "postPromptFirstTokenMs": 5278.428400000004
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "low",
+        "status": 200,
+        "headersMs": 4702.570600000006
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  },
+  {
+    "key": "matrix-41",
+    "model": "gpt-5.3-codex-spark",
+    "provider": "cliproxyapi",
+    "effort": "medium",
+    "declared": [
+      "low",
+      "medium",
+      "high",
+      "xhigh"
+    ],
+    "basis": "static metadata",
+    "phase": "finalists",
+    "round": 1,
+    "kind": "projects",
+    "firstMs": 2338.9020999999775,
+    "totalMs": 2627.8698999999906,
+    "usage": {
+      "input": 450,
+      "output": 46,
+      "reasoning": 727,
+      "cache": {
+        "read": 0,
+        "write": 0
+      }
+    },
+    "timings": {
+      "sessionMs": 0.06630000000586733,
+      "subscriptionMs": 33.603799999982584,
+      "promptMs": 3.974099999992177,
+      "postPromptFirstTokenMs": 2300.9907999999996
+    },
+    "wire": [
+      {
+        "model": "gpt-5.3-codex-spark",
+        "effort": "medium",
+        "status": 200,
+        "headersMs": 1829.6051999999909
+      }
+    ],
+    "excluded": true,
+    "exclusionReason": "invalid Projects fixture"
+  }
+]

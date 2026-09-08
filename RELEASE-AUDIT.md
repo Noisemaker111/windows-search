@@ -361,3 +361,67 @@ release gates remain open. DO NOT RELEASE for daily use remains the decision.
 After validation, both diagnostic bars and the isolated host were stopped; probe
 ports were confirmed closed. The temporary host database and credential log were
 removed. The installed bar and shared proxy were unchanged.
+## Expanded subscription benchmark (2026-09-07)
+
+See MODEL-BENCHMARK.md and model-benchmark-results.json: 56 successful answers
+across Haiku, Spark, Luna and Grok, plus three rejected attempts. Warm median
+first text was 1347 / 2055 / 3055 / 5506ms respectively. These completion-client
+timings exclude preparation, retrieval and the UI. No billing savings are proven.
+Keep Haiku default for now; the benchmark does not authorize installing changes.
+
+Confirmed blockers: vague installed-game requests supplied zero candidates to all
+models; Haiku invented an unsupplied fallback Steam location once. With no web
+sources, Haiku asserted a current fact twice without qualification, while the
+other models labeled knowledge but still failed to explicitly withhold current
+verification. Projects responses were sometimes unnecessarily large. The next
+improvement must address evidence discovery and grounding, not just model choice.
+
+The benchmark is opt-in, uses only existing subscription routes through OpenCode,
+and never launches apps. The additional model catalog existed only in an isolated
+host. All owned sessions were removed, that host was stopped, and the installed
+bar/proxies/startup were preserved. Native release gates remain outstanding.
+
+## Model/reasoning expansion
+
+The initial model-only ranking is provisional. MODEL-REASONING-BENCHMARK.md now
+records 22 text models across 44 low-effort settings and 64 valid repeated
+finalist measurements. Synthetic evidence replaced live private index data after
+automatic review blocked that broader disclosure. A Projects fixture mismatch
+was corrected and its 16 invalid samples excluded and replaced.
+
+Reasoning changes the quality/latency tradeoff: Haiku/none was fastest but failed
+current-fact provenance; Haiku/low and Sonnet 5 settings were more cautious.
+Spark/low roughly halved reported reasoning versus medium. Advertised older and
+Fable routes exposed model, client-version, reasoning-support and retry failures.
+OpenCode's ambient workspace context can also become an ungrounded path answer.
+See the detailed report; none of this establishes current release readiness.
+# Combined source verification (2026-09-08)
+
+Arithmetic retrieval (#6), deep discovery (#7) and opt-in benchmark tooling (#4)
+were combined in an isolated integration branch. Concurrent discovery work had
+already resolved #6/#7; that branch was reused without rewriting it. Benchmark
+conflicts preserve every discovery/arithmetic/Fast test and both benchmark runners
+in strict typechecking. The model-only runtime now denies tools and removes MCP
+servers; the legacy local-index benchmark uses the current retrieval classifier.
+Prior benchmark results remain historical; this refresh made no model calls and
+transferred no real-file metadata.
+
+Source checks: 40 tests / 236 assertions, strict TypeScript and UI syntax pass.
+The synthetic deep-discovery suite passes 100/100 cases. Eleven fake-host native
+lifecycle checks and helper compilation pass. Thirteen headless Edge checks cover
+typing without submission, cancellation, stale answer rejection, selection parity,
+native visibility/focus event handling, and stale selection recovery. A new check
+reaches the actual shim: an unavailable selected ID returns 409 before any model
+execution. Browser model/launch results otherwise remain fixtures.
+
+Initial sandbox native execution was denied by Windows script policy. The first
+browser run passed its assertions but hung during restricted process cleanup;
+only its verified owned shim was terminated. Checks were rerun with the supported
+permission scope, without changing execution policy or shared services.
+
+Source readiness is separate from daily-use readiness. Physical Win+S/Alt+Space,
+focus restoration to actual apps, correct launch identity, DPI/monitors, login,
+proxy/model outage recovery and install/rollback remain unverified. Native CUA is
+disabled in this runtime; fake hosts and DOM focus events do not close those gates.
+Useful current web grounding, broader roots/content discovery and held-out real
+tasks also remain open. Do not install or release this candidate for daily use.

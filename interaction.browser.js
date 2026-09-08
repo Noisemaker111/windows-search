@@ -1,6 +1,26 @@
 import {test,expect} from '@playwright/test'
 const hit={id:'fixture',name:'Calculator',path:'shell:AppsFolder\\fixture',launch:'shell:AppsFolder\\fixture',kind:'app',match:'exact',score:100}
 const event=e=>'data: '+JSON.stringify(e)+'\n\n'
+test('shim rejects a stale selection before model execution or launch',async({request})=>{
+ const before=await (await request.get('/metrics')).json()
+ const response=await request.post('/ask',{data:{query:'synthetic-stale-budget.pdf',model:'claude-haiku-4-5-20251001',selection:'missing-synthetic-selection'}})
+ expect(response.status()).toBe(409)
+ expect((await response.json()).error).toContain('no longer available')
+ const after=await (await request.get('/metrics')).json()
+ expect(after.modelCalls).toBe(before.modelCalls)
+ expect(after.active).toBe(before.active)
+})
+
+test('deleted discovery selection reports an error and editing restores local lookup',async({page})=>{
+ let calls=0
+ await page.route('**/ask',r=>{calls++;return r.fulfill({status:409,json:{error:'This result is no longer available. Search again.'}})})
+ const q=page.getByRole('combobox',{name:'Ask this PC'})
+ await q.fill('Calculator');await expect(page.locator('#hits [role=option]')).toBeVisible();await q.press('ArrowDown');await q.press('Enter')
+ await expect(page.locator('#out')).toContainText('no longer available');await expect(page.locator('#ask')).toBeEnabled()
+ await q.fill('new synthetic query');await expect(page.locator('#answer')).toBeHidden();await expect(page.locator('#hits [role=option]')).toBeVisible()
+ expect(calls).toBe(1)
+})
+
 test('discovered duplicate files remain distinct and selectable after a vague query',async({page})=>{
  const duplicates=['2024','2025'].map(year=>({id:year,name:'budget.pdf',path:'C:\\Documents\\'+year+'\\budget.pdf',launch:'C:\\Documents\\'+year+'\\budget.pdf',kind:'file'}))
  const payloads=[]
