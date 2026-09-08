@@ -63,12 +63,15 @@ its Responses translator preserves priority. No direct paid API route or new
 credential is introduced. Activating this config in an installation requires the
 dedicated OpenCode host to reload it; this PR does not change the running install.
 
-Fast is explicitly a request. In six isolated real Responses checks (three Normal,
-three Fast), all final service-tier metadata reported default. Thus Fast delivery
-and a speed benefit are NOT established for this subscription route. The UI says
-Fast requested and does not claim that priority was served. See the release audit
-and luna-service-tier-results.json. The account/upstream capability or downgrade
-needs resolution before advertising working acceleration.
+Fast is explicitly a request. Codex subscription response metadata can report
+`default` even when Fast is active; it is not a reliable delivery indicator.
+The earlier inference that default meant a downgrade was incorrect. The local
+Codex catalog advertises Fast for Luna. Final outbound traces confirm that this
+proxy sends priority over both HTTP and WebSockets. However, our controlled
+throughput checks showed no material gain: HTTP median 58.28 Normal / 57.00 Fast
+requested tokens/sec (four each); WebSocket 57.71 / 57.12 (two each). No measured
+acceleration or billing claim is made. See RELEASE-AUDIT.md and
+luna-fast-transport-results.json for conditions and maintainer sources.
 
 [Codex Fast documentation](https://learn.chatgpt.com/docs/agent-configuration/speed)
 currently describes GPT-5.6 Fast as 1.5x model speed with 2.5x credit consumption;

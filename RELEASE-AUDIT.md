@@ -198,10 +198,9 @@ requests. Raw sanitized observations are in luna-service-tier-results.json.
 
 Observed first/completion ms: Normal 3825/4550, 5049/6069, 2204/4415; Fast requested
 1943/2909, 2969/3589, 2357/2972. These include fresh session creation and one initial
-host-start admission delay. They are NOT a valid comparison of delivered Fast
-versus Normal, because every response reported default. No 2x speed or cost claim
-is made; billed credits were not observed. Upstream/account support or downgrade
-remains unresolved. Do not advertise this route as delivering Fast acceleration.
+host-start admission delay. These short-answer timings do not establish a Fast gain. The original inference
+that default proves a downgrade was incorrect for Codex subscription traffic;
+see the transport investigation below. Billed credits were not observed.
 
 25 tests / 100 assertions, strict typecheck, UI syntax, 11 fake-host native checks
 and compilation, and nine headless Edge journeys passed. New checks cover exact
@@ -210,3 +209,48 @@ model rejection, persistence, zero auto-submission, normal/fast request identity
 other-model disabling and narrow layout. All owned sessions, relay and test host
 were cleaned up. Installed startup, bar, shared proxy and OpenCode were untouched.
 Physical desktop release gates and current-answer grounding remain outstanding.
+
+## Fast transport investigation and correction
+
+CLIProxyAPI supports priority requests. An OpenAI contributor explains that
+ChatGPT-authenticated Codex does not reliably echo the effective Fast mode in
+response.service_tier. CLIProxyAPI's maintainer confirms the same behavior:
+- https://github.com/openai/codex/issues/14204#issuecomment-4033184620
+- https://github.com/router-for-me/CLIProxyAPI/issues/4355#issuecomment-5002094130
+
+The local Codex catalog explicitly advertises Luna's priority/Fast capability.
+The maintainer also disputes a user report that Fast requires WebSockets:
+https://github.com/router-for-me/CLIProxyAPI/issues/4586#issuecomment-5096157843
+We therefore tested both transports rather than assume either report proves a fix.
+
+Twelve synthetic throughput calls used Luna low through an isolated OpenCode host,
+fresh sessions, sequential reversed-order pairs, and the same 80-line repeat-text
+prompt. Eight used the existing proxy's HTTP Responses route. Four used the same
+installed proxy executable (7.2.147) and credential in a temporary isolated
+instance with websockets enabled, reached by an HTTP-to-WebSocket relay. This is
+a transport diagnostic, not the shipped search prompt or a user-journey benchmark.
+
+| Transport | Calls per mode | Normal median tokens/sec | Fast requested median tokens/sec |
+| --- | --- | --- | --- |
+| HTTP/SSE | 4 | 58.28 | 57.00 |
+| WebSocket | 2 | 57.71 | 57.12 |
+
+HTTP median first-token times were 3180ms Normal / 2317ms Fast requested, including
+fresh session setup and one cold host admission. Completion was 17105 / 16513ms.
+WebSocket first-token medians were 2714 / 2626ms; completion 16579 / 16797ms.
+These small samples show no sustained generation gain. The HTTP first-token
+variation alone is insufficient to establish a service-tier benefit.
+
+Two additional short trace probes confirmed priority plus low reasoning in the
+final upstream HTTP body and WebSocket response.create frame. Thus the proxy
+forwards the setting correctly on both transports. All responses still echoed
+default, which is inconclusive for this subscription backend. Actual billing was
+not measured. No account entitlement failure or backend downgrade is established.
+The remaining Fast criterion is repeatable latency benefit through this route,
+not a particular response.service_tier value.
+
+Sanitized conditions, all 12 throughput rows and the two outbound trace summaries
+are in luna-fast-transport-results.json. All owned sessions and probe processes
+were cleaned up, and the temporary credential copy and raw request logs deleted.
+The shared proxy, original credentials and installed bar were unchanged. The
+existing physical interaction and web-grounding release blockers remain open.

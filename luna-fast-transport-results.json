@@ -1,0 +1,479 @@
+{
+  "conditions": {
+    "model": "gpt-5.6-luna",
+    "reasoning": "low",
+    "proxyVersion": "7.2.147",
+    "host": "isolated OpenCode v2",
+    "prompt": "Print exactly 80 lines. Each line must say: The quick brown fox jumps over the lazy dog. No numbering, headings, or other text.",
+    "system": "Controlled throughput test; follow user formatting; no tools.",
+    "sessions": "fresh per call, sequential, alternating pair order",
+    "http": "existing subscription proxy HTTP Responses",
+    "websocket": "same installed proxy binary and credential in isolated instance, websockets enabled; OpenCode HTTP stream bridged to downstream WebSocket",
+    "tps": "output tokens divided by elapsed first-to-last text delta; approximate, excludes first-token wait",
+    "limitations": "Synthetic repeated-text diagnostic, small sample, no quota billing measured; output line count varies. Not a search-bar latency benchmark."
+  },
+  "http": [
+    {
+      "choice": "gpt-5.6-luna",
+      "firstMs": 3992,
+      "totalMs": 17716,
+      "generationMs": 13384,
+      "tokensPerSecond": 58.728560292880665,
+      "timings": {
+        "sessionMs": 402.2967,
+        "subscriptionMs": 1.84699999999998,
+        "promptMs": 1036.4631,
+        "postPromptFirstTokenMs": 2548.6368
+      },
+      "usage": {
+        "input": 568,
+        "output": 786,
+        "reasoning": 15,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "default",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 78
+    },
+    {
+      "choice": "gpt-5.6-luna#fast",
+      "firstMs": 3131,
+      "totalMs": 18460,
+      "generationMs": 14986,
+      "tokensPerSecond": 52.449408041700714,
+      "timings": {
+        "sessionMs": 354.01810000000114,
+        "subscriptionMs": 1.4879000000000815,
+        "promptMs": 6.163400000001275,
+        "postPromptFirstTokenMs": 2768.7557000000015
+      },
+      "usage": {
+        "input": 565,
+        "output": 786,
+        "reasoning": 16,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "priority",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 78
+    },
+    {
+      "choice": "gpt-5.6-luna#fast",
+      "firstMs": 2369,
+      "totalMs": 16530,
+      "generationMs": 13768,
+      "tokensPerSecond": 57.0874941019576,
+      "timings": {
+        "sessionMs": 381.78340000000026,
+        "subscriptionMs": 1.2678000000014435,
+        "promptMs": 5.262900000001537,
+        "postPromptFirstTokenMs": 1980.513899999998
+      },
+      "usage": {
+        "input": 567,
+        "output": 786,
+        "reasoning": 16,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "priority",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 78
+    },
+    {
+      "choice": "gpt-5.6-luna",
+      "firstMs": 3897,
+      "totalMs": 17564,
+      "generationMs": 13275,
+      "tokensPerSecond": 59.20761544319313,
+      "timings": {
+        "sessionMs": 359.3683999999994,
+        "subscriptionMs": 1.2232000000003609,
+        "promptMs": 4.6186000000016065,
+        "postPromptFirstTokenMs": 3530.9665999999997
+      },
+      "usage": {
+        "input": 568,
+        "output": 786,
+        "reasoning": 16,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "default",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 78
+    },
+    {
+      "choice": "gpt-5.6-luna",
+      "firstMs": 2462,
+      "totalMs": 16646,
+      "generationMs": 13766,
+      "tokensPerSecond": 57.825463282937505,
+      "timings": {
+        "sessionMs": 371.4612000000052,
+        "subscriptionMs": 1.091100000005099,
+        "promptMs": 4.567200000004959,
+        "postPromptFirstTokenMs": 2084.9976000000024
+      },
+      "usage": {
+        "input": 565,
+        "output": 796,
+        "reasoning": 15,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "default",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 79
+    },
+    {
+      "choice": "gpt-5.6-luna#fast",
+      "firstMs": 2226,
+      "totalMs": 16496,
+      "generationMs": 13809,
+      "tokensPerSecond": 56.9205924712393,
+      "timings": {
+        "sessionMs": 361.8325000000041,
+        "subscriptionMs": 1.3430000000080327,
+        "promptMs": 5.0367000000114786,
+        "postPromptFirstTokenMs": 1857.7755000000034
+      },
+      "usage": {
+        "input": 567,
+        "output": 786,
+        "reasoning": 16,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "priority",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 78
+    },
+    {
+      "choice": "gpt-5.6-luna#fast",
+      "firstMs": 2265,
+      "totalMs": 16345,
+      "generationMs": 13698,
+      "tokensPerSecond": 57.37914156949734,
+      "timings": {
+        "sessionMs": 357.17459999999846,
+        "subscriptionMs": 1.2423999999882653,
+        "promptMs": 4.2854000000079395,
+        "postPromptFirstTokenMs": 1902.475999999995
+      },
+      "usage": {
+        "input": 566,
+        "output": 786,
+        "reasoning": 16,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "priority",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 78
+    },
+    {
+      "choice": "gpt-5.6-luna",
+      "firstMs": 2407,
+      "totalMs": 16527,
+      "generationMs": 13766,
+      "tokensPerSecond": 57.09634282160985,
+      "timings": {
+        "sessionMs": 348.65469999999914,
+        "subscriptionMs": 1.1336999999912223,
+        "promptMs": 3.8271000000095228,
+        "postPromptFirstTokenMs": 2052.765100000004
+      },
+      "usage": {
+        "input": 568,
+        "output": 786,
+        "reasoning": 16,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "default",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 78
+    }
+  ],
+  "websocket": [
+    {
+      "choice": "gpt-5.6-luna",
+      "firstMs": 2527,
+      "totalMs": 16662,
+      "generationMs": 13777,
+      "tokensPerSecond": 57.05311721428646,
+      "timings": {
+        "sessionMs": 354.2408,
+        "subscriptionMs": 1.8899999999999864,
+        "promptMs": 4.831099999999992,
+        "postPromptFirstTokenMs": 2163.7853999999998
+      },
+      "usage": {
+        "input": 567,
+        "output": 786,
+        "reasoning": 16,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "default",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 78
+    },
+    {
+      "choice": "gpt-5.6-luna#fast",
+      "firstMs": 2662,
+      "totalMs": 16837,
+      "generationMs": 13762,
+      "tokensPerSecond": 57.11405596318595,
+      "timings": {
+        "sessionMs": 340.0060000000012,
+        "subscriptionMs": 0.9835000000020955,
+        "promptMs": 4.296099999999569,
+        "postPromptFirstTokenMs": 2316.2348999999995
+      },
+      "usage": {
+        "input": 566,
+        "output": 786,
+        "reasoning": 16,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "priority",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 78
+    },
+    {
+      "choice": "gpt-5.6-luna#fast",
+      "firstMs": 2589,
+      "totalMs": 16756,
+      "generationMs": 13758,
+      "tokensPerSecond": 57.12913576693326,
+      "timings": {
+        "sessionMs": 349.5746999999974,
+        "subscriptionMs": 1.222299999993993,
+        "promptMs": 3.7092999999949825,
+        "postPromptFirstTokenMs": 2234.148199999996
+      },
+      "usage": {
+        "input": 567,
+        "output": 786,
+        "reasoning": 16,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "priority",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 78
+    },
+    {
+      "choice": "gpt-5.6-luna",
+      "firstMs": 2901,
+      "totalMs": 16495,
+      "generationMs": 13294,
+      "tokensPerSecond": 58.37383845840593,
+      "timings": {
+        "sessionMs": 341.0607999999993,
+        "subscriptionMs": 1.2105999999985215,
+        "promptMs": 4.0966000000044005,
+        "postPromptFirstTokenMs": 2554.446600000003
+      },
+      "usage": {
+        "input": 566,
+        "output": 776,
+        "reasoning": 15,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "observed": [
+        {
+          "model": "gpt-5.6-luna",
+          "reasoning": "low",
+          "requested": "default",
+          "status": 200,
+          "returnedTiers": [
+            "auto",
+            "default"
+          ]
+        }
+      ],
+      "lineCount": 77
+    }
+  ],
+  "outboundTrace": [
+    {
+      "file": "auth\\logs\\v1-responses-2026-09-07T201458-a2a4ddce.log",
+      "requests": [
+        {
+          "section": "=== WEBSOCKET TIMELINE ===",
+          "type": "response.create",
+          "model": "gpt-5.6-luna",
+          "tier": "priority",
+          "reasoning": "low"
+        },
+        {
+          "section": "=== API WEBSOCKET TIMELINE ===",
+          "type": "response.create",
+          "model": "gpt-5.6-luna",
+          "tier": "priority",
+          "reasoning": "low"
+        }
+      ],
+      "upstreamWebsocket": true
+    },
+    {
+      "file": "auth\\logs\\v1-responses-2026-09-07T201532-fbc2a7ec.log",
+      "requests": [
+        {
+          "section": "=== REQUEST BODY ===",
+          "model": "gpt-5.6-luna",
+          "tier": "priority",
+          "reasoning": "low"
+        },
+        {
+          "section": "=== API REQUEST 1 ===",
+          "model": "gpt-5.6-luna",
+          "tier": "priority",
+          "reasoning": "low"
+        }
+      ],
+      "upstreamWebsocket": false
+    }
+  ]
+}
