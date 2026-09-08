@@ -1,0 +1,1198 @@
+{
+  "date": "2026-09-07",
+  "scope": "Local real-file metadata benchmarks and synthetic-only subscription-model benchmarks. No real-file metadata sent to the model by these benchmark runs.",
+  "localInitial": {
+    "sampling": "25000 entries globally capped; 16 seeded samples, 8 shallow and 8 deep. Pictures starved by global cap.",
+    "rows": [
+      {
+        "root": "Desktop",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 783,
+        "limited": false,
+        "visited": 10479
+      },
+      {
+        "root": "Desktop",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 787,
+        "limited": false,
+        "visited": 10479
+      },
+      {
+        "root": "Desktop",
+        "depth": 4,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 736,
+        "limited": false,
+        "visited": 10479
+      },
+      {
+        "root": "Desktop",
+        "depth": 5,
+        "baselineRank": 0,
+        "rank": 5,
+        "contextualRank": 5,
+        "elapsedMs": 739,
+        "limited": false,
+        "visited": 10479
+      },
+      {
+        "root": "Documents",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 1381,
+        "limited": false,
+        "visited": 13805
+      },
+      {
+        "root": "Documents",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 1053,
+        "limited": false,
+        "visited": 13805
+      },
+      {
+        "root": "Documents",
+        "depth": 9,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 1087,
+        "limited": false,
+        "visited": 13805
+      },
+      {
+        "root": "Documents",
+        "depth": 9,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 1094,
+        "limited": false,
+        "visited": 13805
+      },
+      {
+        "root": "Downloads",
+        "depth": 0,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 75,
+        "limited": false,
+        "visited": 851
+      },
+      {
+        "root": "Downloads",
+        "depth": 0,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 70,
+        "limited": false,
+        "visited": 851
+      },
+      {
+        "root": "Downloads",
+        "depth": 4,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 73,
+        "limited": false,
+        "visited": 851
+      },
+      {
+        "root": "Downloads",
+        "depth": 6,
+        "baselineRank": 0,
+        "rank": 2,
+        "contextualRank": 2,
+        "elapsedMs": 72,
+        "limited": false,
+        "visited": 851
+      },
+      {
+        "root": "Projects",
+        "depth": 1,
+        "baselineRank": 0,
+        "rank": 0,
+        "contextualRank": 1,
+        "elapsedMs": 5002,
+        "limited": true,
+        "visited": 31662
+      },
+      {
+        "root": "Projects",
+        "depth": 1,
+        "baselineRank": 0,
+        "rank": 2,
+        "contextualRank": 2,
+        "elapsedMs": 2500,
+        "limited": true,
+        "visited": 32155
+      },
+      {
+        "root": "Projects",
+        "depth": 4,
+        "baselineRank": 0,
+        "rank": 18,
+        "contextualRank": 18,
+        "elapsedMs": 2501,
+        "limited": true,
+        "visited": 31790
+      },
+      {
+        "root": "Projects",
+        "depth": 3,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 2501,
+        "limited": true,
+        "visited": 31533
+      }
+    ]
+  },
+  "localBalanced": {
+    "seed": "discovery-audit-2",
+    "sampling": [
+      {
+        "root": "desktop",
+        "visited": 5000,
+        "candidates": 3718,
+        "budgetReached": true
+      },
+      {
+        "root": "documents",
+        "visited": 5000,
+        "candidates": 2948,
+        "budgetReached": true
+      },
+      {
+        "root": "downloads",
+        "visited": 851,
+        "candidates": 137,
+        "budgetReached": false
+      },
+      {
+        "root": "projects",
+        "visited": 5000,
+        "candidates": 2104,
+        "budgetReached": true
+      },
+      {
+        "root": "pictures",
+        "visited": 794,
+        "candidates": 791,
+        "budgetReached": false
+      },
+      {
+        "root": "music",
+        "visited": 1,
+        "candidates": 0,
+        "budgetReached": false
+      },
+      {
+        "root": "videos",
+        "visited": 136,
+        "candidates": 67,
+        "budgetReached": false
+      }
+    ],
+    "samples": 20,
+    "baselineFound": 0,
+    "discoveryFound": 18,
+    "withFolderClue": 18,
+    "rows": [
+      {
+        "root": "desktop",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 2,
+        "contextualRank": 2,
+        "elapsedMs": 1288,
+        "limited": false,
+        "visited": 10479
+      },
+      {
+        "root": "desktop",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 1149,
+        "limited": false,
+        "visited": 10479
+      },
+      {
+        "root": "desktop",
+        "depth": 5,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 963,
+        "limited": false,
+        "visited": 10479
+      },
+      {
+        "root": "desktop",
+        "depth": 5,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 925,
+        "limited": false,
+        "visited": 10479
+      },
+      {
+        "root": "documents",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 1746,
+        "limited": false,
+        "visited": 13805
+      },
+      {
+        "root": "documents",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 2,
+        "contextualRank": 2,
+        "elapsedMs": 1410,
+        "limited": false,
+        "visited": 13805
+      },
+      {
+        "root": "documents",
+        "depth": 7,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 1352,
+        "limited": false,
+        "visited": 13805
+      },
+      {
+        "root": "documents",
+        "depth": 7,
+        "baselineRank": 0,
+        "rank": 0,
+        "contextualRank": 0,
+        "elapsedMs": 2860,
+        "limited": false,
+        "visited": 13805
+      },
+      {
+        "root": "downloads",
+        "depth": 0,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 100,
+        "limited": false,
+        "visited": 851
+      },
+      {
+        "root": "downloads",
+        "depth": 0,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 99,
+        "limited": false,
+        "visited": 851
+      },
+      {
+        "root": "downloads",
+        "depth": 3,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 95,
+        "limited": false,
+        "visited": 851
+      },
+      {
+        "root": "downloads",
+        "depth": 4,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 99,
+        "limited": false,
+        "visited": 851
+      },
+      {
+        "root": "projects",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 2503,
+        "limited": true,
+        "visited": 24523
+      },
+      {
+        "root": "projects",
+        "depth": 1,
+        "baselineRank": 0,
+        "rank": 2,
+        "contextualRank": 2,
+        "elapsedMs": 2504,
+        "limited": true,
+        "visited": 26014
+      },
+      {
+        "root": "projects",
+        "depth": 3,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 2503,
+        "limited": true,
+        "visited": 25593
+      },
+      {
+        "root": "projects",
+        "depth": 3,
+        "baselineRank": 0,
+        "rank": 0,
+        "contextualRank": 0,
+        "elapsedMs": 5005,
+        "limited": true,
+        "visited": 24030
+      },
+      {
+        "root": "pictures",
+        "depth": 1,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 36,
+        "limited": false,
+        "visited": 794
+      },
+      {
+        "root": "pictures",
+        "depth": 1,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 38,
+        "limited": false,
+        "visited": 794
+      },
+      {
+        "root": "videos",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 11,
+        "limited": false,
+        "visited": 136
+      },
+      {
+        "root": "videos",
+        "depth": 2,
+        "baselineRank": 0,
+        "rank": 1,
+        "contextualRank": 1,
+        "elapsedMs": 16,
+        "limited": false,
+        "visited": 136
+      }
+    ]
+  },
+  "modelBefore": [
+    {
+      "case": "shallow",
+      "model": "claude-haiku-4-5-20251001",
+      "error": "Error: PC file search is unavailable. No filesystem search was performed; restart the search host and try again."
+    },
+    {
+      "case": "deep",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "I'll search for heliotrope-migration-plan.md in documents.Found: `<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md`",
+      "firstTextMs": 2789,
+      "firstSearchMs": 3605,
+      "totalMs": 5771,
+      "scanMs": [
+        9
+      ],
+      "usage": {
+        "input": 3457,
+        "output": 211,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "vague-folder",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 1,
+      "found": false,
+      "answer": "I'll search for the solar panel project presentation slides.No presentation slides for the solar panel project found in documents, downloads, or projects folders (searched 19 locations with presentation file extensions).",
+      "firstTextMs": 1580,
+      "firstSearchMs": 2640,
+      "totalMs": 4891,
+      "scanMs": [
+        10
+      ],
+      "usage": {
+        "input": 3309,
+        "output": 159,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "duplicates",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "I'll search for your quarterly budget PDFs in documents.Found two quarterly budget PDFs:\n- `<fixture>\\documents\\archive\\2024\\quarterly-budget.pdf`\n- `<fixture>\\documents\\archive\\2025\\quarterly-budget.pdf`",
+      "firstTextMs": 1371,
+      "firstSearchMs": 2319,
+      "totalMs": 4614,
+      "scanMs": [
+        8
+      ],
+      "usage": {
+        "input": 3497,
+        "output": 215,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "typo",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 1,
+      "found": false,
+      "answer": "I'll search for the heliotrop migration plan in your documents.No heliotrop migration plan found in documents (searched 14 folders to depth 6). Would you like me to search downloads or projects, or try different keywords?",
+      "firstTextMs": 1408,
+      "firstSearchMs": 2328,
+      "totalMs": 4474,
+      "scanMs": [
+        8
+      ],
+      "usage": {
+        "input": 3218,
+        "output": 145,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "missing",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "I'll search for that file in the documents folder.The file \"nonexistent-wombat-tax-form.pdf\" was not found in the documents folder (searched 14 locations to depth 6).",
+      "firstTextMs": 1689,
+      "firstSearchMs": 2709,
+      "totalMs": 5006,
+      "scanMs": [
+        7
+      ],
+      "usage": {
+        "input": 3260,
+        "output": 163,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "shallow",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "Found: <fixture>\\documents\\receipts\\train-ticket.pdf",
+      "firstTextMs": 4940,
+      "firstSearchMs": 2307,
+      "totalMs": 6005,
+      "scanMs": [
+        7
+      ],
+      "usage": {
+        "input": 2337,
+        "output": 76,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "deep",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md",
+      "firstTextMs": 5436,
+      "firstSearchMs": 2020,
+      "totalMs": 6834,
+      "scanMs": [
+        8
+      ],
+      "usage": {
+        "input": 2403,
+        "output": 96,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "vague-folder",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 2,
+      "found": true,
+      "answer": "<fixture>\\projects\\solar-panel-rollout\\meetings\\meeting-slides.pptx",
+      "firstTextMs": 6923,
+      "firstSearchMs": 4475,
+      "totalMs": 8185,
+      "scanMs": [
+        3,
+        10
+      ],
+      "usage": {
+        "input": 2570,
+        "output": 138,
+        "reasoning": 40,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "duplicates",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "<fixture>\\documents\\archive\\2024\\quarterly-budget.pdf; <fixture>\\documents\\archive\\2025\\quarterly-budget.pdf",
+      "firstTextMs": 6112,
+      "firstSearchMs": 3777,
+      "totalMs": 7836,
+      "scanMs": [
+        7
+      ],
+      "usage": {
+        "input": 2508,
+        "output": 118,
+        "reasoning": 37,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "typo",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 1,
+      "found": false,
+      "answer": "No match found in Documents (searched filenames and folders up to depth 6).",
+      "firstTextMs": 4643,
+      "firstSearchMs": 2054,
+      "totalMs": 5154,
+      "scanMs": [
+        7
+      ],
+      "usage": {
+        "input": 2223,
+        "output": 54,
+        "reasoning": 13,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "missing",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "No match found in Documents, searched to depth 6 for PDF filenames.",
+      "firstTextMs": 4891,
+      "firstSearchMs": 2783,
+      "totalMs": 5496,
+      "scanMs": [
+        5
+      ],
+      "usage": {
+        "input": 2262,
+        "output": 61,
+        "reasoning": 15,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    }
+  ],
+  "modelAfter": [
+    {
+      "case": "shallow",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "I'll search for your train ticket PDF in documents.Found your train ticket: **<fixture>\\documents\\receipts\\train-ticket.pdf**",
+      "firstTextMs": 2989,
+      "firstSearchMs": 3973,
+      "totalMs": 6096,
+      "scanMs": [
+        9
+      ],
+      "usage": {
+        "input": 3540,
+        "output": 165,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "deep",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "I'll search for the heliotrope-migration-plan.md file in your documents folder.Found it:\n`<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md`",
+      "firstTextMs": 1614,
+      "firstSearchMs": 2847,
+      "totalMs": 5185,
+      "scanMs": [
+        8
+      ],
+      "usage": {
+        "input": 3655,
+        "output": 217,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "vague-folder",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "I'll search for presentation slides related to the solar panel project.Found: `<fixture>\\projects\\solar-panel-rollout\\meetings\\meeting-slides.pptx`",
+      "firstTextMs": 1799,
+      "firstSearchMs": 2575,
+      "totalMs": 5043,
+      "scanMs": [
+        11
+      ],
+      "usage": {
+        "input": 3644,
+        "output": 180,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "duplicates",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "I'll search for your quarterly budget PDFs in documents.Here are your quarterly budget PDFs in documents:\n\n- `<fixture>\\documents\\archive\\2024\\quarterly-budget.pdf`\n- `<fixture>\\documents\\archive\\2025\\quarterly-budget.pdf`",
+      "firstTextMs": 1694,
+      "firstSearchMs": 2716,
+      "totalMs": 5323,
+      "scanMs": [
+        8
+      ],
+      "usage": {
+        "input": 3684,
+        "output": 218,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "typo",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 2,
+      "found": true,
+      "answer": "No results found for \"heliotrop migration plan\" in documents (searched 14 entries to depth 6). Trying broader search:Found: `<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md`",
+      "firstTextMs": 4108,
+      "firstSearchMs": 2519,
+      "totalMs": 7625,
+      "scanMs": [
+        8,
+        9
+      ],
+      "usage": {
+        "input": 5700,
+        "output": 295,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "missing",
+      "model": "claude-haiku-4-5-20251001",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "I'll search for that PDF file in documents.No results found. Searched documents root (14 entries, depth 6, depthLimited=1). The file **nonexistent-wombat-tax-form.pdf** does not appear to exist in the documents location.",
+      "firstTextMs": 1697,
+      "firstSearchMs": 2707,
+      "totalMs": 5126,
+      "scanMs": [
+        7
+      ],
+      "usage": {
+        "input": 3454,
+        "output": 178,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "shallow",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "<fixture>\\documents\\receipts\\train-ticket.pdf",
+      "firstTextMs": 7024,
+      "firstSearchMs": 2306,
+      "totalMs": 8089,
+      "scanMs": [
+        7
+      ],
+      "usage": {
+        "input": 2513,
+        "output": 74,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "deep",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md",
+      "firstTextMs": 4850,
+      "firstSearchMs": 2310,
+      "totalMs": 6326,
+      "scanMs": [
+        8
+      ],
+      "usage": {
+        "input": 2578,
+        "output": 96,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "vague-folder",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "<fixture>\\projects\\solar-panel-rollout\\meetings\\meeting-slides.pptx",
+      "firstTextMs": 4900,
+      "firstSearchMs": 1992,
+      "totalMs": 6119,
+      "scanMs": [
+        12
+      ],
+      "usage": {
+        "input": 2595,
+        "output": 85,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "duplicates",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 1,
+      "found": true,
+      "answer": "<fixture>\\documents\\archive\\2024\\quarterly-budget.pdf  \n<fixture>\\documents\\archive\\2025\\quarterly-budget.pdf",
+      "firstTextMs": 5106,
+      "firstSearchMs": 2378,
+      "totalMs": 6872,
+      "scanMs": [
+        7
+      ],
+      "usage": {
+        "input": 2646,
+        "output": 116,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "typo",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 2,
+      "found": true,
+      "answer": "<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md",
+      "firstTextMs": 7044,
+      "firstSearchMs": 2131,
+      "totalMs": 8408,
+      "scanMs": [
+        6,
+        9
+      ],
+      "usage": {
+        "input": 4012,
+        "output": 121,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "case": "missing",
+      "model": "gpt-5.6-luna",
+      "toolCalls": 2,
+      "found": true,
+      "answer": "No matching PDF found in `<fixture>\\documents` (searched to depth 20).",
+      "firstTextMs": 10183,
+      "firstSearchMs": 4678,
+      "totalMs": 12895,
+      "scanMs": [
+        5,
+        5
+      ],
+      "usage": {
+        "input": 3960,
+        "output": 129,
+        "reasoning": 26,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    }
+  ],
+  "coldAfter": [
+    [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "toolCalls": 1,
+        "found": true,
+        "answer": "Found it:\n\n**<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md**",
+        "totalMs": 8188,
+        "coverage": [
+          {
+            "searched": [
+              "<fixture>\\documents"
+            ],
+            "unavailable": [],
+            "visited": 23,
+            "depth": 20,
+            "depthLimited": 0,
+            "inaccessible": 0,
+            "excludedEntries": 0,
+            "limited": false,
+            "elapsedMs": 14,
+            "resultLimit": 20,
+            "notice": "visited counts filesystem entries, not searched locations. Filename and folder metadata only. Hidden folders, dependencies, build output and links are excluded. A miss does not prove absence elsewhere."
+          }
+        ],
+        "usage": {
+          "input": 3673,
+          "output": 221,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "toolCalls": 1,
+        "found": true,
+        "answer": "**Found:** `<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md`",
+        "totalMs": 7164,
+        "coverage": [
+          {
+            "searched": [
+              "<fixture>\\documents"
+            ],
+            "unavailable": [],
+            "visited": 23,
+            "depth": 20,
+            "depthLimited": 0,
+            "inaccessible": 0,
+            "excludedEntries": 0,
+            "limited": false,
+            "elapsedMs": 12,
+            "resultLimit": 20,
+            "notice": "visited counts filesystem entries, not searched locations. Filename and folder metadata only. Hidden folders, dependencies, build output and links are excluded. A miss does not prove absence elsewhere."
+          }
+        ],
+        "usage": {
+          "input": 3654,
+          "output": 215,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      }
+    ],
+    [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "toolCalls": 1,
+        "found": true,
+        "answer": "Found it: `<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md`",
+        "totalMs": 7419,
+        "coverage": [
+          {
+            "searched": [
+              "<fixture>\\documents"
+            ],
+            "unavailable": [],
+            "visited": 23,
+            "depth": 20,
+            "depthLimited": 0,
+            "inaccessible": 0,
+            "excludedEntries": 0,
+            "limited": false,
+            "elapsedMs": 12,
+            "resultLimit": 20,
+            "notice": "visited counts filesystem entries, not searched locations. Filename and folder metadata only. Hidden folders, dependencies, build output and links are excluded. A miss does not prove absence elsewhere."
+          }
+        ],
+        "usage": {
+          "input": 3656,
+          "output": 215,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      }
+    ]
+  ],
+  "browserAfter": {
+    "typingModelCalls": 0,
+    "rows": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "unknownAtStartup": true,
+        "searches": 1,
+        "pathsGrounded": true,
+        "deletedPathRemoved": true,
+        "staleSelectionStatus": 409,
+        "totalJourneyMs": 4887,
+        "done": {
+          "type": "done",
+          "model": "claude-haiku-4-5-20251001",
+          "firstTokenMs": 3970,
+          "totalMs": 4847,
+          "timings": {
+            "localSearchMs": 3.4440000000004147,
+            "retrievalMs": 0.026700000000346336,
+            "sessionMs": 3.3158000000003085,
+            "subscriptionMs": 2.308999999999287,
+            "promptMs": 48.99340000000029,
+            "postPromptFirstTokenMs": 3909.4840000000004
+          },
+          "preparedSession": true,
+          "promptBytes": 891,
+          "usage": {
+            "input": 3640,
+            "output": 205,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "**Found:** `<fixture>\\documents\\new\\after\\startup\\a\\b\\c\\d\\saffron-orbit-notes.txt`"
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "unknownAtStartup": true,
+        "searches": 2,
+        "pathsGrounded": true,
+        "deletedPathRemoved": true,
+        "staleSelectionStatus": 409,
+        "totalJourneyMs": 11532,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 9965,
+          "totalMs": 11495,
+          "timings": {
+            "localSearchMs": 9.941600000000108,
+            "retrievalMs": 0.011599999999816646,
+            "sessionMs": 785.2660999999989,
+            "subscriptionMs": 1.979300000000876,
+            "promptMs": 37.84439999999995,
+            "postPromptFirstTokenMs": 9127.878
+          },
+          "preparedSession": true,
+          "promptBytes": 890,
+          "usage": {
+            "input": 4065,
+            "output": 128,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "<fixture>\\documents\\new\\after\\startup\\a\\b\\c\\d\\cobalt-orbit-notes.txt"
+      }
+    ]
+  },
+  "browserBareFilenameAfter": {
+    "typingModelCalls": 0,
+    "rows": [
+      {
+        "model": "claude-haiku-4-5-20251001",
+        "unknownAtStartup": true,
+        "searches": 1,
+        "pathsGrounded": true,
+        "deletedPathRemoved": true,
+        "staleSelectionStatus": 409,
+        "totalJourneyMs": 6341,
+        "done": {
+          "type": "done",
+          "model": "claude-haiku-4-5-20251001",
+          "firstTokenMs": 5328,
+          "totalMs": 6289,
+          "timings": {
+            "localSearchMs": 5.002700000000004,
+            "retrievalMs": 0.1331000000000131,
+            "sessionMs": 8.2458000000006,
+            "subscriptionMs": 4.470900000000256,
+            "promptMs": 84.78870000000006,
+            "postPromptFirstTokenMs": 5223.0208
+          },
+          "preparedSession": true,
+          "promptBytes": 882,
+          "usage": {
+            "input": 3633,
+            "output": 190,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "Found it: `<fixture>\\documents\\new\\after\\startup\\a\\b\\c\\d\\saffron-orbit-notes.txt`"
+      },
+      {
+        "model": "gpt-5.6-luna",
+        "unknownAtStartup": true,
+        "searches": 1,
+        "pathsGrounded": true,
+        "deletedPathRemoved": true,
+        "staleSelectionStatus": 409,
+        "totalJourneyMs": 8676,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 7204,
+          "totalMs": 8640,
+          "timings": {
+            "localSearchMs": 7.753199999999197,
+            "retrievalMs": 0.015199999999822467,
+            "sessionMs": 886.3080000000009,
+            "subscriptionMs": 2.908499999999549,
+            "promptMs": 56.942300000000614,
+            "postPromptFirstTokenMs": 6247.844499999999
+          },
+          "preparedSession": true,
+          "promptBytes": 881,
+          "usage": {
+            "input": 2585,
+            "output": 89,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "<fixture>\\documents\\new\\after\\startup\\a\\b\\c\\d\\cobalt-orbit-notes.txt"
+      }
+    ]
+  }
+}

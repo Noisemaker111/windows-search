@@ -85,3 +85,27 @@ to 0.3ms in 12 actual headless browser journeys. Median Enter-to-visible-text wa
 These small, variable samples establish removal of setup overhead, not a stable
 model speedup. Luna stays low/Normal; no extra inference or Fast credit premium
 is needed for this improvement. See selection-latency-results.json and the audit.
+# Finding files outside the startup index
+
+Deliberate submissions can now ask OpenCode to search real filename and folder
+metadata with a read-only `search_files` tool. It can narrow roots and keywords or
+search deeper after an incomplete scan. This is not content/OCR search or a full
+disk index. Search coverage and limits are expandable below the answer. Same-name
+files remain separate; fuzzy discovery never authorizes automatic launching.
+An index miss alone no longer starts a web search. Explicit requests such as
+“search the web for …” and clearly current-information questions can retrieve web
+snippets; other general answers use model knowledge and are not live verification.
+
+The dedicated OpenCode host must load this checkout's `runtime-config`, with the
+MCP working directory resolving to this repository. The `bun` executable must be
+available to that host. Default roots are the profile's Desktop, Documents,
+Downloads, Projects, Pictures, Music and Videos. To supply explicit roots, set
+`SEARCH_PC_ROOTS` in the host environment to a JSON array of objects with unique
+lowercase `id` and absolute `path` fields. Restarting the host applies root changes.
+This candidate does not update the installed host or login startup.
+
+`bun run bench:discovery:local [seed]` benchmarks existing local files without AI
+or uploads. Ground-truth filenames stay in ignored `.cache`; the separate report
+contains ranks, depths and timings. See [discovery audit](DISCOVERY-AUDIT.md) for
+measurements, remaining blockers and the distinction between local scanner tests
+and model-driven search. Recommendation remains **do not release**.
