@@ -1,12 +1,13 @@
 import {test,expect} from 'bun:test'
-import {mkdtemp,mkdir,writeFile,rm,symlink} from 'node:fs/promises'
+import {mkdtemp,mkdir,writeFile,rm,symlink,realpath} from 'node:fs/promises'
 import {join,resolve} from 'node:path'
 import {tmpdir} from 'node:os'
 import {discoverFiles} from './discovery'
 import {search,launchIntent} from './pc'
 
 test('deep discovery, duplicate paths, folder clues, Unicode and scope limits',async()=>{
- const base=await mkdtemp(join(tmpdir(),'windows-search-discovery-'));const root=join(base,'files');await mkdir(root)
+ const temporaryRoot=await realpath(tmpdir())
+ const base=await mkdtemp(join(temporaryRoot,'windows-search-discovery-'));const root=join(base,'files');await mkdir(root)
  try{
   const paths=['shallow/receipt.pdf','archive/2024/client/final/presentations/quarterly-review.pptx','archive/2025/receipt.pdf','notes/café-旅行.txt']
   for(const p of paths){await mkdir(join(root,p,'..'),{recursive:true});await writeFile(join(root,p),'fixture')}
@@ -31,5 +32,5 @@ test('deep discovery, duplicate paths, folder clues, Unicode and scope limits',a
   expect(capped.hits).toHaveLength(20);expect(capped.coverage.matchingEntries).toBe(21);expect(capped.coverage.truncated).toBe(true)
   const scoped=await discoverFiles({terms:['common.md'],root:'test',under:'copy20'},roots)
   expect(scoped.hits).toHaveLength(1);expect(scoped.coverage.truncated).toBe(false)
- }finally{if(resolve(base).startsWith(resolve(tmpdir())+'\\windows-search-discovery-'))await rm(base,{recursive:true,force:true})}
+ }finally{if(resolve(base).startsWith(resolve(temporaryRoot)+'\\windows-search-discovery-'))await rm(base,{recursive:true,force:true})}
 })
