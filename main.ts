@@ -1,7 +1,8 @@
 import { buildIndex, search, launchIntent, launch } from "./pc"
 import { complete, models, request, prepareModel, sessionPool } from "./opencode"
 import { answerPrompt } from "./answer-prompt"
-import { relevant,wantsWeb } from "./evidence"
+import { needsWeb,isCalculation } from "./retrieval-intent"
+import { relevant } from "./evidence"
 import { join } from "node:path"
 import { mkdir,stat } from "node:fs/promises"
 const port = Number(process.env.SEARCH_SHIM_PORT || 8321)
@@ -102,9 +103,9 @@ const server = Bun.serve({
               catch(e) { launchError=String(e); send({type:"launchError",message:launchError}) }
             }
             const retrievalStart=performance.now()
-            const sources=!hits.length && wantsWeb(body.query) ? await web(body.query,signal) : []
+            const sources=needsWeb(body.query,!!hits.length) ? await web(body.query,signal) : []
             const retrievalMs=performance.now()-retrievalStart
-            const source=hits.length?"This PC · indexed locations":sources.length?"Web snippets · check sources":"No verified answer sources"
+            const source=!hits.length&&isCalculation(body.query)?"Calculation · OpenCode":hits.length?"This PC · indexed locations":sources.length?"Web snippets · check sources":"No verified answer sources"
             send({type:"context",source,sources})
             let first:number|undefined
             signal.throwIfAborted()

@@ -310,3 +310,54 @@ cleanup ownership. Physical shortcuts and the broader release gates remain open.
 After validation, all probe listeners were confirmed closed. The owned temporary
 host database and credential log were removed, clearing all diagnostic sessions.
 The installed bar, original credentials and shared proxy were unchanged.
+
+## Arithmetic retrieval delay
+
+Verified defect: submit “17 * 23” or “calculate 12.5 × 4” with no local match.
+The bar waits for Bing before admitting the model prompt, despite the expression
+requiring no web facts. In paired live tests this added 114–290ms. Some arithmetic
+queries also picked up three or four irrelevant snippets, increasing input from
+roughly 740 to roughly 1000 tokens. A web outage could make this wait reach the
+existing three-second retrieval timeout. The observed tests did not hit that cap.
+
+A conservative numeric-expression classifier now skips retrieval only for pure
+arithmetic, optionally prefixed with “what is”, “calculate”, “compute” or “how much
+is”. It does not compute an answer. Every deliberate submission still goes through
+OpenCode, with zero LLM calls while typing/preparing. Date/IP-like text, currency
+rates, current facts and mixed instructions keep existing retrieval behavior.
+Calculation answers have explicit model provenance and no web-source chips.
+
+Acceptance: valid numeric expressions perform no web retrieval, submit once to the
+same AI path, preserve correct answers, and do not classify current-fact or mixed
+text requests as calculations. The numeric fixtures passed; regression coverage
+includes dates, IP addresses, currency rates and mixed instructions. Broad natural
+language arithmetic is intentionally not classified by this narrow rule.
+
+Sixteen real headless Edge submissions (four queries × two conditions × two
+batches) exercised the actual bar, index, isolated OpenCode host and subscription
+proxy with Luna low/Normal. First batch median first text: baseline 2216ms,
+candidate 1558ms; completion 2511ms / 1823ms. Initial host admission contributed
+to both first runs. In the reversed-order repeat using the final candidate,
+first text was 1448ms / 1271ms; completion 2179ms / 1584ms. Retrieval median was
+133ms / less than 1ms. Average input tokens were 869.5 / 738.5, a 15% reduction.
+All 16 answers were correct, every submission used exactly one model call, and
+no calls occurred before Enter. No actual billing claim is made.
+
+A final live smoke verified the visible “Calculation · OpenCode” label and correct
+391 result. The network-response collector misdecoded the middle dot; DOM text
+was correct. The mislabeled collector field is omitted from the sanitized result
+artifact rather than presented as a product defect. One immediate post-restart
+probe failed readiness before any model call; both services were checked healthy
+before the accepted repeated batch. All observations and conditions are stored
+in arithmetic-latency-results.json.
+
+28 tests / 150 assertions, strict typecheck, UI syntax, 10 headless UI regressions,
+and 11 simulated native checks plus compilation passed. Local OpenCode source
+inspection also found a 100ms text batching interval; this is a possible next
+host-side improvement, not a measured installed-runtime saving. General query
+latency, useful current web grounding, physical shortcuts/focus and lifecycle
+release gates remain open. DO NOT RELEASE for daily use remains the decision.
+
+After validation, both diagnostic bars and the isolated host were stopped; probe
+ports were confirmed closed. The temporary host database and credential log were
+removed. The installed bar and shared proxy were unchanged.

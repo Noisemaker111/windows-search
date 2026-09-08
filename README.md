@@ -27,7 +27,7 @@ The candidate exports local-search, retrieval, session-creation, subscription, p
 
 `start.ps1`/`install.ps1` are the existing experimental startup mechanism, not a verified release installer. Startup uses the shared dedicated host port, profile and mutex. Restoring `startup-before.lnk` restores the saved login entry, but full rollback, window cleanup, sign-in startup and absence of owned orphan processes have not been established. Do not install or publish this candidate on the strength of package tests.
 
-Current checks: 26 package tests, 11 simulated native lifecycle checks and 10 headless interaction tests pass; typecheck and UI syntax pass. Native desktop verification remains blocked by the missing Computer Use bridge and visible-UI approval rejection. Only this repository's checks gate its code changes. Historical opencode-config failures are recorded in the audit for provenance and are not release blockers for this application.
+Current checks: 28 package tests, 11 simulated native lifecycle checks and 10 headless interaction tests pass; typecheck and UI syntax pass. Native desktop verification remains blocked by the missing Computer Use bridge and visible-UI approval rejection. Only this repository's checks gate its code changes. Historical opencode-config failures are recorded in the audit for provenance and are not release blockers for this application.
 
 Subscription proxies must already be running at their configured endpoints; startup does not execute source from opencode-config. The old config PR is superseded by this repository. The existing local installation is not migrated by extracting the source: changing its startup location requires a separately verified installation/rollback.
 
@@ -117,3 +117,12 @@ Scans now default to depth 20 and return a continuation when the traversal budge
 is exhausted. OpenCode can continue without rescanning the same prefix. This still
 searches names and paths, not file contents. The results do not establish a 100×
 advantage or release readiness.
+
+
+Pure numeric expressions (including “calculate 12.5 × 4”) skip web retrieval but
+still receive an OpenCode answer. The bar labels this “Calculation · OpenCode”.
+Dates, IP addresses, currency conversions, mixed text and current-fact questions
+do not use this shortcut. In the repeated four-pair browser comparison, median
+first text improved 1.45s → 1.27s and completion 2.18s → 1.58s, with ~15% fewer
+input tokens. These small-sample arithmetic results do not generalize to other
+queries; see arithmetic-latency-results.json for both batches and conditions.
