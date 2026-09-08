@@ -128,3 +128,41 @@ do not use this shortcut. In the repeated four-pair browser comparison, median
 first text improved 1.45s → 1.27s and completion 2.18s → 1.58s, with ~15% fewer
 input tokens. These small-sample arithmetic results do not generalize to other
 queries; see arithmetic-latency-results.json for both batches and conditions.
+## Opt-in model benchmarks
+
+The benchmark runners use a separate agent with all tools denied and no MCP
+servers, so copying the product runtime cannot enable PC discovery during a
+model-only comparison. The model matrix uses supplied synthetic evidence. The
+older `bench:models` runner still reads the local startup index and sends selected
+metadata with prompts; obtain explicit metadata-transfer permission before running
+it. Neither runner is part of CI or a daily-use release qualification.
+
+Run the opt-in subscription model benchmark from this repository with
+`$env:SEARCH_BENCHMARK='1'; bun run bench:models`. Set `SEARCH_OPENCODE_URL` and
+`SEARCH_OPENCODE_LOG` to the intended test host and its local credential log.
+The benchmark submits up to 70 real prompts (two passes, seven query categories,
+five models), disables a model after its first error, and never launches apps.
+It adds Haiku 3.5 and Spark only to its own process and writes an isolated config
+under `.cache/benchmark-runtime`; an OpenCode host must load that configuration
+at startup to test those additional models. The installed host normally permits
+only the product's existing models. Do not change the installed host to run it.
+`SEARCH_BENCH_MODELS` can restrict the comma-separated model IDs. Results and
+local paths stay in ignored `.cache` files. The runner removes its own sessions;
+stop any separately started test host after it completes. Read MODEL-BENCHMARK.md
+for the recorded run, quality failures and limitations.
+
+The expanded reasoning screen is separate: set `SEARCH_BENCHMARK=1` and run
+`bun run bench:matrix prepare`. It inventories the live subscription catalog and
+writes an isolated host configuration under `.cache/matrix-runtime`. Start a
+separate OpenCode host with that config and a separate database, then set
+`SEARCH_OPENCODE_URL` and `SEARCH_OPENCODE_LOG` for that host and run
+`bun run bench:matrix screen`. Reserve loopback port 8337 for its observing relay.
+The runner sends fixed public synthetic evidence only and observes the outgoing
+model and reasoning field without logging credentials. It does not read the PC
+index. Selected combination keys can be repeated with `SEARCH_BENCH_CELLS` and
+`bun run bench:matrix finalists`. Stop the owned test host after the run.
+
+The screen probes two low-cost settings per advertised text model; full declared
+reasoning levels remain in `model-reasoning-inventory.json`. Unbenchmarked higher
+levels are not claimed to work. Reasoning requests reaching the proxy do not
+prove how its upstream normalizes them. See MODEL-REASONING-BENCHMARK.md.
