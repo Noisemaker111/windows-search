@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "start": "bun main.ts",
-    "test": "bun test pc.test.ts reliability.test.ts latency.test.ts fast-mode.test.ts",
+    "test": "bun test pc.test.ts reliability.test.ts latency.test.ts fast-mode.test.ts retrieval-intent.test.ts",
     "typecheck": "tsc --noEmit --strict --lib esnext --target esnext --module preserve --moduleResolution bundler --types bun main.ts pc.ts opencode.ts",
     "check:ui": "node --check app.js",
     "test:ui": "playwright test",

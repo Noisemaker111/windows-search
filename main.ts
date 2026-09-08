@@ -1,6 +1,7 @@
 import { buildIndex, search, launchIntent, launch } from "./pc"
 import { complete, models, request, prepareModel, sessionPool } from "./opencode"
 import { answerPrompt } from "./answer-prompt"
+import { needsWeb, isCalculation } from "./retrieval-intent"
 import { relevant } from "./evidence"
 import { join } from "node:path"
 import { mkdir } from "node:fs/promises"
@@ -90,9 +91,9 @@ const server = Bun.serve({
               catch(e) { launchError=String(e); send({type:"launchError",message:launchError}) }
             }
             const retrievalStart=performance.now()
-            const sources=!hits.length && !/^(where|find|locate|open|play|run|launch)\b/i.test(body.query.trim()) ? await web(body.query,signal) : []
+            const sources=needsWeb(body.query,!!hits.length) ? await web(body.query,signal) : []
             const retrievalMs=performance.now()-retrievalStart
-            const source=hits.length?"This PC · indexed locations":sources.length?"Web snippets · check sources":"No verified answer sources"
+            const source=!hits.length&&isCalculation(body.query)?"Calculation · OpenCode":hits.length?"This PC · indexed locations":sources.length?"Web snippets · check sources":"No verified answer sources"
             send({type:"context",source,sources})
             let first:number|undefined
             signal.throwIfAborted()

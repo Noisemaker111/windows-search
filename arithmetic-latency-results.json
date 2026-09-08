@@ -1,0 +1,636 @@
+{
+  "conditions": {
+    "model": "gpt-5.6-luna",
+    "reasoning": "low",
+    "serviceTier": "normal",
+    "brain": "isolated OpenCode v2 using existing CLIProxyAPI subscription route",
+    "boundary": "headless Edge Enter keydown to DOM-visible text/completion, actual bar and PC index",
+    "queries": "four numeric expressions; paired baseline/candidate in reversed order; repeated batch reverses order again",
+    "baseline": "merged selection-preparation implementation; web retrieval for no-hit general queries",
+    "candidate": "same model and preparation; pure numeric expressions skip web, still submit once to OpenCode",
+    "limitations": "Small sample. Batch one includes initial prompt admission overhead. Batch two uses final date/IP guards and calculation label. Results apply to arithmetic only; no billed credits measured. The response collector misdecoded the middle-dot label; that field was omitted, and final visible label was separately verified in the DOM."
+  },
+  "batches": [
+    [
+      {
+        "candidate": false,
+        "query": "17 * 23",
+        "expected": "391",
+        "uiFirstMs": 2101,
+        "uiDoneMs": 2379,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 2098,
+          "totalMs": 2376,
+          "timings": {
+            "localSearchMs": 0.8951999999990221,
+            "retrievalMs": 205.57960000000458,
+            "sessionMs": 0.14809999999852153,
+            "subscriptionMs": 2.3876000000018394,
+            "promptMs": 553.879399999998,
+            "postPromptFirstTokenMs": 1333.7874999999985
+          },
+          "preparedSession": true,
+          "promptBytes": 406,
+          "usage": {
+            "input": 745,
+            "output": 12,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "17 × 23 = 391.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": true,
+        "query": "17 * 23",
+        "expected": "391",
+        "uiFirstMs": 2340,
+        "uiDoneMs": 2989,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 2338,
+          "totalMs": 2986,
+          "timings": {
+            "localSearchMs": 0.774199999999837,
+            "retrievalMs": 0.1205000000045402,
+            "sessionMs": 0.2793000000019674,
+            "subscriptionMs": 1.7710000000006403,
+            "promptMs": 450.84180000000197,
+            "postPromptFirstTokenMs": 1881.8844000000026
+          },
+          "preparedSession": true,
+          "promptBytes": 345,
+          "usage": {
+            "input": 733,
+            "output": 12,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "17 × 23 = 391.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": true,
+        "query": "what is (12 + 8) / 4?",
+        "expected": "5",
+        "uiFirstMs": 1748,
+        "uiDoneMs": 1953,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1745,
+          "totalMs": 1950,
+          "timings": {
+            "localSearchMs": 1.5807999999960884,
+            "retrievalMs": 0.008000000001629815,
+            "sessionMs": 0.7673999999969965,
+            "subscriptionMs": 1.413300000000163,
+            "promptMs": 6.402000000001863,
+            "postPromptFirstTokenMs": 1734.2704000000012
+          },
+          "preparedSession": true,
+          "promptBytes": 359,
+          "usage": {
+            "input": 742,
+            "output": 17,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "(12 + 8) / 4 = 5.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": false,
+        "query": "what is (12 + 8) / 4?",
+        "expected": "5",
+        "uiFirstMs": 1501,
+        "uiDoneMs": 1844,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1497,
+          "totalMs": 1841,
+          "timings": {
+            "localSearchMs": 1.6601000000009662,
+            "retrievalMs": 289.66249999999854,
+            "sessionMs": 0.04770000000280561,
+            "subscriptionMs": 1.9896000000007916,
+            "promptMs": 4.576399999998102,
+            "postPromptFirstTokenMs": 1198.212599999999
+          },
+          "preparedSession": true,
+          "promptBytes": 420,
+          "usage": {
+            "input": 753,
+            "output": 17,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "(12 + 8) / 4 = 5.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": false,
+        "query": "calculate 12.5 × 4",
+        "expected": "50",
+        "uiFirstMs": 2534,
+        "uiDoneMs": 2642,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 2532,
+          "totalMs": 2640,
+          "timings": {
+            "localSearchMs": 1.2410000000018044,
+            "retrievalMs": 141.03830000000016,
+            "sessionMs": 0.0400999999983469,
+            "subscriptionMs": 1.5345000000015716,
+            "promptMs": 22.74699999999575,
+            "postPromptFirstTokenMs": 2364.7813000000024
+          },
+          "preparedSession": true,
+          "promptBytes": 1484,
+          "usage": {
+            "input": 982,
+            "output": 16,
+            "reasoning": 18,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "12.5 × 4 = 50.",
+        "sourceCount": 3,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": true,
+        "query": "calculate 12.5 × 4",
+        "expected": "50",
+        "uiFirstMs": 1368,
+        "uiDoneMs": 1693,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1367,
+          "totalMs": 1691,
+          "timings": {
+            "localSearchMs": 1.1823000000003958,
+            "retrievalMs": 0.07450000000244472,
+            "sessionMs": 0.07670000000507571,
+            "subscriptionMs": 1.5023999999975786,
+            "promptMs": 5.662499999998545,
+            "postPromptFirstTokenMs": 1357.9038
+          },
+          "preparedSession": true,
+          "promptBytes": 357,
+          "usage": {
+            "input": 736,
+            "output": 14,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "12.5 × 4 = 50.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": true,
+        "query": "how much is 7 - 2?",
+        "expected": "5",
+        "uiFirstMs": 1159,
+        "uiDoneMs": 1447,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1157,
+          "totalMs": 1445,
+          "timings": {
+            "localSearchMs": 1.3522000000011758,
+            "retrievalMs": 0.010199999996984843,
+            "sessionMs": 0.14319999999861466,
+            "subscriptionMs": 1.5293999999994412,
+            "promptMs": 6.036099999997532,
+            "postPromptFirstTokenMs": 1147.3902000000016
+          },
+          "preparedSession": true,
+          "promptBytes": 356,
+          "usage": {
+            "input": 739,
+            "output": 12,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "7 − 2 = 5.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": false,
+        "query": "how much is 7 - 2?",
+        "expected": "5",
+        "uiFirstMs": 2330,
+        "uiDoneMs": 2909,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 2328,
+          "totalMs": 2907,
+          "timings": {
+            "localSearchMs": 1.0257999999957974,
+            "retrievalMs": 118.97649999999703,
+            "sessionMs": 0.03809999999793945,
+            "subscriptionMs": 1.281699999999546,
+            "promptMs": 21.154799999996612,
+            "postPromptFirstTokenMs": 2184.969299999997
+          },
+          "preparedSession": true,
+          "promptBytes": 1409,
+          "usage": {
+            "input": 1000,
+            "output": 12,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "7 − 2 = 5.",
+        "sourceCount": 4,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      }
+    ],
+    [
+      {
+        "candidate": true,
+        "query": "17 * 23",
+        "expected": "391",
+        "uiFirstMs": 1254,
+        "uiDoneMs": 1582,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1251,
+          "totalMs": 1579,
+          "timings": {
+            "localSearchMs": 0.8400999999976193,
+            "retrievalMs": 0.15459999999802676,
+            "sessionMs": 0.25349999999889405,
+            "subscriptionMs": 3.3408999999992375,
+            "promptMs": 6.709500000000844,
+            "postPromptFirstTokenMs": 1238.2101000000002
+          },
+          "preparedSession": true,
+          "promptBytes": 345,
+          "usage": {
+            "input": 735,
+            "output": 12,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "17 × 23 = 391.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": false,
+        "query": "17 * 23",
+        "expected": "391",
+        "uiFirstMs": 1292,
+        "uiDoneMs": 1574,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1290,
+          "totalMs": 1572,
+          "timings": {
+            "localSearchMs": 0.740300000004936,
+            "retrievalMs": 131.9547999999777,
+            "sessionMs": 0.04790000000502914,
+            "subscriptionMs": 1.3225000000093132,
+            "promptMs": 4.999700000014855,
+            "postPromptFirstTokenMs": 1150.2850000000035
+          },
+          "preparedSession": true,
+          "promptBytes": 406,
+          "usage": {
+            "input": 742,
+            "output": 12,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "17 × 23 = 391.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": false,
+        "query": "what is (12 + 8) / 4?",
+        "expected": "5",
+        "uiFirstMs": 1436,
+        "uiDoneMs": 2292,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1434,
+          "totalMs": 2290,
+          "timings": {
+            "localSearchMs": 1.0738999999884982,
+            "retrievalMs": 192.82360000000335,
+            "sessionMs": 0.035899999988032505,
+            "subscriptionMs": 1.487200000003213,
+            "promptMs": 4.075199999992037,
+            "postPromptFirstTokenMs": 1233.9545999999973
+          },
+          "preparedSession": true,
+          "promptBytes": 420,
+          "usage": {
+            "input": 753,
+            "output": 17,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "(12 + 8) / 4 = 5.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": true,
+        "query": "what is (12 + 8) / 4?",
+        "expected": "5",
+        "uiFirstMs": 1320,
+        "uiDoneMs": 1746,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1318,
+          "totalMs": 1743,
+          "timings": {
+            "localSearchMs": 1.782100000000355,
+            "retrievalMs": 0.015799999997398118,
+            "sessionMs": 1.1409999999996217,
+            "subscriptionMs": 1.4393999999992957,
+            "promptMs": 6.514800000000832,
+            "postPromptFirstTokenMs": 1305.8774000000012
+          },
+          "preparedSession": true,
+          "promptBytes": 359,
+          "usage": {
+            "input": 742,
+            "output": 17,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "(12 + 8) / 4 = 5.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": true,
+        "query": "calculate 12.5 × 4",
+        "expected": "50",
+        "uiFirstMs": 1224,
+        "uiDoneMs": 1505,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1220,
+          "totalMs": 1502,
+          "timings": {
+            "localSearchMs": 1.3140999999995984,
+            "retrievalMs": 0.10080000000016298,
+            "sessionMs": 0.13190000000031432,
+            "subscriptionMs": 1.489400000002206,
+            "promptMs": 7.30370000000039,
+            "postPromptFirstTokenMs": 1209.7259000000013
+          },
+          "preparedSession": true,
+          "promptBytes": 357,
+          "usage": {
+            "input": 739,
+            "output": 14,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "12.5 × 4 = 50.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": false,
+        "query": "calculate 12.5 × 4",
+        "expected": "50",
+        "uiFirstMs": 2088,
+        "uiDoneMs": 2265,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 2086,
+          "totalMs": 2263,
+          "timings": {
+            "localSearchMs": 1.0292999999946915,
+            "retrievalMs": 114.36060000001453,
+            "sessionMs": 0.020900000003166497,
+            "subscriptionMs": 1.2195999999821652,
+            "promptMs": 224.078600000008,
+            "postPromptFirstTokenMs": 1745.364900000015
+          },
+          "preparedSession": true,
+          "promptBytes": 1484,
+          "usage": {
+            "input": 982,
+            "output": 14,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "12.5 × 4 = 50.",
+        "sourceCount": 3,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": false,
+        "query": "how much is 7 - 2?",
+        "expected": "5",
+        "uiFirstMs": 1460,
+        "uiDoneMs": 2092,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1458,
+          "totalMs": 2089,
+          "timings": {
+            "localSearchMs": 1.1900000000023283,
+            "retrievalMs": 134.2602000000188,
+            "sessionMs": 0.035700000007636845,
+            "subscriptionMs": 1.2393000000156462,
+            "promptMs": 19.431600000010803,
+            "postPromptFirstTokenMs": 1301.4444000000076
+          },
+          "preparedSession": true,
+          "promptBytes": 1409,
+          "usage": {
+            "input": 1001,
+            "output": 12,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "7 - 2 = 5.",
+        "sourceCount": 4,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      },
+      {
+        "candidate": true,
+        "query": "how much is 7 - 2?",
+        "expected": "5",
+        "uiFirstMs": 1287,
+        "uiDoneMs": 1586,
+        "done": {
+          "type": "done",
+          "model": "gpt-5.6-luna",
+          "firstTokenMs": 1285,
+          "totalMs": 1584,
+          "timings": {
+            "localSearchMs": 1.298399999999674,
+            "retrievalMs": 0.011299999998300336,
+            "sessionMs": 0.13790000000153668,
+            "subscriptionMs": 1.5723999999972875,
+            "promptMs": 4.6886000000013155,
+            "postPromptFirstTokenMs": 1277.066600000002
+          },
+          "preparedSession": true,
+          "promptBytes": 356,
+          "usage": {
+            "input": 738,
+            "output": 12,
+            "reasoning": 0,
+            "cache": {
+              "read": 0,
+              "write": 0
+            }
+          }
+        },
+        "answer": "7 − 2 = 5.",
+        "sourceCount": 0,
+        "callsBeforeSubmit": 0,
+        "callsForSubmission": 1
+      }
+    ]
+  ],
+  "finalLabelSmoke": [
+    {
+      "candidate": true,
+      "query": "17 * 23",
+      "expected": "391",
+      "uiFirstMs": 1511,
+      "uiDoneMs": 1804,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 1509,
+        "totalMs": 1801,
+        "timings": {
+          "localSearchMs": 0.8159999999916181,
+          "retrievalMs": 0.010899999993853271,
+          "sessionMs": 0.1463999999978114,
+          "subscriptionMs": 4.94890000000305,
+          "promptMs": 6.602499999993597,
+          "postPromptFirstTokenMs": 1495.9130999999907
+        },
+        "preparedSession": true,
+        "promptBytes": 345,
+        "usage": {
+          "input": 735,
+          "output": 12,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "17 × 23 = 391.",
+      "visibleContexts": [
+        "Calculation · OpenCode"
+      ],
+      "sourceCount": 0,
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    }
+  ]
+}
