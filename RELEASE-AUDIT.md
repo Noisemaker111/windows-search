@@ -1,5 +1,8 @@
 # Standalone repository status
 
+Latest evidence: [real-file AI benchmark](REAL-AI-BENCHMARK.md). Real model tests
+now reproduce an invented-path blocker; the release recommendation remains no.
+
 This audit was performed before extraction from opencode-config. The application
 now lives in Noisemaker111/windows-search, with its own package and Windows CI.
 All references below to config PR #3, config tests, desktop-inert rules and old

@@ -40,8 +40,8 @@ test('PC search readiness waits for catalog creation and refuses outages without
  await expect(ensurePcSearch(async()=>{throw Error('must not run')},abort.signal)).rejects.toThrow()
 })
 
-test('discovery uses actual matching tool events, ignores other sessions and malformed results',async()=>{
- let stream!:ReadableStreamDefaultController<Uint8Array>;const results:unknown[]=[];let searching=0
+test('discovery ignores foreign events and narration during overlapping tools; failed tools release the answer',async()=>{
+ let stream!:ReadableStreamDefaultController<Uint8Array>;const results:unknown[]=[];let searching=0;const shown:string[]=[]
  const call=async(path:string)=>{
   if(path.startsWith('/api/mcp?'))return Response.json({data:[{name:'pc',status:{status:'connected'}}]})
   if(path==='/api/session')return Response.json({data:{id:'owned'}})
@@ -51,13 +51,18 @@ test('discovery uses actual matching tool events, ignores other sessions and mal
    ['session.tool.input.started',{id:'unrelated',name:'other_tool'}],
    ['session.tool.success',{id:'unrelated',content:[{type:'text',text:'{"hits":["wrong"]}'}]}],
    ['session.tool.input.started',{id:'real',name:'pc_search_files'}],
+   ['session.tool.input.started',{id:'parallel',name:'pc_search_files'}],
+   ['session.text.delta',{delta:' to docs in your downloads folder.'}],
    ['session.tool.success',{id:'real',content:[{type:'text',text:'invalid'},{type:'text',text:'{"hits":[],"coverage":{"limited":true}}'}]}],
+   ['session.text.delta',{delta:'still searching'}],
+   ['session.tool.failed',{id:'parallel'}],
    ['session.text.delta',{delta:'No match in searched folders.'}],['session.execution.succeeded',{}]
   ] as Array<[string,Record<string,unknown>]>)stream.enqueue(new TextEncoder().encode('data: '+JSON.stringify({type,data:{sessionID:'owned',...data}})+'\n\n'))
   return Response.json({})
  }
- await createCompleter(call)('claude-haiku-4-5-20251001','find file',()=>{},AbortSignal.timeout(1000),v=>{results.push(v)},()=>{searching++})
- expect(searching).toBe(1);expect(results).toEqual([{hits:[],coverage:{limited:true}}])
+ const result=await createCompleter(call)('claude-haiku-4-5-20251001','find file',d=>shown.push(d),AbortSignal.timeout(1000),v=>{results.push(v)},()=>{searching++})
+ expect(result.text).toBe('No match in searched folders.');expect(shown).toEqual(['No match in searched folders.'])
+ expect(searching).toBe(2);expect(results).toEqual([{hits:[],coverage:{limited:true}}])
 })
 for(const mode of ['success','failure','disconnect','timeout','cancel'] as const)test('OpenCode '+mode+' cleans up only its own incomplete execution',async()=>{
  const paths:string[]=[];const outer=new AbortController();let stream:ReadableStreamDefaultController<Uint8Array>

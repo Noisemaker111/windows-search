@@ -5,14 +5,15 @@
   "scripts": {
     "start": "bun main.ts",
     "test": "bun test pc.test.ts reliability.test.ts latency.test.ts fast-mode.test.ts discovery.test.ts retrieval-intent.test.ts benchmark-fixtures.test.ts",
-    "typecheck": "tsc --noEmit --strict --lib esnext --target esnext --module preserve --moduleResolution bundler --types bun main.ts pc.ts opencode.ts discovery.ts pc-search-tool.ts bench-local-discovery.ts discovery-sessions.ts bench-deep-discovery.ts benchmark-models.ts benchmark-matrix.ts",
+    "typecheck": "tsc --noEmit --strict --lib esnext --target esnext --module preserve --moduleResolution bundler --types bun main.ts pc.ts opencode.ts discovery.ts pc-search-tool.ts bench-local-discovery.ts discovery-sessions.ts bench-deep-discovery.ts benchmark-models.ts benchmark-matrix.ts bench-real-ai.ts",
     "check:ui": "node --check app.js",
     "test:ui": "playwright test",
     "test:native": "powershell.exe -NoProfile -NonInteractive -File ./native.test.ps1",
     "bench:discovery:local": "bun bench-local-discovery.ts",
     "bench:discovery:deep": "bun bench-deep-discovery.ts",
     "bench:models": "bun benchmark-models.ts",
-    "bench:matrix": "bun benchmark-matrix.ts"
+    "bench:matrix": "bun benchmark-matrix.ts",
+    "bench:discovery:ai": "bun bench-real-ai.ts"
   },
   "devDependencies": {
     "@playwright/test": "^1.63.0",

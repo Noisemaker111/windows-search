@@ -64,6 +64,7 @@ return async function complete(modelID: string, text: string, onDelta: (text:str
   const timer=setTimeout(()=>events.abort(new Error("OpenCode answer timed out")),timeoutMs)
   const combined = AbortSignal.any([events.signal,signal])
   const discoveryTools=new Set<string>()
+  const activeDiscoveryTools=new Set<string>()
   let pendingCursor:string|undefined,discoveredHits=false,investigationRepairs=0
   let full = "", succeeded=false
   let usage:Tokens|undefined
@@ -95,8 +96,10 @@ return async function complete(modelID: string, text: string, onDelta: (text:str
         if (!line.startsWith("data:")) continue
         const event = JSON.parse(line.slice(5))
         if (event.data?.sessionID !== session) continue
-        if(event.type==="session.tool.input.started"&&/(?:^|[_.])(?:search_files|continue_file_search)$/.test(event.data.name)){discoveryTools.add(event.data.id);full='';timings.postPromptFirstTokenMs=0;onSearch?.(event.data.name)}
+        if(event.type==="session.tool.input.started"&&/(?:^|[_.])(?:search_files|continue_file_search)$/.test(event.data.name)){discoveryTools.add(event.data.id);activeDiscoveryTools.add(event.data.id);full='';timings.postPromptFirstTokenMs=0;onSearch?.(event.data.name)}
+        if(event.type==='session.tool.failed')activeDiscoveryTools.delete(event.data.id)
         if(event.type==="session.tool.success"&&discoveryTools.has(event.data.id)){
+          activeDiscoveryTools.delete(event.data.id)
           for(const part of event.data.content||[])if(part.type==='text'){let result;try{result=JSON.parse(part.text)}catch{continue}
             if(Array.isArray(result?.hits)&&result.coverage){discoveredHits ||= result.hits.length>0;pendingCursor=typeof result.nextCursor==='string'?result.nextCursor:undefined}
             await onDiscovery?.(result)}
@@ -105,7 +108,8 @@ return async function complete(modelID: string, text: string, onDelta: (text:str
           const t=event.data.tokens as Tokens
           usage={input:(usage?.input||0)+t.input,output:(usage?.output||0)+t.output,reasoning:(usage?.reasoning||0)+t.reasoning,cache:{read:(usage?.cache.read||0)+t.cache.read,write:(usage?.cache.write||0)+t.cache.write}}
         }
-        if (event.type==="session.text.delta") { if(!full)timings.postPromptFirstTokenMs=performance.now()-admitted; full += event.data.delta; if(!pendingCursor||discoveredHits)onDelta(event.data.delta) }
+        // A model may finish its narration after announcing a tool. It is not an answer.
+        if (event.type==="session.text.delta"&&!activeDiscoveryTools.size) { if(!full)timings.postPromptFirstTokenMs=performance.now()-admitted; full += event.data.delta; if(!pendingCursor||discoveredHits)onDelta(event.data.delta) }
         if (event.type==="session.execution.failed") throw new Error(JSON.stringify(event.data.error))
         if (event.type==="session.execution.succeeded") {
           if(pendingCursor&&!discoveredHits){

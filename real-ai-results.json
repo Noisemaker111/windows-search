@@ -1,0 +1,1040 @@
+{
+  "conditions": "24 sequential real-file metadata queries; 12 previously sampled targets, 3 clue types; Haiku and Luna low Normal, alternating order; fresh sessions, same isolated warm host, no prepared pool, production scan budget 50000/2500ms; no file contents; path presence is mechanical, not a semantic quality score. Parent clues may legitimately match several files. No Windows UI comparison or actual account charges.",
+  "rows": [
+    {
+      "sample": 1,
+      "root": "desktop",
+      "depth": 2,
+      "kind": "exact",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 8009,
+      "firstAnswerMs": 10034,
+      "totalMs": 11330,
+      "scanMs": 1682,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 3067.2940000000003,
+        "subscriptionMs": 3.878700000000208,
+        "promptMs": 133.04340000000002,
+        "postPromptFirstTokenMs": 6822.920499999999
+      },
+      "usage": {
+        "input": 4104,
+        "output": 198,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 186,
+      "answerPathsFromEvidence": 2,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 1,
+      "root": "desktop",
+      "depth": 2,
+      "kind": "exact",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 4934,
+      "firstAnswerMs": 7645,
+      "totalMs": 8985,
+      "scanMs": 1102,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 966.5627000000004,
+        "subscriptionMs": 3.2440000000005966,
+        "promptMs": 102.26519999999982,
+        "postPromptFirstTokenMs": 6571.305199999999
+      },
+      "usage": {
+        "input": 2904,
+        "output": 79,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 123,
+      "answerPathsFromEvidence": 2,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 4,
+      "root": "desktop",
+      "depth": 5,
+      "kind": "partial",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 5934,
+      "firstAnswerMs": 11933,
+      "totalMs": 14870,
+      "scanMs": 1413,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 905.9919999999984,
+        "subscriptionMs": 2.4143000000003667,
+        "promptMs": 51.35770000000048,
+        "postPromptFirstTokenMs": 10972.280700000003
+      },
+      "usage": {
+        "input": 4188,
+        "output": 141,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 340,
+      "answerPathsFromEvidence": 4,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 4,
+      "root": "desktop",
+      "depth": 5,
+      "kind": "partial",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": true,
+      "targetPathInAnswer": false,
+      "firstTargetMs": 3873,
+      "firstAnswerMs": 5411,
+      "totalMs": 6815,
+      "scanMs": 1062,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 614.9544999999998,
+        "subscriptionMs": 2.0011999999987893,
+        "promptMs": 40.54099999999744,
+        "postPromptFirstTokenMs": 4752.8341999999975
+      },
+      "usage": {
+        "input": 5510,
+        "output": 179,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 317,
+      "answerPathsFromEvidence": 0,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 6,
+      "root": "documents",
+      "depth": 2,
+      "kind": "parent-clue",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 4535,
+      "firstAnswerMs": 6058,
+      "totalMs": 7002,
+      "scanMs": 1244,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 816.0541000000012,
+        "subscriptionMs": 2.352200000001176,
+        "promptMs": 33.896600000000035,
+        "postPromptFirstTokenMs": 5205.093399999998
+      },
+      "usage": {
+        "input": 4049,
+        "output": 204,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 163,
+      "answerPathsFromEvidence": 1,
+      "review": {
+        "backtickPathsChecked": 1,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 6,
+      "root": "documents",
+      "depth": 2,
+      "kind": "parent-clue",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 6056,
+      "firstAnswerMs": 8845,
+      "totalMs": 9870,
+      "scanMs": 1260,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 892.8506000000052,
+        "subscriptionMs": 1.8100999999951455,
+        "promptMs": 40.198800000005576,
+        "postPromptFirstTokenMs": 7909.782399999996
+      },
+      "usage": {
+        "input": 2839,
+        "output": 63,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 66,
+      "answerPathsFromEvidence": 1,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 8,
+      "root": "documents",
+      "depth": 7,
+      "kind": "exact",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": false,
+      "targetPathInAnswer": false,
+      "firstTargetMs": null,
+      "firstAnswerMs": 10708,
+      "totalMs": 24645,
+      "scanMs": 1788,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": true,
+      "timings": {
+        "sessionMs": 1059.3381000000008,
+        "subscriptionMs": 2.32039999999688,
+        "promptMs": 43.7899000000034,
+        "postPromptFirstTokenMs": 9601.476199999997
+      },
+      "usage": {
+        "input": 5087,
+        "output": 830,
+        "reasoning": 99,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 1907,
+      "answerPathsFromEvidence": 20,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 8,
+      "root": "documents",
+      "depth": 7,
+      "kind": "exact",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": false,
+      "targetPathInAnswer": false,
+      "firstTargetMs": null,
+      "firstAnswerMs": 6370,
+      "totalMs": 14444,
+      "scanMs": 1195,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": true,
+      "timings": {
+        "sessionMs": 735.3421000000089,
+        "subscriptionMs": 2.900899999993271,
+        "promptMs": 51.15250000001106,
+        "postPromptFirstTokenMs": 5579.857099999994
+      },
+      "usage": {
+        "input": 6453,
+        "output": 1119,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 2076,
+      "answerPathsFromEvidence": 20,
+      "review": {
+        "backtickPathsChecked": 20,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 9,
+      "root": "downloads",
+      "depth": 0,
+      "kind": "partial",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 3352,
+      "firstAnswerMs": 5537,
+      "totalMs": 6367,
+      "scanMs": 131,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 876.6389999999956,
+        "subscriptionMs": 1.7765999999974156,
+        "promptMs": 38.15769999999611,
+        "postPromptFirstTokenMs": 4619.166200000007
+      },
+      "usage": {
+        "input": 4093,
+        "output": 187,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 91,
+      "answerPathsFromEvidence": 1,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 9,
+      "root": "downloads",
+      "depth": 0,
+      "kind": "partial",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 3960,
+      "firstAnswerMs": 6482,
+      "totalMs": 7481,
+      "scanMs": 155,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 768.0565999999963,
+        "subscriptionMs": 2.729699999996228,
+        "promptMs": 41.205000000001746,
+        "postPromptFirstTokenMs": 5669.421500000011
+      },
+      "usage": {
+        "input": 2895,
+        "output": 75,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 62,
+      "answerPathsFromEvidence": 1,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 11,
+      "root": "downloads",
+      "depth": 3,
+      "kind": "parent-clue",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 4270,
+      "firstAnswerMs": 9910,
+      "totalMs": 21060,
+      "scanMs": 86,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": true,
+      "timings": {
+        "sessionMs": 786.1487000000052,
+        "subscriptionMs": 4.091099999990547,
+        "promptMs": 43.02829999999085,
+        "postPromptFirstTokenMs": 9076.154999999999
+      },
+      "usage": {
+        "input": 4852,
+        "output": 723,
+        "reasoning": 55,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 1572,
+      "answerPathsFromEvidence": 20,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 11,
+      "root": "downloads",
+      "depth": 3,
+      "kind": "parent-clue",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 3581,
+      "firstAnswerMs": 5465,
+      "totalMs": 11913,
+      "scanMs": 157,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": true,
+      "timings": {
+        "sessionMs": 799.256400000013,
+        "subscriptionMs": 1.8508999999903608,
+        "promptMs": 41.23080000001937,
+        "postPromptFirstTokenMs": 4621.948300000018
+      },
+      "usage": {
+        "input": 6204,
+        "output": 941,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 1685,
+      "answerPathsFromEvidence": 20,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 13,
+      "root": "projects",
+      "depth": 2,
+      "kind": "exact",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 6435,
+      "firstAnswerMs": 8343,
+      "totalMs": 9125,
+      "scanMs": 3018,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": true,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 722.517200000002,
+        "subscriptionMs": 2.094599999982165,
+        "promptMs": 76.64100000000326,
+        "postPromptFirstTokenMs": 7541.027799999982
+      },
+      "usage": {
+        "input": 4089,
+        "output": 170,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 73,
+      "answerPathsFromEvidence": 1,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 13,
+      "root": "projects",
+      "depth": 2,
+      "kind": "exact",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 6150,
+      "firstAnswerMs": 8864,
+      "totalMs": 10372,
+      "scanMs": 2501,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": true,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 728.690499999997,
+        "subscriptionMs": 3.1657000000122935,
+        "promptMs": 36.42420000000857,
+        "postPromptFirstTokenMs": 8095.245600000024
+      },
+      "usage": {
+        "input": 2890,
+        "output": 67,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 69,
+      "answerPathsFromEvidence": 1,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 16,
+      "root": "projects",
+      "depth": 3,
+      "kind": "partial",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": false,
+      "targetPathInAnswer": false,
+      "firstTargetMs": null,
+      "firstAnswerMs": 20587,
+      "totalMs": 29903,
+      "scanMs": 5015,
+      "toolNames": [
+        "pc_search_files",
+        "pc_continue_file_search"
+      ],
+      "pages": 2,
+      "limited": true,
+      "truncated": true,
+      "timings": {
+        "sessionMs": 938.2825000000012,
+        "subscriptionMs": 2.243900000001304,
+        "promptMs": 231.19630000001052,
+        "postPromptFirstTokenMs": 19414.3609
+      },
+      "usage": {
+        "input": 7116,
+        "output": 679,
+        "reasoning": 139,
+        "cache": {
+          "read": 2560,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 1622,
+      "answerPathsFromEvidence": 23,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 16,
+      "root": "projects",
+      "depth": 3,
+      "kind": "partial",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": false,
+      "targetPathInAnswer": false,
+      "firstTargetMs": null,
+      "firstAnswerMs": 7802,
+      "totalMs": 11851,
+      "scanMs": 2505,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": true,
+      "truncated": true,
+      "timings": {
+        "sessionMs": 858.2826000000059,
+        "subscriptionMs": 2.4320000000006985,
+        "promptMs": 36.032399999996414,
+        "postPromptFirstTokenMs": 6904.349199999997
+      },
+      "usage": {
+        "input": 5670,
+        "output": 545,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 1000,
+      "answerPathsFromEvidence": 14,
+      "review": {
+        "backtickPathsChecked": 14,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 17,
+      "root": "pictures",
+      "depth": 1,
+      "kind": "parent-clue",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": false,
+      "targetPathInAnswer": false,
+      "firstTargetMs": null,
+      "firstAnswerMs": 5735,
+      "totalMs": 10876,
+      "scanMs": 58,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": true,
+      "timings": {
+        "sessionMs": 794.8847999999998,
+        "subscriptionMs": 2.160100000008242,
+        "promptMs": 39.48540000000503,
+        "postPromptFirstTokenMs": 4897.974400000006
+      },
+      "usage": {
+        "input": 5945,
+        "output": 716,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 1534,
+      "answerPathsFromEvidence": 20,
+      "review": {
+        "backtickPathsChecked": 1,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 17,
+      "root": "pictures",
+      "depth": 1,
+      "kind": "parent-clue",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": false,
+      "targetPathInAnswer": false,
+      "firstTargetMs": null,
+      "firstAnswerMs": 14116,
+      "totalMs": 24096,
+      "scanMs": 111,
+      "toolNames": [
+        "pc_search_files",
+        "pc_search_files"
+      ],
+      "pages": 2,
+      "limited": false,
+      "truncated": true,
+      "timings": {
+        "sessionMs": 1005.3775000000023,
+        "subscriptionMs": 2.3563999999896623,
+        "promptMs": 44.33410000000731,
+        "postPromptFirstTokenMs": 13063.81150000001
+      },
+      "usage": {
+        "input": 7837,
+        "output": 641,
+        "reasoning": 104,
+        "cache": {
+          "read": 2560,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 1493,
+      "answerPathsFromEvidence": 20,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 18,
+      "root": "pictures",
+      "depth": 1,
+      "kind": "exact",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 3589,
+      "firstAnswerMs": 5762,
+      "totalMs": 6708,
+      "scanMs": 43,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 643.873499999987,
+        "subscriptionMs": 2.062999999994645,
+        "promptMs": 29.578799999988405,
+        "postPromptFirstTokenMs": 5085.935499999992
+      },
+      "usage": {
+        "input": 2881,
+        "output": 73,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 68,
+      "answerPathsFromEvidence": 1,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 18,
+      "root": "pictures",
+      "depth": 1,
+      "kind": "exact",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 2909,
+      "firstAnswerMs": 4536,
+      "totalMs": 5373,
+      "scanMs": 31,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 603.7041000000027,
+        "subscriptionMs": 1.3185999999986961,
+        "promptMs": 28.745100000000093,
+        "postPromptFirstTokenMs": 3902.285900000017
+      },
+      "usage": {
+        "input": 4041,
+        "output": 173,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 148,
+      "answerPathsFromEvidence": 1,
+      "review": {
+        "backtickPathsChecked": 1,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 19,
+      "root": "videos",
+      "depth": 2,
+      "kind": "partial",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 2791,
+      "firstAnswerMs": 4434,
+      "totalMs": 5832,
+      "scanMs": 13,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 617.0862000000197,
+        "subscriptionMs": 1.2832999999809545,
+        "promptMs": 23.965999999985797,
+        "postPromptFirstTokenMs": 3791.4708999999857
+      },
+      "usage": {
+        "input": 4119,
+        "output": 232,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 305,
+      "answerPathsFromEvidence": 1,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 19,
+      "root": "videos",
+      "depth": 2,
+      "kind": "partial",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": true,
+      "targetPathInAnswer": true,
+      "firstTargetMs": 3681,
+      "firstAnswerMs": 7096,
+      "totalMs": 7949,
+      "scanMs": 10,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "timings": {
+        "sessionMs": 733.9771999999939,
+        "subscriptionMs": 1.5511999999871477,
+        "promptMs": 26.307499999995343,
+        "postPromptFirstTokenMs": 6333.685500000021
+      },
+      "usage": {
+        "input": 2934,
+        "output": 92,
+        "reasoning": 30,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 96,
+      "answerPathsFromEvidence": 1,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 20,
+      "root": "videos",
+      "depth": 2,
+      "kind": "parent-clue",
+      "model": "gpt-5.6-luna",
+      "targetRetrieved": false,
+      "targetPathInAnswer": false,
+      "firstTargetMs": null,
+      "firstAnswerMs": 8277,
+      "totalMs": 21798,
+      "scanMs": 14,
+      "toolNames": [
+        "pc_search_files"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": true,
+      "timings": {
+        "sessionMs": 811.3965000000317,
+        "subscriptionMs": 1.9671000000089407,
+        "promptMs": 34.806299999996554,
+        "postPromptFirstTokenMs": 7428.593600000022
+      },
+      "usage": {
+        "input": 5419,
+        "output": 820,
+        "reasoning": 55,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 1977,
+      "answerPathsFromEvidence": 20,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    },
+    {
+      "sample": 20,
+      "root": "videos",
+      "depth": 2,
+      "kind": "parent-clue",
+      "model": "claude-haiku-4-5-20251001",
+      "targetRetrieved": false,
+      "targetPathInAnswer": false,
+      "firstTargetMs": null,
+      "firstAnswerMs": 10902,
+      "totalMs": 19361,
+      "scanMs": 10,
+      "toolNames": [
+        "pc_search_files",
+        "pc_continue_file_search"
+      ],
+      "pages": 1,
+      "limited": false,
+      "truncated": true,
+      "timings": {
+        "sessionMs": 892.380599999975,
+        "subscriptionMs": 1.9734999999636784,
+        "promptMs": 45.30189999996219,
+        "postPromptFirstTokenMs": 9961.166700000002
+      },
+      "usage": {
+        "input": 7222,
+        "output": 1310,
+        "reasoning": 0,
+        "cache": {
+          "read": 5187,
+          "write": 0
+        }
+      },
+      "repairs": 0,
+      "error": null,
+      "answerChars": 2089,
+      "answerPathsFromEvidence": 20,
+      "review": {
+        "backtickPathsChecked": 0,
+        "pathsUnsupportedByHits": 0,
+        "unsupportedPathsMissingOnDisk": 0
+      }
+    }
+  ]
+}
