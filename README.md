@@ -6,7 +6,7 @@ Standalone application repository: https://github.com/Noisemaker111/windows-sear
 
 The loopback shim indexes Steam libraries, Start-menu shortcuts/Get-StartApps, and immediate Projects contents. It is not a full-disk or recursive file search. Every deliberate submission uses the installed OpenCode v2 host. Haiku is the default through CLIProxyAPI; Luna/Sol use the same subscription proxy and Grok uses the existing SuperGrok proxy. No metered xai route is allowed.
 
-Typing, paste, local suggestions, example buttons, and model changes never submit to AI. Local lookup has a 120ms debounce. Enter/Ask submits; selecting a result with mouse or arrows/Enter requests its launch and submits through the same OpenCode path. Repeated Enter while pending is suppressed; a fresh submission after completion can retry. Editing, Stop, and Escape cancel the answer. Only exact normalized app/game names or explicit commands naming an exact result can auto-launch. Prefixes, acronyms and fuzzy suggestions require selection.
+Typing, paste, local suggestions, example buttons, and model changes never submit to AI. Local lookup has a 40ms debounce. Enter/Ask submits; selecting a result with mouse or arrows/Enter requests its launch and submits through the same OpenCode path. Repeated Enter while pending is suppressed; a fresh submission after completion can retry. Editing, Stop, and Escape cancel the answer. Only exact normalized app/game names or explicit commands naming an exact result can auto-launch. Prefixes, acronyms and fuzzy suggestions require selection.
 
 Launch receipts mean Windows accepted the dispatch request; they do not prove the intended application opened. Removed disk targets, including Steam installation paths, fail before dispatch. Broken shortcuts and packaged-app/protocol failures remain native verification work.
 
@@ -27,7 +27,7 @@ The candidate exports local-search, retrieval, session-creation, subscription, p
 
 `start.ps1`/`install.ps1` are the existing experimental startup mechanism, not a verified release installer. Startup uses the shared dedicated host port, profile and mutex. Restoring `startup-before.lnk` restores the saved login entry, but full rollback, window cleanup, sign-in startup and absence of owned orphan processes have not been established. Do not install or publish this candidate on the strength of package tests.
 
-Current checks: 13 package tests, 11 simulated native lifecycle checks and 8 headless interaction tests pass; typecheck and UI syntax pass. Native desktop verification remains blocked by the missing Computer Use bridge and visible-UI approval rejection. Only this repository's checks gate its code changes. Historical opencode-config failures are recorded in the audit for provenance and are not release blockers for this application.
+Current checks: 26 package tests, 11 simulated native lifecycle checks and 10 headless interaction tests pass; typecheck and UI syntax pass. Native desktop verification remains blocked by the missing Computer Use bridge and visible-UI approval rejection. Only this repository's checks gate its code changes. Historical opencode-config failures are recorded in the audit for provenance and are not release blockers for this application.
 
 Subscription proxies must already be running at their configured endpoints; startup does not execute source from opencode-config. The old config PR is superseded by this repository. The existing local installation is not migrated by extracting the source: changing its startup location requires a separately verified installation/rollback.
 
@@ -43,9 +43,45 @@ existing query without submitting it. Hiding cancels a pending response; ordinar
 focus loss alone does not. These are candidate behaviors, not physically verified
 claims. `hotkey.ps1 -Check` compiles even when the installed helper owns the mutex.
 
-The shim prepares an empty OpenCode session for Haiku at startup and after a
-successful answer, keeping creation off the warm submission path. Other models
-prepare on deliberate submission. No preparation invokes inference, and prompted
-sessions are never reused. Local suggestions use a 40ms debounce. Responses carry
+The shim prepares an empty OpenCode session for Haiku at startup and for the
+selected model when the bar loads, regains focus, or changes model/service speed.
+It also replenishes after a successful answer. Expired empty sessions refresh on
+reopening. No preparation invokes inference, and prompted sessions are never
+reused. A cold immediate submission still waits for preparation if necessary. Local suggestions use a 40ms debounce. Responses carry
 phase timings and input/output token usage for diagnosis; these are not billing
 figures. See RELEASE-AUDIT.md for measured warm results and remaining release gates.
+
+## Luna service speed
+
+Luna uses low reasoning with a separate Normal / Fast selector. Fast requests
+`service_tier: priority`; it does not reduce reasoning or select a different
+model. Choices persist locally. Selecting/changing a model or service speed never
+submits a prompt. Haiku remains the initial default, and Sol/Grok remain available.
+
+Luna uses OpenCode's native OpenAI Responses adapter with the existing loopback
+subscription proxy. The proxy's Chat Completions translator drops service_tier;
+its Responses translator preserves priority. No direct paid API route or new
+credential is introduced. Activating this config in an installation requires the
+dedicated OpenCode host to reload it; this PR does not change the running install.
+
+Fast is explicitly a request. Codex subscription response metadata can report
+`default` even when Fast is active; it is not a reliable delivery indicator.
+The earlier inference that default meant a downgrade was incorrect. The local
+Codex catalog advertises Fast for Luna. Final outbound traces confirm that this
+proxy sends priority over both HTTP and WebSockets. However, our controlled
+throughput checks showed no material gain: HTTP median 58.28 Normal / 57.00 Fast
+requested tokens/sec (four each); WebSocket 57.71 / 57.12 (two each). No measured
+acceleration or billing claim is made. See RELEASE-AUDIT.md and
+luna-fast-transport-results.json for conditions and maintainer sources.
+
+[Codex Fast documentation](https://learn.chatgpt.com/docs/agent-configuration/speed)
+currently describes GPT-5.6 Fast as 1.5x model speed with 2.5x credit consumption;
+API pricing is separate. These are product-level terms, not measured charges for
+this proxy account. The selector warns that Fast uses more credits.
+
+Selection preparation reduced median session setup during submission from 553ms
+to 0.3ms in 12 actual headless browser journeys. Median Enter-to-visible-text was
+2.68s before / 2.30s after; excluding the first cold-host run, baseline was 2.50s.
+These small, variable samples establish removal of setup overhead, not a stable
+model speedup. Luna stays low/Normal; no extra inference or Fast credit premium
+is needed for this improvement. See selection-latency-results.json and the audit.

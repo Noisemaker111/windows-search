@@ -2,6 +2,7 @@ import {test,expect} from '@playwright/test'
 const hit={id:'fixture',name:'Calculator',path:'shell:AppsFolder\\fixture',launch:'shell:AppsFolder\\fixture',kind:'app',match:'exact',score:100}
 const event=e=>'data: '+JSON.stringify(e)+'\n\n'
 test.beforeEach(async({page})=>{
+ await page.route('**/prepare',r=>r.fulfill({json:{ok:true}}))
  await page.route('**/search?*',r=>r.fulfill({json:{hits:[hit]}}))
  await page.goto('/')
 })
@@ -53,4 +54,32 @@ test('native window identity, dismissal cancellation and focus select the existi
  await expect(page.locator('#status')).toHaveText('Answer stopped');await page.waitForTimeout(300);await expect(page.locator('#out')).toHaveText('')
  await page.evaluate(()=>window.dispatchEvent(new Event('focus')))
  await expect(q).toBeFocused();expect(await q.evaluate(e=>e.value.slice(e.selectionStart,e.selectionEnd))).toBe('Calculator')
+})
+
+test('Luna Normal/Fast is independent of reasoning, persists, and never auto-submits',async({page})=>{
+ const payloads=[]
+ await page.route('**/ask',r=>{payloads.push(r.request().postDataJSON());return r.fulfill({contentType:'text/event-stream',body:event({type:'delta',text:'Fixture answer'})+event({type:'done',firstTokenMs:10,totalMs:20})})})
+ await expect(page.getByRole('combobox',{name:'Service speed'})).toBeDisabled()
+ await page.locator('#model').selectOption('gpt-5.6-luna');await page.locator('#speed').selectOption('fast')
+ await expect(page.locator('#status')).toContainText('more credits');expect(payloads).toHaveLength(0)
+ await page.reload();await expect(page.locator('#model')).toHaveValue('gpt-5.6-luna');await expect(page.locator('#speed')).toHaveValue('fast');expect(payloads).toHaveLength(0)
+ await page.locator('#q').fill('Where is Calculator');await page.locator('#q').press('Enter')
+ await expect(page.locator('#status')).toHaveText('Answer complete');expect(payloads[0].model).toBe('gpt-5.6-luna#fast')
+ await expect(page.locator('#answer-label')).toHaveText('OpenCode · Luna · low reasoning · Fast requested')
+ await page.locator('#speed').selectOption('normal');expect(payloads).toHaveLength(1)
+ await page.locator('#q').press('Enter');await expect(page.locator('#status')).toHaveText('Answer complete');expect(payloads[1].model).toBe('gpt-5.6-luna')
+ await page.locator('#model').selectOption('grok-4.6');await expect(page.locator('#speed')).toBeDisabled();await expect(page.locator('#speed')).toHaveValue('normal')
+ await page.setViewportSize({width:360,height:600});await page.locator('#model').selectOption('gpt-5.6-luna');await page.locator('#speed').selectOption('fast')
+ expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
+})
+
+test('opening and model/speed selection prepare only the chosen model, never typing',async({page})=>{
+ const prepared=[];let asks=0
+ await page.route('**/prepare',r=>{prepared.push(r.request().postDataJSON().model);return r.fulfill({json:{ok:true}})})
+ await page.route('**/ask',r=>{asks++;return r.fulfill({body:''})})
+ await page.reload();await expect.poll(()=>prepared.length).toBeGreaterThan(0)
+ await page.locator('#model').selectOption('gpt-5.6-luna');await expect.poll(()=>prepared.at(-1)).toBe('gpt-5.6-luna')
+ await page.locator('#speed').selectOption('fast');await expect.poll(()=>prepared.at(-1)).toBe('gpt-5.6-luna#fast')
+ const count=prepared.length;await page.locator('#q').pressSequentially('where is calculator',{delay:10});await page.locator('#q').fill('where is calc')
+ await expect(page.locator('#hits [role=option]')).toBeVisible();expect(prepared.length).toBe(count);expect(asks).toBe(0)
 })

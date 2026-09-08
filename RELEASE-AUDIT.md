@@ -171,3 +171,142 @@ DO NOT RELEASE remains the recommendation. Native hardware shortcuts and focus,
 actual target-app launch confirmation, DPI/monitor behavior, useful current web
 retrieval, real proxy/model outage recovery and login/uninstall lifecycle remain
 unverified. The latency improvement is material but does not close these gates.
+
+## Luna Normal/Fast service-tier control
+
+This is service speed, independent of reasoning. Luna remains at low reasoning;
+Normal sends service_tier=default and Fast selects an OpenCode model variant with
+service_tier=priority. Session-pool keys distinguish the two. The selector persists,
+is disabled for other models, cancels an in-flight answer on changes, and does not
+submit until Enter/click. Answer provenance says Fast requested, not Fast served.
+
+Inspection of CLIProxyAPI v7.2.147 found its Chat Completions request translation
+constructs a new payload without service_tier. Six initial chat-path probes
+therefore did not verify Fast. Luna now uses the installed OpenCode native
+@opencode-ai/ai/providers/openai/responses adapter against the same subscription
+proxy. The generic compatible-responses package was rejected by the installed
+host during setup; the supported native adapter was then verified successfully.
+The Responses translator preserves priority and removes other service_tier values.
+No service-tier override was found in the running proxy's configuration.
+
+Six final Responses checks used the same short public synthetic path prompt and
+fresh sessions, with three requests per mode in varied order. All six sent
+reasoning.effort=low; the observed requests had the intended default/priority tier.
+All completed successfully with the supplied path. All final tier values returned
+by upstream were default (initial events were auto), including all three priority
+requests. Raw sanitized observations are in luna-service-tier-results.json.
+
+Observed first/completion ms: Normal 3825/4550, 5049/6069, 2204/4415; Fast requested
+1943/2909, 2969/3589, 2357/2972. These include fresh session creation and one initial
+host-start admission delay. These short-answer timings do not establish a Fast gain. The original inference
+that default proves a downgrade was incorrect for Codex subscription traffic;
+see the transport investigation below. Billed credits were not observed.
+
+25 tests / 100 assertions, strict typecheck, UI syntax, 11 fake-host native checks
+and compilation, and nine headless Edge journeys passed. New checks cover exact
+OpenCode model/variant identity, Responses routing, unchanged low effort, foreign
+model rejection, persistence, zero auto-submission, normal/fast request identity,
+other-model disabling and narrow layout. All owned sessions, relay and test host
+were cleaned up. Installed startup, bar, shared proxy and OpenCode were untouched.
+Physical desktop release gates and current-answer grounding remain outstanding.
+
+## Fast transport investigation and correction
+
+CLIProxyAPI supports priority requests. An OpenAI contributor explains that
+ChatGPT-authenticated Codex does not reliably echo the effective Fast mode in
+response.service_tier. CLIProxyAPI's maintainer confirms the same behavior:
+- https://github.com/openai/codex/issues/14204#issuecomment-4033184620
+- https://github.com/router-for-me/CLIProxyAPI/issues/4355#issuecomment-5002094130
+
+The local Codex catalog explicitly advertises Luna's priority/Fast capability.
+The maintainer also disputes a user report that Fast requires WebSockets:
+https://github.com/router-for-me/CLIProxyAPI/issues/4586#issuecomment-5096157843
+We therefore tested both transports rather than assume either report proves a fix.
+
+Twelve synthetic throughput calls used Luna low through an isolated OpenCode host,
+fresh sessions, sequential reversed-order pairs, and the same 80-line repeat-text
+prompt. Eight used the existing proxy's HTTP Responses route. Four used the same
+installed proxy executable (7.2.147) and credential in a temporary isolated
+instance with websockets enabled, reached by an HTTP-to-WebSocket relay. This is
+a transport diagnostic, not the shipped search prompt or a user-journey benchmark.
+
+| Transport | Calls per mode | Normal median tokens/sec | Fast requested median tokens/sec |
+| --- | --- | --- | --- |
+| HTTP/SSE | 4 | 58.28 | 57.00 |
+| WebSocket | 2 | 57.71 | 57.12 |
+
+HTTP median first-token times were 3180ms Normal / 2317ms Fast requested, including
+fresh session setup and one cold host admission. Completion was 17105 / 16513ms.
+WebSocket first-token medians were 2714 / 2626ms; completion 16579 / 16797ms.
+These small samples show no sustained generation gain. The HTTP first-token
+variation alone is insufficient to establish a service-tier benefit.
+
+Two additional short trace probes confirmed priority plus low reasoning in the
+final upstream HTTP body and WebSocket response.create frame. Thus the proxy
+forwards the setting correctly on both transports. All responses still echoed
+default, which is inconclusive for this subscription backend. Actual billing was
+not measured. No account entitlement failure or backend downgrade is established.
+The remaining Fast criterion is repeatable latency benefit through this route,
+not a particular response.service_tier value.
+
+Sanitized conditions, all 12 throughput rows and the two outbound trace summaries
+are in luna-fast-transport-results.json. All owned sessions and probe processes
+were cleaned up, and the temporary credential copy and raw request logs deleted.
+The shared proxy, original credentials and installed bar were unchanged. The
+existing physical interaction and web-grounding release blockers remain open.
+
+## Selection preparation: measured browser latency improvement
+
+Verified defect: start a fresh shim, choose Luna, type a query, and press Enter.
+Only Haiku was prepared at startup. Luna preparation began on submission, adding
+roughly half a second before inference. Reopening after five minutes also left an
+expired slot in place until submission. This affects every non-default model's
+first use and makes the selector feel slower than subsequent queries.
+
+The bar now requests one empty session for the selected model on load, focus and
+model/speed changes. Typing does not prepare or submit. Expired preparation is
+refreshed before submission when the bar reopens, and shutdown owns retiring
+sessions as well as current slots. There is no speculative inference, history
+reuse or change to the model/tier default. Immediate Enter can still wait when
+preparation has not finished; preparation does not make cold startup free.
+
+Acceptance: after selection preparation settles, submission session wait below
+10ms, zero LLM calls before Enter, exactly one call per deliberate submission,
+and no model/variant crossing or expired-session leak. All were checked: 12 live
+headless Edge journeys against the actual bar and real Windows Calculator index,
+through an isolated OpenCode host and existing subscription proxy. The same
+query, Luna low/Normal and 650ms pause after selection were used each trial.
+Each trial had a fresh shim/session pool; baseline suppressed the new /prepare
+request to reproduce the prior behavior. Six pairs reverse condition order between pairs to reduce ordering bias. See selection-latency-results.json for every observation.
+
+| Measured boundary | Prior behavior (6) | Prepared selection (6) |
+| --- | --- | --- |
+| Median Enter to visible first text | 2684ms | 2297ms |
+| Median Enter to visible completion | 3296ms | 2891ms |
+| Median session wait during submission | 553.1ms | 0.3ms |
+| LLM calls before Enter / per submission | 0 / 1 | 0 / 1 |
+
+One baseline run included 1465ms cold-host prompt admission. Excluding it, the
+baseline first-text median is 2504ms (five runs), compared with 2297ms candidate
+(six). Model wait also varied substantially, including a candidate 3480ms first
+text result. Thus the causal improvement is removal of ~0.55s session setup;
+observed whole-operation medians improved, but are not a general latency SLA.
+Local search stayed around 2-3ms. The remaining ~2s is mostly post-admission
+OpenCode/proxy/model wait. The bar still needs further latency work for daily use.
+
+An additional 12-call, six-query comparison of Luna low versus none reasoning
+preserved paths and missing/current-information honesty in both modes. None was
+not consistently faster and was not adopted. No reasoning or credit-cost increase
+was used to get the session improvement.
+
+The first browser harness attempts failed (copied-process startup and a stale
+isolated relay configuration); these produced no accepted measurements. The
+host configuration was corrected and readiness checked before the final trials.
+26 tests / 105 assertions, typecheck, UI syntax, 10 headless interaction regressions,
+and 11 simulated native checks plus compilation passed. The new regressions cover
+selected-model preparation, zero typing/submission side effects and expired-slot
+cleanup ownership. Physical shortcuts and the broader release gates remain open.
+
+After validation, all probe listeners were confirmed closed. The owned temporary
+host database and credential log were removed, clearing all diagnostic sessions.
+The installed bar, original credentials and shared proxy were unchanged.

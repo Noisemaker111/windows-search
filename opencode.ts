@@ -1,10 +1,12 @@
 import { join } from "node:path"
 import { EmptySessionPool } from "./session-pool"
-export const models = [
+export type SearchModel={id:string;name:string;providerID:string;modelID?:string;variant?:string}
+export const models:SearchModel[] = [
   {id:"claude-haiku-4-5-20251001",name:"Haiku",providerID:"cliproxyapi"},
-  {id:"gpt-5.6-luna",name:"Luna",providerID:"cliproxyapi"},
+  {id:"gpt-5.6-luna",name:"Luna · low reasoning",providerID:"cliproxyapi"},
   {id:"gpt-5.6-sol",name:"Sol",providerID:"cliproxyapi"},
-  {id:"grok-4.6",name:"Grok · SuperGrok",providerID:"grok-sub"}
+  {id:"grok-4.6",name:"Grok · SuperGrok",providerID:"grok-sub"},
+  {id:"gpt-5.6-luna#fast",name:"Luna · low reasoning · Fast requested",providerID:"cliproxyapi",modelID:"gpt-5.6-luna",variant:"fast"}
 ]
 const base = process.env.SEARCH_OPENCODE_URL || "http://127.0.0.1:8322"
 export class OpenCodeHttpError extends Error { constructor(public status:number,message:string){super(message)} }
@@ -23,7 +25,7 @@ async function createSession(call:typeof request,modelID:string,signal?:AbortSig
   const model=models.find(m=>m.id===modelID)
   if(!model)throw Error("Unsupported subscription model")
   const created=await call("/api/session",{title:"Windows search",agent:"search-bar",
-    model:{id:model.id,providerID:model.providerID},location:{directory:join(import.meta.dir,"runtime-config")}},signal)
+    model:{id:model.modelID||model.id,providerID:model.providerID,...(model.variant?{variant:model.variant}:{})},location:{directory:join(import.meta.dir,"runtime-config")}},signal)
   return ((await created.json()) as {data:{id:string}}).data.id
 }
 async function removeSession(id:string){

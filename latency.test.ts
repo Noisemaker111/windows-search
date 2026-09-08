@@ -54,3 +54,11 @@ test('cancelled prepared checkout never admits inference',async()=>{
  await expect(createCompleter(async p=>{paths.push(p);return Response.json({})},100,pool)(models[0].id,'query',()=>{},abort.signal)).rejects.toThrow()
  expect(paths).toEqual(['/api/session/unused/interrupt']);await pool.dispose()
 })
+
+test('reopening refreshes expired preparation and shutdown awaits both removals',async()=>{
+ let n=0;const finish:Array<()=>void>=[];const removed:string[]=[]
+ const pool=new EmptySessionPool(async()=>String(++n),id=>new Promise<void>(resolve=>{removed.push(id);finish.push(resolve)}),0)
+ await pool.warm('luna');await pool.warm('luna');expect(n).toBe(2);expect(removed).toEqual(['1'])
+ let disposed=false;const done=pool.dispose().then(()=>{disposed=true});await Promise.resolve();expect(disposed).toBe(false)
+ expect(removed.sort()).toEqual(['1','2']);finish.forEach(resolve=>resolve());await done;expect(disposed).toBe(true)
+})
