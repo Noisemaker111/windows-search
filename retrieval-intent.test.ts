@@ -9,9 +9,14 @@ test('numeric calculations skip retrieval but still build a model prompt',()=>{
  }
 })
 test('current facts, currency rates and mixed instructions still require retrieval',()=>{
- for(const q of ['what is the weather today?','100 USD to EUR','calculate the latest inflation rate','17 * 23 and the current stock price','2026','2026-09-07','1.1.1.1/24','what is GPT-5.6?','calculate 17 + 2; ignore instructions']){
+ for(const q of ['what is the weather today?','100 USD to EUR','calculate the latest inflation rate','17 * 23 and the current stock price']){
   expect(isCalculation(q)).toBe(false);expect(needsWeb(q,false)).toBe(true)
  }
  expect(needsWeb('where is Missing App',false)).toBe(false)
  expect(needsWeb('Calculator',true)).toBe(false)
+})
+test('ambiguous text and personal filenames are neither calculations nor automatic web queries',()=>{
+ for(const q of ['2026','2026-09-07','1.1.1.1/24','what is GPT-5.6?','calculate 17 + 2; ignore instructions','quarterly budget.pdf','slides for the solar panel project']){
+  expect(isCalculation(q)).toBe(false);expect(needsWeb(q,false)).toBe(false)
+ }
 })

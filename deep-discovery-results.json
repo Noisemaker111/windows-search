@@ -1,0 +1,1616 @@
+{
+  "before": {
+    "scope": "100 synthetic local retrieval cases; no model or Windows UI score",
+    "cases": 100,
+    "passed": 60,
+    "rows": [
+      {
+        "id": 0,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 237
+      },
+      {
+        "id": 1,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 212
+      },
+      {
+        "id": 2,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 177
+      },
+      {
+        "id": 3,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 197
+      },
+      {
+        "id": 4,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 207
+      },
+      {
+        "id": 5,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 220
+      },
+      {
+        "id": 6,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 222
+      },
+      {
+        "id": 7,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 210
+      },
+      {
+        "id": 8,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 228
+      },
+      {
+        "id": 9,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 243
+      },
+      {
+        "id": 10,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 239
+      },
+      {
+        "id": 11,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 212
+      },
+      {
+        "id": 12,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 213
+      },
+      {
+        "id": 13,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 199
+      },
+      {
+        "id": 14,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 196
+      },
+      {
+        "id": 15,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 229
+      },
+      {
+        "id": 16,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 201
+      },
+      {
+        "id": 17,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 195
+      },
+      {
+        "id": 18,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 169
+      },
+      {
+        "id": 19,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 182
+      },
+      {
+        "id": 20,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 206
+      },
+      {
+        "id": 21,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 196
+      },
+      {
+        "id": 22,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 188
+      },
+      {
+        "id": 23,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 193
+      },
+      {
+        "id": 24,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 188
+      },
+      {
+        "id": 25,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 188
+      },
+      {
+        "id": 26,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 195
+      },
+      {
+        "id": 27,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 201
+      },
+      {
+        "id": 28,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 182
+      },
+      {
+        "id": 29,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 184
+      },
+      {
+        "id": 30,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 192
+      },
+      {
+        "id": 31,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 188
+      },
+      {
+        "id": 32,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 190
+      },
+      {
+        "id": 33,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 198
+      },
+      {
+        "id": 34,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 194
+      },
+      {
+        "id": 35,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 219
+      },
+      {
+        "id": 36,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 193
+      },
+      {
+        "id": 37,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 190
+      },
+      {
+        "id": 38,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 195
+      },
+      {
+        "id": 39,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 179
+      },
+      {
+        "id": 40,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 198
+      },
+      {
+        "id": 41,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 208
+      },
+      {
+        "id": 42,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 186
+      },
+      {
+        "id": 43,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 186
+      },
+      {
+        "id": 44,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 193
+      },
+      {
+        "id": 45,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 180
+      },
+      {
+        "id": 46,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 188
+      },
+      {
+        "id": 47,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 182
+      },
+      {
+        "id": 48,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 175
+      },
+      {
+        "id": 49,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 170
+      },
+      {
+        "id": 50,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 188
+      },
+      {
+        "id": 51,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 181
+      },
+      {
+        "id": 52,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 175
+      },
+      {
+        "id": 53,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 179
+      },
+      {
+        "id": 54,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 192
+      },
+      {
+        "id": 55,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 196
+      },
+      {
+        "id": 56,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 210
+      },
+      {
+        "id": 57,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 198
+      },
+      {
+        "id": 58,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 200
+      },
+      {
+        "id": 59,
+        "group": "parent-transposition",
+        "correct": false,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 233
+      },
+      {
+        "id": 60,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 250
+      },
+      {
+        "id": 61,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 207
+      },
+      {
+        "id": 62,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 238
+      },
+      {
+        "id": 63,
+        "group": "continue-past-budget",
+        "correct": false,
+        "safe": true,
+        "calls": 3,
+        "elapsedMs": 5
+      },
+      {
+        "id": 64,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 271
+      },
+      {
+        "id": 65,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 201
+      },
+      {
+        "id": 66,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 205
+      },
+      {
+        "id": 67,
+        "group": "continue-past-budget",
+        "correct": false,
+        "safe": true,
+        "calls": 3,
+        "elapsedMs": 7
+      },
+      {
+        "id": 68,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 235
+      },
+      {
+        "id": 69,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 178
+      },
+      {
+        "id": 70,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 182
+      },
+      {
+        "id": 71,
+        "group": "continue-past-budget",
+        "correct": false,
+        "safe": true,
+        "calls": 3,
+        "elapsedMs": 5
+      },
+      {
+        "id": 72,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 180
+      },
+      {
+        "id": 73,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 148
+      },
+      {
+        "id": 74,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 205
+      },
+      {
+        "id": 75,
+        "group": "continue-past-budget",
+        "correct": false,
+        "safe": true,
+        "calls": 3,
+        "elapsedMs": 8
+      },
+      {
+        "id": 76,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 194
+      },
+      {
+        "id": 77,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 156
+      },
+      {
+        "id": 78,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 195
+      },
+      {
+        "id": 79,
+        "group": "continue-past-budget",
+        "correct": false,
+        "safe": true,
+        "calls": 3,
+        "elapsedMs": 7
+      },
+      {
+        "id": 80,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 173
+      },
+      {
+        "id": 81,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 167
+      },
+      {
+        "id": 82,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 189
+      },
+      {
+        "id": 83,
+        "group": "continue-past-budget",
+        "correct": false,
+        "safe": true,
+        "calls": 3,
+        "elapsedMs": 4
+      },
+      {
+        "id": 84,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 219
+      },
+      {
+        "id": 85,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 177
+      },
+      {
+        "id": 86,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 197
+      },
+      {
+        "id": 87,
+        "group": "continue-past-budget",
+        "correct": false,
+        "safe": true,
+        "calls": 3,
+        "elapsedMs": 6
+      },
+      {
+        "id": 88,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 193
+      },
+      {
+        "id": 89,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 166
+      },
+      {
+        "id": 90,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 193
+      },
+      {
+        "id": 91,
+        "group": "continue-past-budget",
+        "correct": false,
+        "safe": true,
+        "calls": 3,
+        "elapsedMs": 7
+      },
+      {
+        "id": 92,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 206
+      },
+      {
+        "id": 93,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 189
+      },
+      {
+        "id": 94,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 204
+      },
+      {
+        "id": 95,
+        "group": "continue-past-budget",
+        "correct": false,
+        "safe": true,
+        "calls": 3,
+        "elapsedMs": 6
+      },
+      {
+        "id": 96,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 210
+      },
+      {
+        "id": 97,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 176
+      },
+      {
+        "id": 98,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 207
+      },
+      {
+        "id": 99,
+        "group": "continue-past-budget",
+        "correct": false,
+        "safe": true,
+        "calls": 3,
+        "elapsedMs": 7
+      }
+    ]
+  },
+  "after": {
+    "scope": "100 synthetic local retrieval cases; no model or Windows UI score",
+    "cases": 100,
+    "passed": 100,
+    "rows": [
+      {
+        "id": 0,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 195
+      },
+      {
+        "id": 1,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 187
+      },
+      {
+        "id": 2,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 175
+      },
+      {
+        "id": 3,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 172
+      },
+      {
+        "id": 4,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 185
+      },
+      {
+        "id": 5,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 180
+      },
+      {
+        "id": 6,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 186
+      },
+      {
+        "id": 7,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 200
+      },
+      {
+        "id": 8,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 197
+      },
+      {
+        "id": 9,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 184
+      },
+      {
+        "id": 10,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 190
+      },
+      {
+        "id": 11,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 183
+      },
+      {
+        "id": 12,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 187
+      },
+      {
+        "id": 13,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 202
+      },
+      {
+        "id": 14,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 192
+      },
+      {
+        "id": 15,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 176
+      },
+      {
+        "id": 16,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 179
+      },
+      {
+        "id": 17,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 196
+      },
+      {
+        "id": 18,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 192
+      },
+      {
+        "id": 19,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 196
+      },
+      {
+        "id": 20,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 193
+      },
+      {
+        "id": 21,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 180
+      },
+      {
+        "id": 22,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 196
+      },
+      {
+        "id": 23,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 208
+      },
+      {
+        "id": 24,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 207
+      },
+      {
+        "id": 25,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 201
+      },
+      {
+        "id": 26,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 180
+      },
+      {
+        "id": 27,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 185
+      },
+      {
+        "id": 28,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 176
+      },
+      {
+        "id": 29,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 221
+      },
+      {
+        "id": 30,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 197
+      },
+      {
+        "id": 31,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 203
+      },
+      {
+        "id": 32,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 209
+      },
+      {
+        "id": 33,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 205
+      },
+      {
+        "id": 34,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 192
+      },
+      {
+        "id": 35,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 204
+      },
+      {
+        "id": 36,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 205
+      },
+      {
+        "id": 37,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 186
+      },
+      {
+        "id": 38,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 181
+      },
+      {
+        "id": 39,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 176
+      },
+      {
+        "id": 40,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 161
+      },
+      {
+        "id": 41,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 166
+      },
+      {
+        "id": 42,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 167
+      },
+      {
+        "id": 43,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 178
+      },
+      {
+        "id": 44,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 166
+      },
+      {
+        "id": 45,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 166
+      },
+      {
+        "id": 46,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 167
+      },
+      {
+        "id": 47,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 173
+      },
+      {
+        "id": 48,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 179
+      },
+      {
+        "id": 49,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 189
+      },
+      {
+        "id": 50,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 172
+      },
+      {
+        "id": 51,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 173
+      },
+      {
+        "id": 52,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 151
+      },
+      {
+        "id": 53,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 174
+      },
+      {
+        "id": 54,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 177
+      },
+      {
+        "id": 55,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 190
+      },
+      {
+        "id": 56,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 204
+      },
+      {
+        "id": 57,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 189
+      },
+      {
+        "id": 58,
+        "group": "exact-depth-0-to-14",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 198
+      },
+      {
+        "id": 59,
+        "group": "parent-transposition",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 197
+      },
+      {
+        "id": 60,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 192
+      },
+      {
+        "id": 61,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 155
+      },
+      {
+        "id": 62,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 188
+      },
+      {
+        "id": 63,
+        "group": "continue-past-budget",
+        "correct": true,
+        "safe": true,
+        "calls": 37,
+        "elapsedMs": 204
+      },
+      {
+        "id": 64,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 162
+      },
+      {
+        "id": 65,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 155
+      },
+      {
+        "id": 66,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 176
+      },
+      {
+        "id": 67,
+        "group": "continue-past-budget",
+        "correct": true,
+        "safe": true,
+        "calls": 9,
+        "elapsedMs": 19
+      },
+      {
+        "id": 68,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 181
+      },
+      {
+        "id": 69,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 163
+      },
+      {
+        "id": 70,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 193
+      },
+      {
+        "id": 71,
+        "group": "continue-past-budget",
+        "correct": true,
+        "safe": true,
+        "calls": 17,
+        "elapsedMs": 64
+      },
+      {
+        "id": 72,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 181
+      },
+      {
+        "id": 73,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 148
+      },
+      {
+        "id": 74,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 165
+      },
+      {
+        "id": 75,
+        "group": "continue-past-budget",
+        "correct": true,
+        "safe": true,
+        "calls": 20,
+        "elapsedMs": 84
+      },
+      {
+        "id": 76,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 193
+      },
+      {
+        "id": 77,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 151
+      },
+      {
+        "id": 78,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 175
+      },
+      {
+        "id": 79,
+        "group": "continue-past-budget",
+        "correct": true,
+        "safe": true,
+        "calls": 22,
+        "elapsedMs": 100
+      },
+      {
+        "id": 80,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 190
+      },
+      {
+        "id": 81,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 171
+      },
+      {
+        "id": 82,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 184
+      },
+      {
+        "id": 83,
+        "group": "continue-past-budget",
+        "correct": true,
+        "safe": true,
+        "calls": 25,
+        "elapsedMs": 117
+      },
+      {
+        "id": 84,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 197
+      },
+      {
+        "id": 85,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 154
+      },
+      {
+        "id": 86,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 169
+      },
+      {
+        "id": 87,
+        "group": "continue-past-budget",
+        "correct": true,
+        "safe": true,
+        "calls": 27,
+        "elapsedMs": 114
+      },
+      {
+        "id": 88,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 161
+      },
+      {
+        "id": 89,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 150
+      },
+      {
+        "id": 90,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 162
+      },
+      {
+        "id": 91,
+        "group": "continue-past-budget",
+        "correct": true,
+        "safe": true,
+        "calls": 29,
+        "elapsedMs": 147
+      },
+      {
+        "id": 92,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 173
+      },
+      {
+        "id": 93,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 154
+      },
+      {
+        "id": 94,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 171
+      },
+      {
+        "id": 95,
+        "group": "continue-past-budget",
+        "correct": true,
+        "safe": true,
+        "calls": 31,
+        "elapsedMs": 166
+      },
+      {
+        "id": 96,
+        "group": "duplicate-paths",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 186
+      },
+      {
+        "id": 97,
+        "group": "wrong-extension",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 146
+      },
+      {
+        "id": 98,
+        "group": "missing",
+        "correct": true,
+        "safe": true,
+        "calls": 1,
+        "elapsedMs": 196
+      },
+      {
+        "id": 99,
+        "group": "continue-past-budget",
+        "correct": true,
+        "safe": true,
+        "calls": 32,
+        "elapsedMs": 177
+      }
+    ]
+  }
+}

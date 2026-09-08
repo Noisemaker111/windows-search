@@ -1,0 +1,120 @@
+{
+  "real-ai-results.json": {
+    "claude-haiku-4-5-20251001": {
+      "n": 12,
+      "retrieved": 8,
+      "targetInAnswer": 7,
+      "firstTextMedianMs": 5896.5,
+      "completeMedianMs": 10000.5,
+      "maxMs": 19361,
+      "scanMedianMs": 609.5,
+      "outputMedian": 218,
+      "inputMedian": 4814.5,
+      "charsMedian": 311,
+      "unsupportedPaths": 0
+    },
+    "gpt-5.6-luna": {
+      "n": 12,
+      "retrieved": 8,
+      "targetInAnswer": 8,
+      "firstTextMedianMs": 8854.5,
+      "completeMedianMs": 12621,
+      "maxMs": 29903,
+      "scanMedianMs": 628.5,
+      "outputMedian": 116.5,
+      "inputMedian": 3561,
+      "charsMedian": 231.5,
+      "unsupportedPaths": 0
+    }
+  },
+  "real-ai-followup-results.json": {
+    "claude-haiku-4-5-20251001": {
+      "n": 8,
+      "retrieved": 4,
+      "targetInAnswer": 2,
+      "firstTextMedianMs": 5601.5,
+      "completeMedianMs": 7702,
+      "maxMs": 8345,
+      "scanMedianMs": 600,
+      "outputMedian": 314,
+      "inputMedian": 6578,
+      "charsMedian": 462,
+      "unsupportedPaths": 0
+    },
+    "gpt-5.6-luna": {
+      "n": 8,
+      "retrieved": 4,
+      "targetInAnswer": 1,
+      "firstTextMedianMs": 8214.5,
+      "completeMedianMs": 10773,
+      "maxMs": 12034,
+      "scanMedianMs": 577.5,
+      "outputMedian": 166,
+      "inputMedian": 5217.5,
+      "charsMedian": 332.5,
+      "unsupportedPaths": 1
+    }
+  },
+  "real-ai-final-results.json": {
+    "claude-haiku-4-5-20251001": {
+      "n": 4,
+      "retrieved": 4,
+      "targetInAnswer": 2,
+      "firstTextMedianMs": 5649,
+      "completeMedianMs": 8120.5,
+      "maxMs": 9352,
+      "scanMedianMs": 673,
+      "outputMedian": 280,
+      "inputMedian": 6111,
+      "charsMedian": 492.5,
+      "unsupportedPaths": 0
+    },
+    "gpt-5.6-luna": {
+      "n": 4,
+      "retrieved": 4,
+      "targetInAnswer": 1,
+      "firstTextMedianMs": 9331.5,
+      "completeMedianMs": 12494,
+      "maxMs": 25622,
+      "scanMedianMs": 650.5,
+      "outputMedian": 145,
+      "inputMedian": 4759,
+      "charsMedian": 309,
+      "unsupportedPaths": 1
+    }
+  },
+  "matched": {
+    "claude-haiku-4-5-20251001 before": {
+      "n": 4,
+      "totalMedianMs": 13178.5,
+      "firstMedianMs": 5917.5,
+      "outputMedian": 1030,
+      "inputMedian": 6328.5,
+      "charsMedian": 1880.5
+    },
+    "claude-haiku-4-5-20251001 after": {
+      "n": 8,
+      "totalMedianMs": 7702,
+      "firstMedianMs": 5601.5,
+      "outputMedian": 314,
+      "inputMedian": 6578,
+      "charsMedian": 462
+    },
+    "gpt-5.6-luna before": {
+      "n": 4,
+      "totalMedianMs": 21429,
+      "firstMedianMs": 10309,
+      "outputMedian": 771.5,
+      "inputMedian": 4969.5,
+      "charsMedian": 1739.5
+    },
+    "gpt-5.6-luna after": {
+      "n": 8,
+      "totalMedianMs": 10773,
+      "firstMedianMs": 8214.5,
+      "outputMedian": 166,
+      "inputMedian": 5217.5,
+      "charsMedian": 332.5
+    }
+  }
+}

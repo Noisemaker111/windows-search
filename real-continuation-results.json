@@ -1,0 +1,227 @@
+{
+  "samples": 20,
+  "firstFound": 18,
+  "withContinuation": 18,
+  "rows": [
+    {
+      "sample": 0,
+      "root": "desktop",
+      "depth": 2,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 1070
+    },
+    {
+      "sample": 1,
+      "root": "desktop",
+      "depth": 2,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 1120
+    },
+    {
+      "sample": 2,
+      "root": "desktop",
+      "depth": 5,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 977
+    },
+    {
+      "sample": 3,
+      "root": "desktop",
+      "depth": 5,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 1095
+    },
+    {
+      "sample": 4,
+      "root": "documents",
+      "depth": 2,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 1850
+    },
+    {
+      "sample": 5,
+      "root": "documents",
+      "depth": 2,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 1354
+    },
+    {
+      "sample": 6,
+      "root": "documents",
+      "depth": 7,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 1469
+    },
+    {
+      "sample": 7,
+      "root": "documents",
+      "depth": 7,
+      "firstFound": false,
+      "found": false,
+      "pages": 1,
+      "limited": false,
+      "truncated": true,
+      "elapsedMs": 1496
+    },
+    {
+      "sample": 8,
+      "root": "downloads",
+      "depth": 0,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 103
+    },
+    {
+      "sample": 9,
+      "root": "downloads",
+      "depth": 0,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 98
+    },
+    {
+      "sample": 10,
+      "root": "downloads",
+      "depth": 3,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 100
+    },
+    {
+      "sample": 11,
+      "root": "downloads",
+      "depth": 4,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 98
+    },
+    {
+      "sample": 12,
+      "root": "projects",
+      "depth": 2,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": true,
+      "truncated": false,
+      "elapsedMs": 2501
+    },
+    {
+      "sample": 13,
+      "root": "projects",
+      "depth": 1,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": true,
+      "truncated": false,
+      "elapsedMs": 2501
+    },
+    {
+      "sample": 14,
+      "root": "projects",
+      "depth": 3,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": true,
+      "truncated": false,
+      "elapsedMs": 2501
+    },
+    {
+      "sample": 15,
+      "root": "projects",
+      "depth": 3,
+      "firstFound": false,
+      "found": false,
+      "pages": 3,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 5582
+    },
+    {
+      "sample": 16,
+      "root": "pictures",
+      "depth": 1,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 34
+    },
+    {
+      "sample": 17,
+      "root": "pictures",
+      "depth": 1,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 30
+    },
+    {
+      "sample": 18,
+      "root": "videos",
+      "depth": 2,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 10
+    },
+    {
+      "sample": 19,
+      "root": "videos",
+      "depth": 2,
+      "firstFound": true,
+      "found": true,
+      "pages": 1,
+      "limited": false,
+      "truncated": false,
+      "elapsedMs": 11
+    }
+  ]
+}

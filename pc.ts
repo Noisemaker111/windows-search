@@ -49,12 +49,13 @@ export function search(index: Hit[], query: string) {
   const seen=new Set<string>()
   return index.map(h=>({...h,score:score(h)})).filter(h=>h.score>0)
     .sort((a,b)=>b.score-a.score||Number(b.launch.startsWith("steam:"))-Number(a.launch.startsWith("steam:")))
-    .filter(h=>{const key=normalize(h.name);if(seen.has(key))return false;seen.add(key);return true})
+    .filter(h=>{const key=["file","folder"].includes(h.kind)?h.path.toLowerCase():normalize(h.name);if(seen.has(key))return false;seen.add(key);return true})
     .slice(0,8).map(h=>({...h,match:h.score===100?"exact":h.score<80?"fuzzy":"prefix"}))
 }
 
 export function launchIntent(query: string, hits: (Hit & {score?:number})[]) {
   if (!hits.length) return false
+  const exact=hits.filter(h=>normalize(h.name)===needle(query));if(exact.length>1)return false
   const explicit = /^(open|run|launch|start|play)\s+/i.test(query.trim())
   // Suggestions are not authorization: even a unique fuzzy/prefix match needs selection.
   if (explicit) return normalize(hits[0].name) === needle(query)

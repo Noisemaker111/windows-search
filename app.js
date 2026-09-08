@@ -87,6 +87,14 @@ async function ask(selection){
    for(const line of lines){
     if(!line.startsWith('data:')||id!==answerId)continue;const e=JSON.parse(line.slice(5))
     if(e.type==='hits'){hits=e.hits;active=selection?hits.findIndex(h=>h.id===selection):-1;render()}
+    if(e.type==='searching'){out.textContent='';status.textContent='Searching your files…'}
+    if(e.type==='coverage'){
+     const c=e.coverage,detail=document.createElement('details'),summary=document.createElement('summary'),scope=document.createElement('div')
+     const limited=c.limited||c.depthLimited||c.inaccessible||c.unavailable?.length||c.truncated
+     summary.textContent='Filename search · '+c.searched.length+' location(s)'+(limited?' · Limited coverage':'')
+     scope.textContent=c.searched.join('\n')+'\nDepth: '+c.depth+' · Entries checked: '+c.visited+'\n'+(c.limited?'Time or entry limit reached. ':'')+(c.depthLimited?'Deeper folders remain unchecked. ':'')+(c.truncated?'Only the top '+c.resultLimit+' matches are shown; narrow the folder. ':'')+(c.inaccessible?'Some folders were inaccessible. ':'')+(c.unavailable?.length?'Unavailable: '+c.unavailable.join(', ')+'. ':'')+'\n'+c.notice
+     detail.append(summary,scope);$('#sources').append(detail)
+    }
     if(e.type==='context'){status.textContent=e.source;for(const s of e.sources){const a=document.createElement('a');a.href=s.url;a.target='_blank';a.rel='noopener';a.textContent=s.title||new URL(s.url).hostname;a.title=s.title;$('#sources').append(a)}}
     if(e.type==='delta')out.textContent+=e.text
     if(e.type==='launch'){$('#launch').hidden=false;$('#launch').className='';$('#launch').textContent='Launch requested · '+e.result.name}

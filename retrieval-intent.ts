@@ -1,3 +1,4 @@
+import {wantsWeb} from './evidence'
 /** Identify only self-contained numeric expressions; this never evaluates or answers them. */
 export function isCalculation(query:string){
  const expression=query.trim().replace(/^(?:what(?:'s| is)|calculate|compute|how much is)\s+/i,'').replace(/[?=]\s*$/,'').trim()
@@ -6,5 +7,5 @@ export function isCalculation(query:string){
  return expression.length>0&&expression.length<=240&&/^[\d\s.,()+*/%×÷^−-]+$/.test(expression)&&/\d/.test(expression)&&/[+*/%×÷^−-]/.test(expression)
 }
 export function needsWeb(query:string,hasLocalHits:boolean){
- return !hasLocalHits&&!/^(where|find|locate|open|play|run|launch)\b/i.test(query.trim())&&!isCalculation(query)
+ return !hasLocalHits&&!isCalculation(query)&&wantsWeb(query)
 }

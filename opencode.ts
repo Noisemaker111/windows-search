@@ -31,21 +31,41 @@ async function createSession(call:typeof request,modelID:string,signal?:AbortSig
 async function removeSession(id:string){
   await request("/api/session/"+encodeURIComponent(id),undefined,AbortSignal.timeout(2000),"DELETE")
 }
-export const sessionPool=new EmptySessionPool(model=>createSession(request,model,AbortSignal.timeout(5000)),removeSession)
+export const sessionPool=new EmptySessionPool(async model=>{const signal=AbortSignal.timeout(10000);await ensurePcSearch(request,signal);return createSession(request,model,signal)},removeSession)
 export function prepareModel(model:string){return models.some(m=>m.id===model)?sessionPool.warm(model):Promise.resolve()}
 export type Tokens={input:number;output:number;reasoning:number;cache:{read:number;write:number}}
+export async function ensurePcSearch(call:typeof request,signal:AbortSignal){
+  const bounded=AbortSignal.any([signal,AbortSignal.timeout(8000)])
+  while(true){
+    bounded.throwIfAborted()
+    const res=await call('/api/mcp?location[directory]='+encodeURIComponent(join(import.meta.dir,'runtime-config')),undefined,bounded)
+    const value=await res.json() as {data?:Array<{name:string,status:{status:string}}>}
+    const status=value.data?.find(s=>s.name==='pc')?.status.status
+    if(status==='connected')return
+    if(status&&status!=='pending')throw Error('PC file search is unavailable. No filesystem search was performed; restart the search host and try again.')
+    await new Promise<void>((resolve,reject)=>{
+      const stop=()=>{clearTimeout(timer);reject(bounded.reason)}
+      const timer=setTimeout(()=>{bounded.removeEventListener('abort',stop);resolve()},100)
+      bounded.addEventListener('abort',stop,{once:true})
+    })
+  }
+}
 export function createCompleter(call: typeof request = request, timeoutMs = 45000, pool?:EmptySessionPool) {
-return async function complete(modelID: string, text: string, onDelta: (text:string)=>void, signal:AbortSignal) {
+return async function complete(modelID: string, text: string, onDelta: (text:string)=>void, signal:AbortSignal,onDiscovery?:(result:unknown)=>void|Promise<void>,onSearch?:(name:string)=>void,onRetry?:()=>void) {
   const started=performance.now()
   const timings={sessionMs:0,subscriptionMs:0,promptMs:0,postPromptFirstTokenMs:0}
   const model = models.find(m => m.id===modelID)
   if (!model) throw new Error("Unsupported model. Only the configured subscription routes are allowed.")
+  if(onDiscovery)await ensurePcSearch(call,signal)
   const reserved=pool?await pool.take(modelID):{id:await createSession(call,modelID,signal),prepared:false}
   let session=reserved.id,preparedSession=reserved.prepared
   timings.sessionMs=performance.now()-started
   const events = new AbortController()
   const timer=setTimeout(()=>events.abort(new Error("OpenCode answer timed out")),timeoutMs)
   const combined = AbortSignal.any([events.signal,signal])
+  const discoveryTools=new Set<string>()
+  const activeDiscoveryTools=new Set<string>()
+  let pendingCursor:string|undefined,discoveredHits=false,investigationRepairs=0
   let full = "", succeeded=false
   let usage:Tokens|undefined
   try {
@@ -76,16 +96,31 @@ return async function complete(modelID: string, text: string, onDelta: (text:str
         if (!line.startsWith("data:")) continue
         const event = JSON.parse(line.slice(5))
         if (event.data?.sessionID !== session) continue
+        if(event.type==="session.tool.input.started"&&/(?:^|[_.])(?:search_files|continue_file_search)$/.test(event.data.name)){discoveryTools.add(event.data.id);activeDiscoveryTools.add(event.data.id);full='';timings.postPromptFirstTokenMs=0;onSearch?.(event.data.name)}
+        if(event.type==='session.tool.failed')activeDiscoveryTools.delete(event.data.id)
+        if(event.type==="session.tool.success"&&discoveryTools.has(event.data.id)){
+          activeDiscoveryTools.delete(event.data.id)
+          for(const part of event.data.content||[])if(part.type==='text'){let result;try{result=JSON.parse(part.text)}catch{continue}
+            if(Array.isArray(result?.hits)&&result.coverage){discoveredHits ||= result.hits.length>0;pendingCursor=typeof result.nextCursor==='string'?result.nextCursor:undefined}
+            await onDiscovery?.(result)}
+        }
         if(event.type==="session.step.ended"&&event.data.tokens){
           const t=event.data.tokens as Tokens
           usage={input:(usage?.input||0)+t.input,output:(usage?.output||0)+t.output,reasoning:(usage?.reasoning||0)+t.reasoning,cache:{read:(usage?.cache.read||0)+t.cache.read,write:(usage?.cache.write||0)+t.cache.write}}
         }
-        if (event.type==="session.text.delta") { if(!full)timings.postPromptFirstTokenMs=performance.now()-admitted; full += event.data.delta; onDelta(event.data.delta) }
+        // A model may finish its narration after announcing a tool. It is not an answer.
+        if (event.type==="session.text.delta"&&!activeDiscoveryTools.size) { if(!full)timings.postPromptFirstTokenMs=performance.now()-admitted; full += event.data.delta; if(!pendingCursor||discoveredHits)onDelta(event.data.delta) }
         if (event.type==="session.execution.failed") throw new Error(JSON.stringify(event.data.error))
         if (event.type==="session.execution.succeeded") {
+          if(pendingCursor&&!discoveredHits){
+            onRetry?.();full=''
+            if(investigationRepairs++)throw Error('File search is incomplete. No match in the checked portion; remaining folders were not checked.')
+            await call('/api/session/'+session+'/prompt',{text:JSON.stringify({instruction:'The last scan is incomplete, so absence has not been established. Call continue_file_search with this cursor before answering. If still incomplete, explicitly state that limit; never claim the whole location was searched.',cursor:pendingCursor})},combined)
+            continue
+          }
           if (!full.trim()) throw new Error("OpenCode returned an empty answer")
           succeeded=true
-          return {session,model:modelID,text:full,timings,preparedSession,usage}
+          return {session,model:modelID,text:full,timings,preparedSession,usage,investigationRepairs}
         }
       }
     }

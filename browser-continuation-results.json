@@ -1,0 +1,77 @@
+{
+  "typingModelCalls": 0,
+  "rows": [
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "unknownAtStartup": true,
+      "searches": 2,
+      "pathsGrounded": true,
+      "deletedPathRemoved": true,
+      "staleSelectionStatus": 409,
+      "totalJourneyMs": 9734,
+      "done": {
+        "type": "done",
+        "model": "claude-haiku-4-5-20251001",
+        "firstTokenMs": 8791,
+        "totalMs": 9683,
+        "timings": {
+          "localSearchMs": 4.97280000000319,
+          "retrievalMs": 0.1934999999939464,
+          "sessionMs": 1623.8459000000003,
+          "subscriptionMs": 12.144000000000233,
+          "promptMs": 443.41710000000603,
+          "postPromptFirstTokenMs": 6702.027000000002
+        },
+        "preparedSession": true,
+        "promptBytes": 1036,
+        "usage": {
+          "input": 6590,
+          "output": 303,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "investigationRepairs": 0
+      },
+      "answer": "Found it: `<fixture>\\documents\\new\\after\\startup\\a\\b\\c\\d\\saffron-orbit-notes.txt`"
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "unknownAtStartup": true,
+      "searches": 2,
+      "pathsGrounded": true,
+      "deletedPathRemoved": true,
+      "staleSelectionStatus": 409,
+      "totalJourneyMs": 10841,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 9437,
+        "totalMs": 10805,
+        "timings": {
+          "localSearchMs": 7.854599999991478,
+          "retrievalMs": 0.008000000001629815,
+          "sessionMs": 648.8300000000017,
+          "subscriptionMs": 2.0262999999977183,
+          "promptMs": 45.57700000000477,
+          "postPromptFirstTokenMs": 8731.138600000006
+        },
+        "preparedSession": true,
+        "promptBytes": 1035,
+        "usage": {
+          "input": 4615,
+          "output": 130,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "investigationRepairs": 0
+      },
+      "answer": "<fixture>\\documents\\new\\after\\startup\\a\\b\\c\\d\\cobalt-orbit-notes.txt"
+    }
+  ]
+}

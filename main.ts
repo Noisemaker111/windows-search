@@ -1,10 +1,10 @@
 import { buildIndex, search, launchIntent, launch } from "./pc"
 import { complete, models, request, prepareModel, sessionPool } from "./opencode"
 import { answerPrompt } from "./answer-prompt"
-import { needsWeb, isCalculation } from "./retrieval-intent"
+import { needsWeb,isCalculation } from "./retrieval-intent"
 import { relevant } from "./evidence"
 import { join } from "node:path"
-import { mkdir } from "node:fs/promises"
+import { mkdir,stat } from "node:fs/promises"
 const port = Number(process.env.SEARCH_SHIM_PORT || 8321)
 let index = await buildIndex()
 let indexedAt = Date.now()
@@ -20,6 +20,15 @@ async function cacheIcons(){
 void cacheIcons()
 setInterval(async()=> { try { index = await buildIndex(); indexedAt=Date.now();void cacheIcons() } catch(e) { console.error("Index refresh:",String(e)) } },60000)
 void prepareModel(models[0].id)
+const discovered=new Map<string,{hit:import('./pc').Hit,expires:number}>()
+async function catalog(){
+  // A discovered path is a short-lived suggestion, not a permanent index fact.
+  await Promise.all([...discovered].map(async([id,item])=>{
+    const valid=item.expires>=Date.now()&&await stat(item.hit.path).then(s=>item.hit.kind==='folder'?s.isDirectory():s.isFile(),()=>false)
+    if(!valid&&discovered.get(id)===item)discovered.delete(id)
+  }))
+  return [...index,...[...discovered.values()].map(x=>x.hit)]
+}
 const launches: unknown[] = []
 const xml = (s:string) => s.replace(/<!\[CDATA\[([\s\S]*?)\]\]>/g,"$1").replace(/<[^>]*>/g,"").replace(/&amp;/g,"&").replace(/&lt;/g,"<").replace(/&gt;/g,">").replace(/&quot;/g,'"').replace(/&#39;/g,"'")
 async function web(query:string, signal:AbortSignal) {
@@ -48,7 +57,7 @@ const server = Bun.serve({
     if (url.pathname==="/health") return Response.json({ok:true,brain:"OpenCode v2",defaultModel:models[0].id,indexed:index.length,indexedAt,
       opencode:await request("/api/session/active").then(()=>true,()=>false),launches:launches.slice(-5)})
     if (url.pathname==="/models") return Response.json(models)
-    if (url.pathname==="/search") { stats.searches++; return Response.json({hits:search(index,url.searchParams.get("q")||"")}) }
+    if (url.pathname==="/search") { stats.searches++; return Response.json({hits:search(await catalog(),url.searchParams.get("q")||"")}) }
     if (url.pathname==="/run" && req.method==="POST") {
       const body = await req.json() as {id?: string; launch?: string; query?: unknown; model?: unknown}
       if (!body) return Response.json({error:"Choose a current result"},{status:400})
@@ -70,9 +79,12 @@ const server = Bun.serve({
       stats.submissions++
       const started=performance.now()
       void prepareModel(body.model)
-      const hits=search(index,body.query)
+      const current=await catalog()
+      const hits=search(current,body.query)
       const localSearchMs=performance.now()-started
-      const selected=hits.find(h=>h.id===body.selection)
+      const selected=body.selection?current.find(h=>h.id===body.selection):undefined
+      if(body.selection&&!selected)return Response.json({error:'This result is no longer available. Search again.'},{status:409})
+      if(selected&&!hits.some(h=>h.id===selected.id))hits.unshift({...selected,match:"discovered",score:100})
       const abort=new AbortController()
       const clientId=typeof body.clientId==="string"?body.clientId.slice(0,80):crypto.randomUUID()
       clients.get(clientId)?.abort();clients.set(clientId,abort)
@@ -99,8 +111,16 @@ const server = Bun.serve({
             signal.throwIfAborted()
             stats.modelCalls++
             const prompt=answerPrompt(body.query,hits,sources,launched,launchError)
-            const result = await complete(body.model,prompt,delta=>{first??=performance.now()-started;send({type:"delta",text:delta})},signal)
-            send({type:"done",model:result.model,firstTokenMs:Math.round(first||0),totalMs:Math.round(performance.now()-started),timings:{localSearchMs,retrievalMs,...result.timings},preparedSession:result.preparedSession,promptBytes:Buffer.byteLength(prompt),usage:result.usage})
+            const result = await complete(body.model,prompt,delta=>{first??=performance.now()-started;send({type:"delta",text:delta})},signal,async value=>{
+              const result=value as {hits?:import('./pc').Hit[],coverage?:unknown}
+              if(!Array.isArray(result?.hits)||!result.coverage)return
+              const found=result.hits.filter(h=>h&&typeof h.id==='string'&&typeof h.name==='string'&&typeof h.path==='string'&&h.launch===h.path&&['file','folder'].includes(h.kind)).slice(0,20)
+              for(const hit of found)discovered.set(hit.id,{hit,expires:Date.now()+300000})
+              while(discovered.size>500)discovered.delete(discovered.keys().next().value!)
+              for(const hit of found)if(!hits.some(h=>h.path===hit.path))hits.push({...hit,match:'discovered',score:50})
+              send({type:'hits',hits});send({type:'coverage',coverage:result.coverage})
+            },()=>{first=undefined;send({type:'searching'})},()=>{first=undefined;send({type:'searching'})})
+            send({type:"done",model:result.model,firstTokenMs:Math.round(first||0),totalMs:Math.round(performance.now()-started),timings:{localSearchMs,retrievalMs,...result.timings},preparedSession:result.preparedSession,promptBytes:Buffer.byteLength(prompt),usage:result.usage,investigationRepairs:result.investigationRepairs})
           } catch(e) { send({type:"error",message:String(e)}) }
           finally { clearTimeout(deadlineTimer);if(signal.aborted)stats.cancelled++;if(clients.get(clientId)===abort)clients.delete(clientId);try {controller.close()} catch {} }
         },

@@ -1,6 +1,16 @@
 import {test,expect} from '@playwright/test'
 const hit={id:'fixture',name:'Calculator',path:'shell:AppsFolder\\fixture',launch:'shell:AppsFolder\\fixture',kind:'app',match:'exact',score:100}
 const event=e=>'data: '+JSON.stringify(e)+'\n\n'
+test('discovered duplicate files remain distinct and selectable after a vague query',async({page})=>{
+ const duplicates=['2024','2025'].map(year=>({id:year,name:'budget.pdf',path:'C:\\Documents\\'+year+'\\budget.pdf',launch:'C:\\Documents\\'+year+'\\budget.pdf',kind:'file'}))
+ const payloads=[]
+ await page.route('**/ask',async r=>{payloads.push(r.request().postDataJSON());await r.fulfill({contentType:'text/event-stream',body:[{type:'delta',text:'I will search.'},{type:'searching'},{type:'hits',hits:duplicates},{type:'coverage',coverage:{searched:['C:\\Documents'],limited:false,depthLimited:1,notice:'Depth limit reached'}},{type:'delta',text:'Two matching files.'},{type:'done',firstTokenMs:10,totalMs:20}].map(event).join('')})})
+ const q=page.getByRole('combobox',{name:'Ask this PC'});await q.fill('my budget documents');await q.press('Enter')
+ await expect(page.locator('#out')).toHaveText('Two matching files.');await expect(page.locator('#sources')).toContainText('Limited coverage')
+ await page.locator('#sources summary').focus();await page.locator('#sources summary').press('Enter');await expect(page.locator('#sources details div')).toContainText('Deeper folders remain unchecked.')
+ await expect(page.locator('#hits [role=option]')).toHaveCount(2)
+ await page.locator('#hits [role=option]').nth(1).click();await expect.poll(()=>payloads.length).toBe(2);expect(payloads[1].selection).toBe('2025')
+})
 test.beforeEach(async({page})=>{
  await page.route('**/prepare',r=>r.fulfill({json:{ok:true}}))
  await page.route('**/search?*',r=>r.fulfill({json:{hits:[hit]}}))
@@ -45,7 +55,7 @@ test('model change after outage makes no call and leaves a usable retry',async({
 
 test('native window identity, dismissal cancellation and focus select the existing query',async({page})=>{
  await page.goto('/?native=1&windowId=0123456789abcdef0123456789abcdef')
- await expect(page).toHaveTitle('Windows Search [8331] 0123456789abcdef0123456789abcdef')
+ await expect(page).toHaveTitle('Windows Search ['+new URL(page.url()).port+'] 0123456789abcdef0123456789abcdef')
  await page.route('**/ask',async r=>{await new Promise(resolve=>setTimeout(resolve,250));await r.fulfill({contentType:'text/event-stream',body:event({type:'delta',text:'STALE'})+event({type:'done',firstTokenMs:1,totalMs:2})}).catch(()=>{})})
  const q=page.getByRole('combobox',{name:'Ask this PC'});await q.fill('Calculator');await q.press('Enter');await expect(page.locator('#stop')).toBeVisible()
  await page.evaluate(()=>window.dispatchEvent(new Event('blur')))

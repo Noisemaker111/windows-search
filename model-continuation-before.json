@@ -1,0 +1,108 @@
+{
+  "conditions": "Synthetic roots only; traversal budget deliberately reduced to 12 entries to exercise continuation, production default remains 50000.",
+  "rows": [
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "case": "continue-deep",
+      "tools": [
+        "pc_search_files",
+        "pc_continue_file_search"
+      ],
+      "found": true,
+      "visited": [
+        12,
+        23
+      ],
+      "firstAnswerMs": 10270,
+      "totalMs": 11284,
+      "answer": "Found it:\n\n**<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md**",
+      "usage": {
+        "input": 6579,
+        "output": 332,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "case": "vague-parent-typo",
+      "tools": [
+        "pc_search_files",
+        "pc_search_files",
+        "pc_search_files"
+      ],
+      "found": false,
+      "visited": [
+        12,
+        12
+      ],
+      "firstAnswerMs": 20163,
+      "totalMs": 21290,
+      "answer": "No slides matching \"solar panel\" or \"solar\" were found in documents, downloads, or projects folders (searched 12 entries, depth 20). Try checking specific project folders or searching with different keywords like \"panel\" or \"energy.\"",
+      "usage": {
+        "input": 9179,
+        "output": 456,
+        "reasoning": 0,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "case": "continue-deep",
+      "tools": [
+        "pc_search_files",
+        "pc_continue_file_search"
+      ],
+      "found": true,
+      "visited": [
+        12,
+        23
+      ],
+      "firstAnswerMs": 10163,
+      "totalMs": 12079,
+      "answer": "<fixture>\\documents\\lab\\year\\phase\\notes\\approved\\revisions\\packaged\\final\\heliotrope-migration-plan.md",
+      "usage": {
+        "input": 4587,
+        "output": 139,
+        "reasoning": 14,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "case": "vague-parent-typo",
+      "tools": [
+        "pc_search_files",
+        "pc_search_files",
+        "pc_search_files"
+      ],
+      "found": false,
+      "visited": [
+        12,
+        12,
+        12
+      ],
+      "firstAnswerMs": 14027,
+      "totalMs": 15384,
+      "answer": "No matching slides found in Documents, Downloads, or Projects (searched up to depth 20 for `.ppt` and `.pptx` filenames).",
+      "usage": {
+        "input": 6886,
+        "output": 153,
+        "reasoning": 66,
+        "cache": {
+          "read": 0,
+          "write": 0
+        }
+      }
+    }
+  ]
+}

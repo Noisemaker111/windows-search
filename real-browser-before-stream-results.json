@@ -1,0 +1,79 @@
+{
+  "conditions": "Headless installed Edge, isolated candidate bar and OpenCode host, live subscription models, real incomplete filename metadata, no launch; not physical native shortcut verification.",
+  "rows": [
+    {
+      "model": "claude-haiku-4-5-20251001",
+      "case": "real-partial-desktop",
+      "typingModelCalls": 0,
+      "targetInResults": true,
+      "visibleRows": 15,
+      "answerChars": 476,
+      "answerPathsFromEvidence": 3,
+      "done": {
+        "type": "done",
+        "model": "claude-haiku-4-5-20251001",
+        "firstTokenMs": 5237,
+        "totalMs": 7249,
+        "timings": {
+          "localSearchMs": 4.403699999995297,
+          "retrievalMs": 0.3251999999920372,
+          "sessionMs": 5.944699999992736,
+          "subscriptionMs": 2.222799999988638,
+          "promptMs": 27.548300000024028,
+          "postPromptFirstTokenMs": 5193.618799999997
+        },
+        "preparedSession": true,
+        "promptBytes": 1687,
+        "usage": {
+          "input": 5751,
+          "output": 258,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "investigationRepairs": 0
+      },
+      "launchEvents": 0,
+      "errorEvents": 0
+    },
+    {
+      "model": "gpt-5.6-luna",
+      "case": "real-partial-desktop",
+      "typingModelCalls": 0,
+      "targetInResults": true,
+      "visibleRows": 15,
+      "answerChars": 289,
+      "answerPathsFromEvidence": 2,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 7794,
+        "totalMs": 9989,
+        "timings": {
+          "localSearchMs": 11.86809999999241,
+          "retrievalMs": 0.024199999985285103,
+          "sessionMs": 7.147899999981746,
+          "subscriptionMs": 2.24120000001858,
+          "promptMs": 37.16779999999562,
+          "postPromptFirstTokenMs": 7734.418400000024
+        },
+        "preparedSession": true,
+        "promptBytes": 1687,
+        "usage": {
+          "input": 4408,
+          "output": 123,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "investigationRepairs": 0
+      },
+      "launchEvents": 0,
+      "errorEvents": 0
+    }
+  ]
+}

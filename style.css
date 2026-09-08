@@ -10,3 +10,4 @@ footer{display:flex;align-items:center;justify-content:space-between;gap:12px;pa
 .name{overflow-wrap:anywhere;flex-wrap:wrap}.path{white-space:normal;overflow-wrap:anywhere;font-size:12px}.match-label{flex-shrink:0}#q:focus-visible{outline:2px solid #b0a4ff;outline-offset:4px;border-radius:2px}
 
 #speed:disabled{opacity:.45;cursor:not-allowed}
+#sources details{width:100%;font-size:12px;overflow-wrap:anywhere;color:#b8b9c7}#sources summary{cursor:pointer}#sources details div{white-space:pre-wrap;line-height:1.5;margin-top:6px}#sources summary:focus-visible{outline:2px solid #b0a4ff;outline-offset:2px}
