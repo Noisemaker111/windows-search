@@ -254,3 +254,59 @@ are in luna-fast-transport-results.json. All owned sessions and probe processes
 were cleaned up, and the temporary credential copy and raw request logs deleted.
 The shared proxy, original credentials and installed bar were unchanged. The
 existing physical interaction and web-grounding release blockers remain open.
+
+## Selection preparation: measured browser latency improvement
+
+Verified defect: start a fresh shim, choose Luna, type a query, and press Enter.
+Only Haiku was prepared at startup. Luna preparation began on submission, adding
+roughly half a second before inference. Reopening after five minutes also left an
+expired slot in place until submission. This affects every non-default model's
+first use and makes the selector feel slower than subsequent queries.
+
+The bar now requests one empty session for the selected model on load, focus and
+model/speed changes. Typing does not prepare or submit. Expired preparation is
+refreshed before submission when the bar reopens, and shutdown owns retiring
+sessions as well as current slots. There is no speculative inference, history
+reuse or change to the model/tier default. Immediate Enter can still wait when
+preparation has not finished; preparation does not make cold startup free.
+
+Acceptance: after selection preparation settles, submission session wait below
+10ms, zero LLM calls before Enter, exactly one call per deliberate submission,
+and no model/variant crossing or expired-session leak. All were checked: 12 live
+headless Edge journeys against the actual bar and real Windows Calculator index,
+through an isolated OpenCode host and existing subscription proxy. The same
+query, Luna low/Normal and 650ms pause after selection were used each trial.
+Each trial had a fresh shim/session pool; baseline suppressed the new /prepare
+request to reproduce the prior behavior. Six pairs reverse condition order between pairs to reduce ordering bias. See selection-latency-results.json for every observation.
+
+| Measured boundary | Prior behavior (6) | Prepared selection (6) |
+| --- | --- | --- |
+| Median Enter to visible first text | 2684ms | 2297ms |
+| Median Enter to visible completion | 3296ms | 2891ms |
+| Median session wait during submission | 553.1ms | 0.3ms |
+| LLM calls before Enter / per submission | 0 / 1 | 0 / 1 |
+
+One baseline run included 1465ms cold-host prompt admission. Excluding it, the
+baseline first-text median is 2504ms (five runs), compared with 2297ms candidate
+(six). Model wait also varied substantially, including a candidate 3480ms first
+text result. Thus the causal improvement is removal of ~0.55s session setup;
+observed whole-operation medians improved, but are not a general latency SLA.
+Local search stayed around 2-3ms. The remaining ~2s is mostly post-admission
+OpenCode/proxy/model wait. The bar still needs further latency work for daily use.
+
+An additional 12-call, six-query comparison of Luna low versus none reasoning
+preserved paths and missing/current-information honesty in both modes. None was
+not consistently faster and was not adopted. No reasoning or credit-cost increase
+was used to get the session improvement.
+
+The first browser harness attempts failed (copied-process startup and a stale
+isolated relay configuration); these produced no accepted measurements. The
+host configuration was corrected and readiness checked before the final trials.
+26 tests / 105 assertions, typecheck, UI syntax, 10 headless interaction regressions,
+and 11 simulated native checks plus compilation passed. The new regressions cover
+selected-model preparation, zero typing/submission side effects and expired-slot
+cleanup ownership. Physical shortcuts and the broader release gates remain open.
+
+After validation, all probe listeners were confirmed closed. The owned temporary
+host database and credential log were removed, clearing all diagnostic sessions.
+The installed bar, original credentials and shared proxy were unchanged.

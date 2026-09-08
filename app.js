@@ -8,6 +8,13 @@ if([...model.options].some(o=>o.value===savedModel))model.value=savedModel
 function syncSpeed(){speed.disabled=model.value!=='gpt-5.6-luna';speed.value=!speed.disabled&&readPreference('search-luna-speed')==='fast'?'fast':'normal'}
 syncSpeed()
 function selectedModel(){return model.value==='gpt-5.6-luna'&&speed.value==='fast'?'gpt-5.6-luna#fast':model.value}
+// Session preparation creates no prompt and never runs on typing.
+let preparingModel
+function prepareSelection(){
+ const id=selectedModel();if(preparingModel===id)return
+ preparingModel=id
+ fetch('/prepare',{method:'POST',headers:{'content-type':'application/json'},body:JSON.stringify({model:id})}).catch(()=>{}).finally(()=>{if(preparingModel===id)preparingModel=undefined})
+}
 const paths={
  search:'<circle cx="10.5" cy="10.5" r="6.5"/><path d="m16 16 4.5 4.5"/>',
  arrow:'<path d="M12 19V5m-6 6 6-6 6 6"/>',
@@ -106,10 +113,11 @@ q.addEventListener('keydown',e=>{
 askButton.onclick=()=>ask(active>=0?hits[active]?.id:undefined)
 stopButton.onclick=()=>{cancel();status.textContent='Answer stopped'}
 clearButton.onclick=()=>{q.value='';edited();q.focus()}
-model.onchange=()=>{savePreference('search-model',model.value);syncSpeed();cancel();status.textContent='Model changed · Enter to ask';answer.hidden=true}
-speed.onchange=()=>{savePreference('search-luna-speed',speed.value);cancel();status.textContent=speed.value==='fast'?'Fast requested · uses more credits · Enter to ask':'Normal service · Enter to ask';answer.hidden=true}
+model.onchange=()=>{savePreference('search-model',model.value);syncSpeed();cancel();prepareSelection();status.textContent='Model changed · Enter to ask';answer.hidden=true}
+speed.onchange=()=>{savePreference('search-luna-speed',speed.value);cancel();prepareSelection();status.textContent=speed.value==='fast'?'Fast requested · uses more credits · Enter to ask':'Normal service · Enter to ask';answer.hidden=true}
 document.querySelectorAll('[data-query]').forEach(b=>b.onclick=()=>{q.value=b.dataset.query;edited();q.focus()})
 window.addEventListener('focus',()=>{
+ prepareSelection()
  if(nativeWindow){q.focus();q.select()}
  else if(document.activeElement===document.body)q.focus()
 })
@@ -120,3 +128,5 @@ function leaveWindow(){
 if(nativeWindow)document.addEventListener('visibilitychange',()=>{if(document.hidden)leaveWindow()})
 window.addEventListener('pagehide',leaveWindow)
 edited();q.focus()
+
+prepareSelection()

@@ -1,0 +1,836 @@
+{
+  "conditions": {
+    "model": "gpt-5.6-luna",
+    "reasoning": "low",
+    "serviceTier": "normal",
+    "query": "where is calculator",
+    "boundary": "headless Edge keydown Enter to MutationObserver seeing answer text; actual bar -> isolated OpenCode -> existing subscription proxy",
+    "index": "actual Windows index; built-in Calculator only, no launch",
+    "comparison": "separate shim process and fresh pool each trial; baseline intercepts /prepare to reproduce prior behavior; candidate waits for preparation; both pause 650ms after selection before typing",
+    "order": "baseline,candidate,candidate,baseline,baseline,candidate,candidate,baseline,baseline,candidate,candidate,baseline",
+    "caveats": "12 trials, one initial cold host included and reported separately; model/network variance; not physical shortcut verification or sign-in startup. No inference during preparation. API success preparedSession means reserved, not necessarily already ready."
+  },
+  "browser": [
+    {
+      "prepared": false,
+      "uiFirstMs": 3924,
+      "uiDoneMs": 4616,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 3918,
+        "totalMs": 4609,
+        "timings": {
+          "localSearchMs": 2.2986000000000786,
+          "retrievalMs": 0.0007000000000516593,
+          "sessionMs": 570.4929999999999,
+          "subscriptionMs": 2.128400000000056,
+          "promptMs": 1465.4054999999998,
+          "postPromptFirstTokenMs": 1876.0728
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 737,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed, but no file path was provided.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": true,
+      "uiFirstMs": 2456,
+      "uiDoneMs": 3015,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 2453,
+        "totalMs": 3013,
+        "timings": {
+          "localSearchMs": 2.240099999999984,
+          "retrievalMs": 0.0017000000002553861,
+          "sessionMs": 0.39820000000008804,
+          "subscriptionMs": 4.1887000000001535,
+          "promptMs": 7.382000000000062,
+          "postPromptFirstTokenMs": 2436.2237000000005
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 739,
+          "output": 10,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is an installed app.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": true,
+      "uiFirstMs": 2138,
+      "uiDoneMs": 2767,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 2136,
+        "totalMs": 2765,
+        "timings": {
+          "localSearchMs": 2.2244000000000597,
+          "retrievalMs": 0.0007000000000516593,
+          "sessionMs": 0.2795000000000982,
+          "subscriptionMs": 4.781099999999697,
+          "promptMs": 12.469500000000153,
+          "postPromptFirstTokenMs": 2113.9809000000005
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 737,
+          "output": 14,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed, but no path was supplied.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": false,
+      "uiFirstMs": 2864,
+      "uiDoneMs": 3466,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 2861,
+        "totalMs": 3463,
+        "timings": {
+          "localSearchMs": 2.4225000000001273,
+          "retrievalMs": 0.0007000000000516593,
+          "sessionMs": 535.7550000000001,
+          "subscriptionMs": 1.74350000000004,
+          "promptMs": 5.2952000000000226,
+          "postPromptFirstTokenMs": 2313.5557
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 737,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed, but no file path was provided.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": false,
+      "uiFirstMs": 5164,
+      "uiDoneMs": 5676,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 5158,
+        "totalMs": 5670,
+        "timings": {
+          "localSearchMs": 2.442500000000109,
+          "retrievalMs": 0.0009000000000014552,
+          "sessionMs": 603.0994999999998,
+          "subscriptionMs": 1.481999999999971,
+          "promptMs": 4.840099999999438,
+          "postPromptFirstTokenMs": 4544.3191
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 737,
+          "output": 8,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": true,
+      "uiFirstMs": 2002,
+      "uiDoneMs": 2727,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 1998,
+        "totalMs": 2723,
+        "timings": {
+          "localSearchMs": 2.340099999999893,
+          "retrievalMs": 0.0007999999997991836,
+          "sessionMs": 0.2627999999995154,
+          "subscriptionMs": 2.025900000000547,
+          "promptMs": 7.468799999999646,
+          "postPromptFirstTokenMs": 1983.6617999999999
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 739,
+          "output": 18,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed as a Windows app; no file path was supplied.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": true,
+      "uiFirstMs": 2713,
+      "uiDoneMs": 4405,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 2709,
+        "totalMs": 4401,
+        "timings": {
+          "localSearchMs": 2.2335999999995693,
+          "retrievalMs": 0.000699999999596912,
+          "sessionMs": 0.25900000000001455,
+          "subscriptionMs": 6.988199999999779,
+          "promptMs": 9.32470000000012,
+          "postPromptFirstTokenMs": 2688.6242
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 738,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed, but no file path was supplied.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": false,
+      "uiFirstMs": 2504,
+      "uiDoneMs": 3126,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 2499,
+        "totalMs": 3121,
+        "timings": {
+          "localSearchMs": 2.395300000000134,
+          "retrievalMs": 0.0008000000002539309,
+          "sessionMs": 511.53819999999996,
+          "subscriptionMs": 2.0632000000000517,
+          "promptMs": 5.679499999999734,
+          "postPromptFirstTokenMs": 1974.9349000000002
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 736,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed, but no file path was supplied.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": false,
+      "uiFirstMs": 2239,
+      "uiDoneMs": 2792,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 2233,
+        "totalMs": 2786,
+        "timings": {
+          "localSearchMs": 2.44399999999996,
+          "retrievalMs": 0.0007999999997991836,
+          "sessionMs": 589.4047999999998,
+          "subscriptionMs": 2.429599999999482,
+          "promptMs": 5.510299999999916,
+          "postPromptFirstTokenMs": 1630.9818000000005
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 740,
+          "output": 8,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": true,
+      "uiFirstMs": 2044,
+      "uiDoneMs": 2697,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 2039,
+        "totalMs": 2692,
+        "timings": {
+          "localSearchMs": 2.263300000000072,
+          "retrievalMs": 0.0007000000000516593,
+          "sessionMs": 0.3198000000002139,
+          "subscriptionMs": 1.6860999999998967,
+          "promptMs": 6.699999999999818,
+          "postPromptFirstTokenMs": 2025.9382999999998
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 735,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed, but no file path was supplied.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": true,
+      "uiFirstMs": 3480,
+      "uiDoneMs": 4065,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 3475,
+        "totalMs": 4059,
+        "timings": {
+          "localSearchMs": 2.623099999999795,
+          "retrievalMs": 0.0009000000000014552,
+          "sessionMs": 0.3073000000003958,
+          "subscriptionMs": 7.662999999999556,
+          "promptMs": 5.725999999999658,
+          "postPromptFirstTokenMs": 3456.2123
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 738,
+          "output": 18,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed on this PC, but no file path was provided.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    },
+    {
+      "prepared": false,
+      "uiFirstMs": 2233,
+      "uiDoneMs": 2669,
+      "done": {
+        "type": "done",
+        "model": "gpt-5.6-luna",
+        "firstTokenMs": 2231,
+        "totalMs": 2666,
+        "timings": {
+          "localSearchMs": 2.7575000000001637,
+          "retrievalMs": 0.001299999999901047,
+          "sessionMs": 446.9203000000002,
+          "subscriptionMs": 1.548200000000179,
+          "promptMs": 5.288700000000063,
+          "postPromptFirstTokenMs": 1771.4117
+        },
+        "preparedSession": true,
+        "promptBytes": 375,
+        "usage": {
+          "input": 738,
+          "output": 11,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        }
+      },
+      "answer": "Calculator is installed as an app.",
+      "callsBeforeSubmit": 0,
+      "callsForSubmission": 1
+    }
+  ],
+  "reasoningExperiment": {
+    "conditions": "Six synthetic grounded search prompts, low versus none in alternating pairs, original answerPrompt/system, sessions prewarmed; one cold-host first call. None not adopted because it was not consistently faster.",
+    "rows": [
+      {
+        "query": "Where is Example Game?",
+        "choice": "gpt-5.6-luna",
+        "firstMs": 3355,
+        "totalMs": 4280,
+        "preparationMs": 472,
+        "timings": {
+          "sessionMs": 0.13570000000004256,
+          "subscriptionMs": 2.266200000000026,
+          "promptMs": 1296.4351000000001,
+          "postPromptFirstTokenMs": 2053.7442
+        },
+        "usage": {
+          "input": 745,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "low",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "Example Game is located at C:\\Games\\Example."
+      },
+      {
+        "query": "Where is Example Game?",
+        "choice": "gpt-5.6-luna#none",
+        "firstMs": 1905,
+        "totalMs": 2416,
+        "preparationMs": 627,
+        "timings": {
+          "sessionMs": 0.03359999999975116,
+          "subscriptionMs": 2.254899999999907,
+          "promptMs": 10.440800000000309,
+          "postPromptFirstTokenMs": 1891.5231999999996
+        },
+        "usage": {
+          "input": 745,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "none",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "Example Game is located at C:\\Games\\Example."
+      },
+      {
+        "query": "where is exmaple game",
+        "choice": "gpt-5.6-luna#none",
+        "firstMs": 1497,
+        "totalMs": 2068,
+        "preparationMs": 438,
+        "timings": {
+          "sessionMs": 0.02839999999923748,
+          "subscriptionMs": 1.4844999999986612,
+          "promptMs": 4.620699999999488,
+          "postPromptFirstTokenMs": 1491.0339000000004
+        },
+        "usage": {
+          "input": 749,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "none",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "Example Game is located at C:\\Games\\Example."
+      },
+      {
+        "query": "where is exmaple game",
+        "choice": "gpt-5.6-luna",
+        "firstMs": 1465,
+        "totalMs": 2035,
+        "preparationMs": 0,
+        "timings": {
+          "sessionMs": 0.054799999999886495,
+          "subscriptionMs": 1.7291999999997643,
+          "promptMs": 45.63249999999971,
+          "postPromptFirstTokenMs": 1417.2246000000014
+        },
+        "usage": {
+          "input": 745,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "low",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "Example Game is located at C:\\Games\\Example."
+      },
+      {
+        "query": "where is My Project",
+        "choice": "gpt-5.6-luna",
+        "firstMs": 1798,
+        "totalMs": 2386,
+        "preparationMs": 453,
+        "timings": {
+          "sessionMs": 0.018000000000029104,
+          "subscriptionMs": 1.5509000000001834,
+          "promptMs": 4.357099999999264,
+          "postPromptFirstTokenMs": 1791.6322
+        },
+        "usage": {
+          "input": 747,
+          "output": 16,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "low",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "My Project is located at C:\\Projects\\My Project."
+      },
+      {
+        "query": "where is My Project",
+        "choice": "gpt-5.6-luna#none",
+        "firstMs": 1550,
+        "totalMs": 2242,
+        "preparationMs": 0,
+        "timings": {
+          "sessionMs": 0.028000000000247383,
+          "subscriptionMs": 1.0007000000005064,
+          "promptMs": 34.27779999999984,
+          "postPromptFirstTokenMs": 1514.7217999999993
+        },
+        "usage": {
+          "input": 747,
+          "output": 16,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "none",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "My Project is located at C:\\Projects\\My Project."
+      },
+      {
+        "query": "where is Missing App",
+        "choice": "gpt-5.6-luna#none",
+        "firstMs": 1897,
+        "totalMs": 2543,
+        "preparationMs": 475,
+        "timings": {
+          "sessionMs": 0.04730000000199652,
+          "subscriptionMs": 1.6706000000012864,
+          "promptMs": 4.378600000000006,
+          "postPromptFirstTokenMs": 1890.4787000000033
+        },
+        "usage": {
+          "input": 747,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "none",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "“Missing App” was not found in indexed locations."
+      },
+      {
+        "query": "where is Missing App",
+        "choice": "gpt-5.6-luna",
+        "firstMs": 1600,
+        "totalMs": 2148,
+        "preparationMs": 0,
+        "timings": {
+          "sessionMs": 0.018200000002252636,
+          "subscriptionMs": 1.2760999999991327,
+          "promptMs": 7.055599999999686,
+          "postPromptFirstTokenMs": 1591.5419000000002
+        },
+        "usage": {
+          "input": 747,
+          "output": 15,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "low",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "“Missing App” was not found in indexed locations."
+      },
+      {
+        "query": "what is the latest release of Example App today?",
+        "choice": "gpt-5.6-luna",
+        "firstMs": 1555,
+        "totalMs": 2303,
+        "preparationMs": 556,
+        "timings": {
+          "sessionMs": 0.046000000002095476,
+          "subscriptionMs": 1.4440000000031432,
+          "promptMs": 4.647099999998318,
+          "postPromptFirstTokenMs": 1548.7973999999995
+        },
+        "usage": {
+          "input": 752,
+          "output": 21,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "low",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "I don’t have a verified web result for the latest release of Example App today."
+      },
+      {
+        "query": "what is the latest release of Example App today?",
+        "choice": "gpt-5.6-luna#none",
+        "firstMs": 2443,
+        "totalMs": 3264,
+        "preparationMs": 0,
+        "timings": {
+          "sessionMs": 0.04109999999855063,
+          "subscriptionMs": 1.1630000000004657,
+          "promptMs": 4.767700000000332,
+          "postPromptFirstTokenMs": 2436.576399999998
+        },
+        "usage": {
+          "input": 753,
+          "output": 24,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "none",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "I don’t have a supplied web result or local match confirming the latest release of Example App today."
+      },
+      {
+        "query": "where are the example files",
+        "choice": "gpt-5.6-luna#none",
+        "firstMs": 1471,
+        "totalMs": 2037,
+        "preparationMs": 464,
+        "timings": {
+          "sessionMs": 0.04739999999947031,
+          "subscriptionMs": 1.0084999999999127,
+          "promptMs": 3.8935999999994237,
+          "postPromptFirstTokenMs": 1466.1048999999985
+        },
+        "usage": {
+          "input": 748,
+          "output": 16,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "none",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "Example files are located at C:\\Work\\Example files."
+      },
+      {
+        "query": "where are the example files",
+        "choice": "gpt-5.6-luna",
+        "firstMs": 1637,
+        "totalMs": 2099,
+        "preparationMs": 0,
+        "timings": {
+          "sessionMs": 0.03840000000127475,
+          "subscriptionMs": 2.0271000000029744,
+          "promptMs": 4.195100000000821,
+          "postPromptFirstTokenMs": 1630.7621
+        },
+        "usage": {
+          "input": 749,
+          "output": 16,
+          "reasoning": 0,
+          "cache": {
+            "read": 0,
+            "write": 0
+          }
+        },
+        "observed": [
+          {
+            "model": "gpt-5.6-luna",
+            "reasoning": "low",
+            "requested": "default",
+            "status": 200,
+            "returnedTiers": [
+              "auto",
+              "default"
+            ]
+          }
+        ],
+        "text": "Example files are located at C:\\Work\\Example files."
+      }
+    ]
+  }
+}

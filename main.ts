@@ -56,6 +56,12 @@ const server = Bun.serve({
       try { const result = await launch(hit); launches.push(result); return Response.json(result) }
       catch(e) { return Response.json({error:String(e)},{status:400}) }
     }
+    if (url.pathname==="/prepare" && req.method==="POST") {
+      const body=await req.json() as {model?:unknown}
+      if(!body||typeof body.model!=="string"||!models.some(m=>m.id===body.model))return Response.json({error:"Supported model required"},{status:400})
+      await prepareModel(body.model)
+      return Response.json({ok:true})
+    }
     if (url.pathname==="/ask" && req.method==="POST") {
       const body = await req.json() as {query: string; model: string; clientId?:string; selection?:string}
       if (!body || typeof body.model!=="string" || typeof body.query!=="string" || !body.query.trim() || body.query.length>4000 || !models.some(m=>m.id===body.model))

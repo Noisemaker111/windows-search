@@ -2,6 +2,7 @@ import {test,expect} from '@playwright/test'
 const hit={id:'fixture',name:'Calculator',path:'shell:AppsFolder\\fixture',launch:'shell:AppsFolder\\fixture',kind:'app',match:'exact',score:100}
 const event=e=>'data: '+JSON.stringify(e)+'\n\n'
 test.beforeEach(async({page})=>{
+ await page.route('**/prepare',r=>r.fulfill({json:{ok:true}}))
  await page.route('**/search?*',r=>r.fulfill({json:{hits:[hit]}}))
  await page.goto('/')
 })
@@ -70,4 +71,15 @@ test('Luna Normal/Fast is independent of reasoning, persists, and never auto-sub
  await page.locator('#model').selectOption('grok-4.6');await expect(page.locator('#speed')).toBeDisabled();await expect(page.locator('#speed')).toHaveValue('normal')
  await page.setViewportSize({width:360,height:600});await page.locator('#model').selectOption('gpt-5.6-luna');await page.locator('#speed').selectOption('fast')
  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true)
+})
+
+test('opening and model/speed selection prepare only the chosen model, never typing',async({page})=>{
+ const prepared=[];let asks=0
+ await page.route('**/prepare',r=>{prepared.push(r.request().postDataJSON().model);return r.fulfill({json:{ok:true}})})
+ await page.route('**/ask',r=>{asks++;return r.fulfill({body:''})})
+ await page.reload();await expect.poll(()=>prepared.length).toBeGreaterThan(0)
+ await page.locator('#model').selectOption('gpt-5.6-luna');await expect.poll(()=>prepared.at(-1)).toBe('gpt-5.6-luna')
+ await page.locator('#speed').selectOption('fast');await expect.poll(()=>prepared.at(-1)).toBe('gpt-5.6-luna#fast')
+ const count=prepared.length;await page.locator('#q').pressSequentially('where is calculator',{delay:10});await page.locator('#q').fill('where is calc')
+ await expect(page.locator('#hits [role=option]')).toBeVisible();expect(prepared.length).toBe(count);expect(asks).toBe(0)
 })
